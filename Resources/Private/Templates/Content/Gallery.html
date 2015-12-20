@@ -1,0 +1,37 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Content" />
+ 
+	<f:section name="Configuration">
+		<flux:form id="gallery" wizardTab="MG" options="{group: 'Custom elements', icon: '../typo3conf/ext/fluxtemplate/Resources/Public/Icons/custom-content.png'}">
+			<flux:field.inline.fal name="settings.images" multiple="TRUE" maxItems="20" />
+		</flux:form>
+	</f:section>
+ 
+	<f:section name="Preview">
+		<b><f:translate key="flux.gallery" /></b>
+	</f:section>
+ 
+	<f:section name="Resources">
+	</f:section>
+ 
+	<f:section name="Item">
+		<li><a href="{image.url}" title="{f:if(condition: image.description, then: '{image.title}: ', else: '{image.title}')}{image.description}" rel="gallery">
+		<f:image treatIdAsReference="TRUE" src="{image.id}" alt="{image.title}" title="{f:if(condition: image.description, then: '{image.title}: ', else: '{image.title}')}{image.description}" width="120c" height="120c" /></a></li>
+	</f:section>
+ 
+	<f:section name="Main">
+		<div id="gallery">
+			<div class="gallery_list">
+				<ul>
+					<f:for each="{v:content.resources.fal(field: 'settings.images')}" as="image">
+						<f:render section="Item" arguments="{_all}" />
+					</f:for>
+				</ul>
+			</div>
+		</div>
+	</f:section>
+	
+</div>

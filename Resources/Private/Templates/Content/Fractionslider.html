@@ -1,0 +1,271 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Content" />
+	<f:section name="Configuration">
+		<flux:form id="fractionslider" options="{group: 'Sliders', icon: '../typo3conf/ext/fluxtemplate/Resources/Public/Icons/fraction-slider.png'}">
+			<flux:field.select name="slideTransition" items="{none: 'none', fade: 'fade', left: 'left', right: 'right', top: 'top', bottom: 'bottom', scrollLeft: 'scrollLeft', scrollRight: 'scrollRight', scrollTop: 'scrollTop', scrollBottom: 'scrollBottom'}" default="none" />
+			<flux:field.input name="slideTransitionSpeed" default="2000" eval="int,trim" />
+			<flux:field.select name="slideEndAnimation" items="{true: 'enable', false: 'disable'}" default="true" />
+			<flux:field.select name="fullWidth" items="{true: 'enable', false: 'disable'}" default="false" />
+			<flux:field.input name="delay" default="0" eval="int,trim" />
+			<flux:field.input name="timeout" default="2000" eval="int,trim" />
+			<flux:field.input name="speedIn" default="2500" eval="int,trim" />
+			<flux:field.input name="speedOut" default="1000" eval="int,trim" />
+			<flux:field.select name="easeIn" items="{linear: 'linear', swing: 'swing', easeInQuad: 'easeInQuad', easeOutQuad: 'easeOutQuad', easeInOutQuad: 'easeInOutQuad', easeInCubic: 'easeInCubic', easeOutCubic: 'easeOutCubic', easeInOutCubic: 'easeInOutCubic', easeInQuart: 'easeInQuart', easeOutQuart: 'easeOutQuart', easeInOutQuart: 'easeInOutQuart', easeInQuint: 'easeInQuint', easeOutQuint: 'easeOutQuint', easeInOutQuint: ' easeInOutQuint', easeInExpo: 'easeInExpo', easeOutExpo: 'easeOutExpo', easeInOutExpo: 'easeInOutExpo', easeInSine: 'easeInSine', easeOutSine: 'easeOutSine', easeInOutSine: 'easeInOutSine', easeInCirc: 'easeInCirc', easeOutCirc: 'easeOutCirc', easeInOutCirc: 'easeInOutCirc', easeInElastic: 'easeInElastic', easeOutElastic: 'easeOutElastic', easeInOutElastic: 'easeInOutElastic', easeInBack: 'easeInBack', easeOutBack: 'easeOutBack', easeInOutBack: 'easeInOutBack', easeInBounce: 'easeInBounce', easeOutBounce: 'easeOutBounce', easeInOutBounce: 'easeInOutBounce'}" default="easeOutExpo" />
+			<flux:field.select name="easeOut" items="{linear: 'linear', swing: 'swing', easeInQuad: 'easeInQuad', easeOutQuad: 'easeOutQuad', easeInOutQuad: 'easeInOutQuad', easeInCubic: 'easeInCubic', easeOutCubic: 'easeOutCubic', easeInOutCubic: 'easeInOutCubic', easeInQuart: 'easeInQuart', easeOutQuart: 'easeOutQuart', easeInOutQuart: 'easeInOutQuart', easeInQuint: 'easeInQuint', easeOutQuint: 'easeOutQuint', easeInOutQuint: ' easeInOutQuint', easeInExpo: 'easeInExpo', easeOutExpo: 'easeOutExpo', easeInOutExpo: 'easeInOutExpo', easeInSine: 'easeInSine', easeOutSine: 'easeOutSine', easeInOutSine: 'easeInOutSine', easeInCirc: 'easeInCirc', easeOutCirc: 'easeOutCirc', easeInOutCirc: 'easeInOutCirc', easeInElastic: 'easeInElastic', easeOutElastic: 'easeOutElastic', easeInOutElastic: 'easeInOutElastic', easeInBack: 'easeInBack', easeOutBack: 'easeOutBack', easeInOutBack: 'easeInOutBack', easeInBounce: 'easeInBounce', easeOutBounce: 'easeOutBounce', easeInOutBounce: 'easeInOutBounce'}" default="easeOutCubic" />
+			<flux:field.select name="controls" items="{true: 'enable', false: 'disable'}" default="false" />
+			<flux:field.select name="pager" items="{true: 'enable', false: 'disable'}" default="false" />
+			<flux:field.select name="autoChange" items="{true: 'enable', false: 'disable'}" default="true" />
+			<flux:field.select name="pauseOnHover" items="{true: 'enable', false: 'disable'}" default="false" />
+			<flux:field.select name="backgroundAnimation" items="{true: 'enable', false: 'disable'}" default="false" />
+			<flux:field.file name="backgroundElement" maxItems="1" allowed="jpg,jpeg,png,gif" />
+			<flux:field.input name="backgroundX" default="500" eval="int,trim" />
+			<flux:field.input name="backgroundY" default="500" eval="int,trim" />
+			<flux:field.input name="backgroundSpeed" default="2500" eval="int,trim" />
+			<flux:field.select name="backgroundEase" items="{linear: 'linear', swing: 'swing', easeInQuad: 'easeInQuad', easeOutQuad: 'easeOutQuad', easeInOutQuad: 'easeInOutQuad', easeInCubic: 'easeInCubic', easeOutCubic: 'easeOutCubic', easeInOutCubic: 'easeInOutCubic', easeInQuart: 'easeInQuart', easeOutQuart: 'easeOutQuart', easeInOutQuart: 'easeInOutQuart', easeInQuint: 'easeInQuint', easeOutQuint: 'easeOutQuint', easeInOutQuint: ' easeInOutQuint', easeInExpo: 'easeInExpo', easeOutExpo: 'easeOutExpo', easeInOutExpo: 'easeInOutExpo', easeInSine: 'easeInSine', easeOutSine: 'easeOutSine', easeInOutSine: 'easeInOutSine', easeInCirc: 'easeInCirc', easeOutCirc: 'easeOutCirc', easeInOutCirc: 'easeInOutCirc', easeInElastic: 'easeInElastic', easeOutElastic: 'easeOutElastic', easeInOutElastic: 'easeInOutElastic', easeInBack: 'easeInBack', easeOutBack: 'easeOutBack', easeInOutBack: 'easeInOutBack', easeInBounce: 'easeInBounce', easeOutBounce: 'easeOutBounce', easeInOutBounce: 'easeInOutBounce'}" default="easeOutCubic" />
+			<flux:field.select name="responsive" items="{true: 'enable', false: 'disable'}" default="true" />
+			<flux:field.select name="increase" items="{true: 'enable', false: 'disable'}" default="false" />
+			<flux:field.input name="dimensionsWidth" default="1170" eval="int,trim" />
+			<flux:field.input name="dimensionsHeight" default="480" eval="int,trim" />
+			<flux:grid>
+				<f:for each="{slides}" as="slide">
+					<f:for each="{slide}" as="element">
+						<v:condition.type.isArray value="{element.elements}">
+							<f:for each="{element.elements}" as="type" iteration="iteration">
+								<f:for each="{type}" key="elementType" as="elementData">
+									<f:if condition="{0: elementType} == {0: 'content'}">
+										<flux:grid.row>
+											<flux:grid.column name="{elementData.id}" label="Content: {elementData.id}" />
+										</flux:grid.row>
+									</f:if>
+								</f:for>
+							</f:for>
+						</v:condition.type.isArray>
+					</f:for>
+				</f:for>
+			</flux:grid>
+			<flux:form.sheet name="slides">
+				<flux:form.section name="slides">
+					<flux:form.object name="slide">
+						<flux:field.select name="dataIn" items="{none: 'none', fade: 'fade', slideLeft: 'left', slideRight: 'right', slideTop: 'top', slideBottom: 'bottom', scrollLeft: 'scrollLeft', scrollRight: 'scrollRight', scrollTop: 'scrollTop', scrollBottom: 'scrollBottom'}" default="none" />
+						<flux:field.input name="slideCssClasses" />
+						<flux:field.file name="slideBackgroundImage" allowed="jpg,jpeg,png" />
+						<flux:form.section name="elements">
+							<flux:form.object name="image">
+								<flux:field.file name="file" />
+								<f:render section="SharedObjectFields" arguments="{_all}" />
+							</flux:form.object>
+							<flux:form.object name="header">
+								<flux:field.input name="title" />
+								<flux:field.select name="size" items="h1,h2,h3,h4,h5,h6" />
+								<f:render section="SharedObjectFields" arguments="{_all}" />
+							</flux:form.object>
+							<flux:form.object name="text">
+								<flux:field.text name="text" enableRichText="TRUE" />
+								<f:render section="SharedObjectFields" arguments="{_all}" />
+							</flux:form.object>
+							<flux:form.object name="button">
+								<flux:field.select items="xs,sm,default,lg" name="size" default="default"/>
+								<flux:field.input name="title"/>
+								<flux:field.input name="target">
+								    <flux:wizard.link activeTab="Page"/>
+								</flux:field.input>
+								<flux:field.select items="default,primary,success,info,warning,danger,link"
+										   name="options" default="default"/>
+								<f:render section="SharedObjectFields" arguments="{_all}" />
+							</flux:form.object>
+							<flux:form.object name="content">
+								<flux:field.input name="id" default="{v:random.string(length: 6)}" />
+								<f:render section="SharedObjectFields" arguments="{_all}" />
+							</flux:form.object>
+						</flux:form.section>
+					</flux:form.object>
+				</flux:form.section>
+			</flux:form.sheet>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Preview">
+		<p>Slides: {slides -> f:count()}</p>
+		<flux:widget.grid />
+	</f:section>
+
+	<f:section name="SharedObjectFields">
+		<flux:field.input name="elementCssClasses" label="Element CSS classes" />
+		<flux:field.custom name="void">
+			<div style="width: 96%; background: #ffffff; padding: 2px 2%; border:1px solid #000000;">
+				<h3 style="color:#333333; margin-top:1.25em;">Element Animation Config</h3>
+				<p>Below you can config a few animations to be used for this specific element instance.</p>
+			</div>
+		</flux:field.custom>
+		
+		<flux:field.checkbox name="elementDataFixed" label="data-fixed: The Element wont be animated and will be visible from the beginning of the slide" requestUpdate="1" />
+		<flux:field.input name="elementDataPositionTop" label="data-position :(top),left; Position top of the element inside the slider. Format in pixels." eval="int,trim" />
+		<flux:field.input name="elementDataPositionLeft" label="data-position :top,(left); Position left of the element inside the slider. Format in pixels." eval="int,trim" />
+		<flux:field.select name="elementDataIn" label="dataIn: Type of the in-animation" items="{none: 'none', fade: 'fade', left: 'left', topLeft: 'topLeft', bottomLeft: 'bottomLeft', right: 'right', topRight: 'topRight', bottomRight: 'bottomRight', top: 'top', bottom: 'bottom'}" default="none" />
+		<flux:field.select name="elementDataOut" label="data-out: Type of the out-animation" items="{none: 'none', fade: 'fade', left: 'left', topLeft: 'topLeft', bottomLeft: 'bottomLeft', right: 'right', topRight: 'topRight', bottomRight: 'bottomRight', top: 'top', bottom: 'bottom'}" default="none" />
+		<flux:field.select name="elementDataEaseIn" label="data-ease-in: Easing in" items="{none: 'none', linear: 'linear', swing: 'swing', easeInQuad: 'easeInQuad', easeOutQuad: 'easeOutQuad', easeInOutQuad: 'easeInOutQuad', easeInCubic: 'easeInCubic', easeOutCubic: 'easeOutCubic', easeInOutCubic: 'easeInOutCubic', easeInQuart: 'easeInQuart', easeOutQuart: 'easeOutQuart', easeInOutQuart: 'easeInOutQuart', easeInQuint: 'easeInQuint', easeOutQuint: 'easeOutQuint', easeInOutQuint: ' easeInOutQuint', easeInExpo: 'easeInExpo', easeOutExpo: 'easeOutExpo', easeInOutExpo: 'easeInOutExpo', easeInSine: 'easeInSine', easeOutSine: 'easeOutSine', easeInOutSine: 'easeInOutSine', easeInCirc: 'easeInCirc', easeOutCirc: 'easeOutCirc', easeInOutCirc: 'easeInOutCirc', easeInElastic: 'easeInElastic', easeOutElastic: 'easeOutElastic', easeInOutElastic: 'easeInOutElastic', easeInBack: 'easeInBack', easeOutBack: 'easeOutBack', easeInOutBack: 'easeInOutBack', easeInBounce: 'easeInBounce', easeOutBounce: 'easeOutBounce', easeInOutBounce: 'easeInOutBounce'}" default="none" />
+		<flux:field.select name="elementDataEaseOut" label="data-ease-out: Easing out" items="{none: 'none', linear: 'linear', swing: 'swing', easeInQuad: 'easeInQuad', easeOutQuad: 'easeOutQuad', easeInOutQuad: 'easeInOutQuad', easeInCubic: 'easeInCubic', easeOutCubic: 'easeOutCubic', easeInOutCubic: 'easeInOutCubic', easeInQuart: 'easeInQuart', easeOutQuart: 'easeOutQuart', easeInOutQuart: 'easeInOutQuart', easeInQuint: 'easeInQuint', easeOutQuint: 'easeOutQuint', easeInOutQuint: ' easeInOutQuint', easeInExpo: 'easeInExpo', easeOutExpo: 'easeOutExpo', easeInOutExpo: 'easeInOutExpo', easeInSine: 'easeInSine', easeOutSine: 'easeOutSine', easeInOutSine: 'easeInOutSine', easeInCirc: 'easeInCirc', easeOutCirc: 'easeOutCirc', easeInOutCirc: 'easeInOutCirc', easeInElastic: 'easeInElastic', easeOutElastic: 'easeOutElastic', easeInOutElastic: 'easeInOutElastic', easeInBack: 'easeInBack', easeOutBack: 'easeOutBack', easeInOutBack: 'easeInOutBack', easeInBounce: 'easeInBounce', easeOutBounce: 'easeOutBounce', easeInOutBounce: 'easeInOutBounce'}" default="none" />
+		<flux:field.input name="elementDataTime" label="data-time: Time after which the elements animation is complete. It will start at the beginning of the slide/step, or after its specificed delay." eval="int,trim" />
+		<flux:field.input name="elementDataDelay" label="data-delay: Time in ms before the in transition starts (in the current step)" eval="int,trim" />
+		<flux:field.input name="elementDataStep" label="data-step: Define a step in which order executed this element" eval="int,trim" />
+		<flux:field.checkbox name="elementDataSpecial" label="data-special: Cycle will trigger the out transition for the previous element in the current step. (Remember to use data-delay for elements with cycle, or they will start at the same time the element to cycle starts.)" default="0" />
+	</f:section>
+
+	<f:section name="Main">
+		<v:asset.style name="fractionslider-css" group="jquery" path="EXT:fluxtemplate/Resources/Public/CSS/fractionslider/fractionslider.css" standalone="TRUE" allowMoveToFooter="FALSE" />
+    <v:asset.script name="fractionslider-js" path="EXT:fluxtemplate/Resources/Public/JavaScript/fractionslider/jquery.fractionslider.js" group="jquery" standalone="TRUE" allowMoveToFooter="TRUE" />
+    <v:asset.script name="fractionslider-init-js" dependencies="fractionslider-js" group="jquery" standalone="TRUE" allowMoveToFooter="TRUE">					
+            <![CDATA[                        
+            $(window).load(function(){
+                $('.fractionslider').fractionSlider({
+		    'slideTransition': ']]>{slideTransition}<![CDATA[',
+		    'slideTransitionSpeed': ]]>{slideTransitionSpeed}<![CDATA[,
+		    'slideEndAnimation': ]]>{slideEndAnimation}<![CDATA[,
+		    'transitionIn': 'left',
+		    'transitionOut': 'left',
+		    'fullWidth': ]]>{fullWidth}<![CDATA[,
+		    'delay': ]]>{delay}<![CDATA[,
+		    'timeout': ]]>{timeout}<![CDATA[,
+		    'speedIn': ]]>{speedIn}<![CDATA[,
+		    'speedOut': ]]>{speedOut}<![CDATA[,
+		    'easeIn': ']]>{easeIn}<![CDATA[',
+		    'easeOut': ']]>{easeOut}<![CDATA[',
+
+		    'controls': ]]>{controls}<![CDATA[,
+		    'pager': ]]>{pager}<![CDATA[,
+		    'autoChange': ]]>{autoChange}<![CDATA[,
+		    'pauseOnHover': ]]>{pauseOnHover}<![CDATA[,
+
+		    'backgroundAnimation': ]]>{backgroundAnimation}<![CDATA[,
+		    'backgroundElement': ]]>{f:if(condition: backgroundElement, then: backgroundElement, else: 'null')}<![CDATA[,
+		    'backgroundX': ]]>{backgroundX}<![CDATA[,
+		    'backgroundY': ]]>{backgroundY}<![CDATA[,
+		    'backgroundSpeed': ]]>{backgroundSpeed}<![CDATA[,
+		    'backgroundEase': ']]>{backgroundEase}<![CDATA[',
+
+		    'responsive': ]]>{responsive}<![CDATA[,
+		    'increase': ]]>{increase}<![CDATA[,
+		    'dimensions': ']]>{dimensionsWidth},{dimensionsHeight}<![CDATA[',
+		    
+		    'startCallback': null,
+		    'startNextSlideCallback': null,
+		    'stopCallback': null,
+		    'pauseCallback': null,
+		    'resumeCallback': null,
+		    'nextSlideCallback': null,
+		    'prevSlideCallback': null,
+		    'pagerCallback': null
+                });        
+            });
+            ]]>
+    </v:asset.script>
+	   <div class="slider-wrapper">
+		<div class="responsive-container">
+			<div class="fractionslider">
+				<div class="fs_loader"></div>
+				<f:for each="{slides}" as="slide">
+					<f:for each="{slide}" as="element">
+						<div class="slide {element.slideCssClasses}" data-in="{element.dataIn}" <f:if condition="{element.slideBackgroundImage}">style="background-image:url({element.slideBackgroundImage});background-repeat:no-repeat;background-position:center center;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;"</f:if>>
+							<v:condition.type.isArray value="{element.elements}">
+								<f:for each="{element.elements}" as="type" iteration="iteration">
+									<f:for each="{type}" key="elementType" as="elementData">
+										<f:render section="{elementType -> v:format.case(case: 'ucfirst')}" arguments="{_all}" />
+									</f:for>
+								</f:for>
+							</v:condition.type.isArray>
+						</div>
+					</f:for>
+	            </f:for>
+	        </div>
+		</div>
+	</div> 
+	</f:section>
+
+	<f:section name="Image">
+          <img 	src="{elementData.file}"
+			<f:if condition="{elementData.elementCssClasses} != ''">class="{elementData.elementCssClasses}"</f:if>
+			data-position="{elementData.elementDataPositionTop},{elementData.elementDataPositionLeft}"
+			data-in="{elementData.elementDataIn}"
+			data-out="{elementData.elementDataOut}"
+			<f:if condition="{elementData.elementDataTime} != '0'">data-time="{elementData.elementDataTime}"</f:if>
+			<f:if condition="{elementData.elementDataDelay} != '0'">data-delay="{elementData.elementDataDelay}"</f:if>
+			<f:if condition="{elementData.elementDataStep} != '0'">data-step="{elementData.elementDataStep}"</f:if>
+			<f:if condition="{elementData.elementDataEaseIn} != 'none'">data-ease-in="{elementData.elementDataEaseIn}"</f:if>
+			<f:if condition="{elementData.elementDataEaseOut} != 'none'">data-ease-out="{elementData.elementDataEaseOut}"</f:if>
+			<f:if condition="{elementData.elementDataSpecial}">data-special="cycle"</f:if>
+			{f:if(condition: elementData.elementDataFixed, then: 'data-fixed')} />      
+	</f:section>
+	
+	<f:section name="Header">
+		<{elementData.size} 	<f:if condition="{elementData.elementCssClasses} != ''">class="{elementData.elementCssClasses}"</f:if>
+					data-position="{elementData.elementDataPositionTop},{elementData.elementDataPositionLeft}"
+					data-in="{elementData.elementDataIn}"
+					data-out="{elementData.elementDataOut}"
+					<f:if condition="{elementData.elementDataTime} != '0'">data-time="{elementData.elementDataTime}"</f:if>
+					<f:if condition="{elementData.elementDataDelay} != '0'">data-delay="{elementData.elementDataDelay}"</f:if>
+					<f:if condition="{elementData.elementDataStep} != '0'">data-step="{elementData.elementDataStep}"</f:if>
+					<f:if condition="{elementData.elementDataEaseIn} != 'none'">data-ease-in="{elementData.elementDataEaseIn}"</f:if>
+					<f:if condition="{elementData.elementDataEaseOut} != 'none'">data-ease-out="{elementData.elementDataEaseOut}"</f:if>
+					<f:if condition="{elementData.elementDataSpecial}">data-special="cycle"</f:if>
+					{f:if(condition: elementData.elementDataFixed, then: 'data-fixed')} >
+			{elementData.title -> f:format.htmlentities()}
+		</{elementData.size}>
+	</f:section>
+	
+	<f:section name="Text">
+		<div class="element-text {elementData.elementCssClasses}"
+			data-position="{elementData.elementDataPositionTop},{elementData.elementDataPositionLeft}"
+			data-in="{elementData.elementDataIn}"
+			data-out="{elementData.elementDataOut}"
+			<f:if condition="{elementData.elementDataTime} != '0'">data-time="{elementData.elementDataTime}"</f:if>
+			<f:if condition="{elementData.elementDataDelay} != '0'">data-delay="{elementData.elementDataDelay}"</f:if>
+			<f:if condition="{elementData.elementDataStep} != '0'">data-step="{elementData.elementDataStep}"</f:if>
+			<f:if condition="{elementData.elementDataEaseIn} != 'none'">data-ease-in="{elementData.elementDataEaseIn}"</f:if>
+			<f:if condition="{elementData.elementDataEaseOut} != 'none'">data-ease-out="{elementData.elementDataEaseOut}"</f:if>
+			<f:if condition="{elementData.elementDataSpecial}">data-special="cycle"</f:if>
+			{f:if(condition: elementData.elementDataFixed, then: 'data-fixed')} >
+			{elementData.text -> f:format.html()}
+		</div>
+	</f:section>
+	
+	<f:section name="Button">
+		<div class="{elementData.elementCssClasses}"
+			data-position="{elementData.elementDataPositionTop},{elementData.elementDataPositionLeft}"
+			data-in="{elementData.elementDataIn}"
+			data-out="{elementData.elementDataOut}"
+			<f:if condition="{elementData.elementDataTime} != '0'">data-time="{elementData.elementDataTime}"</f:if>
+			<f:if condition="{elementData.elementDataDelay} != '0'">data-delay="{elementData.elementDataDelay}"</f:if>
+			<f:if condition="{elementData.elementDataStep} != '0'">data-step="{elementData.elementDataStep}"</f:if>
+			<f:if condition="{elementData.elementDataEaseIn} != 'none'">data-ease-in="{elementData.elementDataEaseIn}"</f:if>
+			<f:if condition="{elementData.elementDataEaseOut} != 'none'">data-ease-out="{elementData.elementDataEaseOut}"</f:if>
+			<f:if condition="{elementData.elementDataSpecial}">data-special="cycle"</f:if>
+			{f:if(condition: elementData.elementDataFixed, then: 'data-fixed')} >
+				<v:link.typolink configuration="{parameter: elementData.target}">
+					<button class="btn btn-{elementData.options} {f:if(then: 'btn-{elementData.size}', else: '', condition: '{elementData.size}!=\'default\'')}">
+						{elementData.title -> f:format.htmlentities()}
+					</button>
+				</v:link.typolink>
+		</div>
+	</f:section>
+
+	<f:section name="Content">
+		<div class="element-content {elementData.elementCssClasses}"
+			data-position="{elementData.elementDataPositionTop},{elementData.elementDataPositionLeft}"
+			data-in="{elementData.elementDataIn}"
+			data-out="{elementData.elementDataOut}"
+			<f:if condition="{elementData.elementDataTime} != '0'">data-time="{elementData.elementDataTime}"</f:if>
+			<f:if condition="{elementData.elementDataDelay} != '0'">data-delay="{elementData.elementDataDelay}"</f:if>
+			<f:if condition="{elementData.elementDataStep} != '0'">data-step="{elementData.elementDataStep}"</f:if>
+			<f:if condition="{elementData.elementDataEaseIn} != 'none'">data-ease-in="{elementData.elementDataEaseIn}"</f:if>
+			<f:if condition="{elementData.elementDataEaseOut} != 'none'">data-ease-out="{elementData.elementDataEaseOut}"</f:if>
+			<f:if condition="{elementData.elementDataSpecial}">data-special="cycle"</f:if>
+			{f:if(condition: elementData.elementDataFixed, then: 'data-fixed')} >
+			<flux:content.render area="{elementData.id}" />
+		</div>
+	</f:section>
+
+	
+</div>

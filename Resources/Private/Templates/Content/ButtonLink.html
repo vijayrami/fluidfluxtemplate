@@ -1,0 +1,70 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Content" />
+
+<f:section name="Configuration">
+	<flux:form id="buttonlink" options="{group: 'Bootstrap elements', icon: '../typo3conf/ext/fluxtemplate/Resources/Public/Icons/icon-bootstrap.png'}">
+		<flux:field.input name="target">
+			<flux:wizard.link activeTab="page" />
+		</flux:field.input>
+		<flux:field.input name="text" />
+		<flux:field.checkbox name="tooltip" />
+		<flux:field.input name="title" />
+		<flux:field.input name="iconClass" />
+		<flux:field.select name="iconPlacement" items="left,right" size="1" maxItems="1" default="left" />
+		<flux:field.select name="size" items="default,xs,sm,lg" size="1" maxItems="1" />
+		<flux:field.checkbox name="block" />
+		<flux:field.select name="class" items="default,primary,success,warning,danger,info,inverse" size="1" maxItems="1" />
+		<flux:field.input name="additionalClassNames" />
+		<flux:field.select name="wrapTag" items="none,span,p,div,dt,dd,fieldset" />		
+	</flux:form>
+</f:section>
+
+<f:section name="Preview">
+	Button: {text}, size: {size}, class: {class}
+</f:section>
+
+<f:section name="Main">
+	<f:if condition="{0: wrapTag} != {0: 'none'}">
+		<f:then>
+			<{wrapTag} class="button-wrap">
+				<f:render section="Button" arguments="{_all}" />
+			</{wrapTag}>
+		</f:then>
+		<f:else>
+			<f:render section="Button" arguments="{_all}" />
+		</f:else>
+	</f:if>
+</f:section>
+
+<f:section name="Button">
+	<f:if condition="{target -> v:math.round()} > 0">
+		<f:then>
+			<f:link.page pageUid="{target}" class="btn btn-{size} btn-{class} {additionalClassNames}{f:if(condition: block, then: ' btn-block')}" rel="{f:if(condition: tooltip, then: 'tooltip')}" title="{title}">
+				<f:render section="Text" arguments="{_all}" />
+			</f:link.page>
+		</f:then>
+		<f:else>
+			<a href="{target}" class="btn btn-{size} btn-{class} {additionalClassNames}{f:if(condition: block, then: ' btn-block')}" rel="{f:if(condition: tooltip, then: 'tooltip')}" title="{title}">
+				<f:render section="Text" arguments="{_all}" />
+			</a>
+		</f:else>
+	</f:if>
+</f:section>
+
+<f:section name="Text">
+	<f:if condition="{iconClass}">
+		<f:if condition="{iconPlacement} == 'left'">
+			<f:then>
+				<i class="fa fa-{iconClass}"></i> {text}
+			</f:then>
+			<f:else>
+				{text} <i class="fa fa-{iconClass}"></i>
+			</f:else>				
+		</f:if>		
+	</f:if>
+</f:section>
+
+</div>

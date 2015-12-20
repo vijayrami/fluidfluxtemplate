@@ -1,0 +1,86 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Content" />
+
+<f:section name="Configuration">
+	<flux:form id="googlemap" options="{group: 'Bootstrap elements', icon: '../typo3conf/ext/fluxtemplate/Resources/Public/Icons/map.png'}">
+		
+		<flux:form.sheet name="goolemapconfiguration">
+			<flux:field.input name="settings.googlemap.id" default="{v:random.string(length: 8)}" />
+
+			<flux:field.input name="settings.googlemap.latitude" default="0.0" eval="trim" />
+
+			<flux:field.input name="settings.googlemap.longitude" default="0.0" eval="trim" />
+
+			<flux:field.input name="settings.googlemap.zoom" default="12" eval="int,trim" />
+		
+			<flux:field.select name="settings.googlemap.maptypeid" items="{ROADMAP: 'Roadmap', SATELLITE: 'Satellite', HYBRID: 'Hybrid', TERRAIN: 'Terrain'}" default="ROADMAP" />			
+		</flux:form.sheet>
+		
+		<flux:form.sheet name="display">
+		<flux:field.input name="settings.googlemap.linktitle" default="" eval="trim" />
+			<flux:field.text name="settings.googlemap.infowindow" requestUpdate="1" cols="50" rows="10" enableRichText="1" defaultExtras="richtext[*]:rtetransform[mode=tscss]" />
+			<flux:field.checkbox name="settings.googlemap.openinfowindow" default="0" />
+			<flux:field.input name="settings.googlemap.width" default="100%" eval="trim" />
+			<flux:field.input name="settings.googlemap.height" default="400" eval="int,trim" />
+		</flux:form.sheet>
+	
+	</flux:form>
+</f:section>
+
+<f:section name="Preview">
+	<ul>
+	<li>Google Map</li>
+	</ul>	
+</f:section>
+
+<f:section name="Main">
+	
+	<v:asset.script path="https://maps.googleapis.com/maps/api/js?v=3.exp" external="TURE" name="google-map-js" standalone="1" />
+	
+	<v:asset.script name="googlemap-{settings.googlemap.id}">
+	
+function initialize_{settings.googlemap.id}() {
+	var myLatlng = new google.maps.LatLng({settings.googlemap.latitude},{settings.googlemap.longitude});
+	var mapOptions = {
+		zoom: <f:format.raw>{settings.googlemap.zoom}</f:format.raw>,
+		center: myLatlng,
+		mapTypeId: google.maps.MapTypeId.{settings.googlemap.maptypeid}
+	}
+	var map = new google.maps.Map(document.getElementById('map-canvas-{settings.googlemap.id}'), mapOptions);
+	
+	var contentString = '<f:format.html>{settings.googlemap.infowindow}</f:format.html>';
+	
+	var infowindow = new google.maps.InfoWindow({
+      content: contentString
+  });
+
+
+	var marker = new google.maps.Marker({
+		position: myLatlng,
+		map: map,
+		title: '<f:format.raw>{settings.googlemap.linktitle}</f:format.raw>'
+	});
+	
+	google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(map,marker);
+  });
+  <f:if condition="{settings.googlemap.openinfowindow}">
+	<f:then>
+		infowindow.open(map,marker);
+	</f:then>					
+  </f:if>
+}
+
+google.maps.event.addDomListener(window, 'load', initialize_{settings.googlemap.id});
+		
+	</v:asset.script>
+
+	<div id="map-canvas-{settings.googlemap.id}" class="fluid-googlemap" style="width:{settings.googlemap.width};height:{settings.googlemap.height}px;"></div>
+
+</f:section>
+
+
+</div>

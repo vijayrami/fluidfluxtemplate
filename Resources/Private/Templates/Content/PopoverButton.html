@@ -1,0 +1,85 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Content" />
+
+<f:section name="Configuration">
+	<flux:form id="popoverbutton" options="{group: 'Bootstrap elements', icon: '../typo3conf/ext/fluxtemplate/Resources/Public/Icons/icon-bootstrap.png'}">
+		
+		<flux:form.sheet name="popoveraddons">
+			<flux:form.section name="popoveraddons">
+				<flux:form.object name="popover">
+					<flux:field.input name="text" />
+					<flux:field.select name="popoverPlacement" items="left,top,bottom,right" size="1" maxItems="1" default="right" />
+					<flux:field.select name="size" items="default,xs,sm,lg" size="1" maxItems="1" />		
+					<flux:field.select name="class" items="default,primary,success,warning,danger,info,inverse" size="1" maxItems="1" />
+					<flux:field.input name="additionalClassNames" />
+					<flux:field.select name="wrapTag" items="none,span,p,div,dt,dd,fieldset" />		
+					<flux:field.input name="title" />
+					<flux:field.text name="content" enableRichText="1" defaultExtras="richtext:rte_transform[flag=rte_enabled|mode=ts_css]" />
+				</flux:form.object>
+			</flux:form.section>
+		</flux:form.sheet>
+	</flux:form>
+</f:section>
+
+<f:section name="Preview">
+	<p><v:l key="popovers" />: {popoveraddons -> f:count()}</p>
+	<ul>
+	<f:for each="{popoveraddons}" as="popover" iteration="iteration">
+		<li>
+			<f:for each="{popover}" key="popoverType" as="popoverData">
+				Popover Title: {popoverData.text}<br/>
+				Popover Placement: {popoverData.popoverPlacement}<br/>
+				Popover Button Size: {popoverData.size}<br/>
+				Popover Button Class: {popoverData.class}<br/>
+				Popover Additional Class Names: {popoverData.additionalClassNames}<br/>
+				Popover Wraptag: {popoverData.wrapTag}<br/>
+				Popover Title: {popoverData.title}<br/>
+				Popover Content: {popoverData.content -> f:format.html()}<br/>
+			</f:for>
+		</li>
+	</f:for>
+	</ul>
+	
+</f:section>
+
+<f:section name="Main">
+	
+	<f:for each="{popoveraddons}" as="popover" iteration="iteration">		
+		<f:for each="{popover}" key="popoverType" as="popoverData">
+			
+			<f:if condition="{0: popoverData.wrapTag} != {0: 'none'}">
+			
+				<f:then>
+					<{popoverData.wrapTag} class="popover-wrap">
+						<f:render section="Popover" arguments="{_all}" />
+					</{popoverData.wrapTag}>
+				</f:then>
+				<f:else>
+					<f:render section="Popover" arguments="{_all}" />
+				</f:else>
+				
+			</f:if>
+		</f:for>		
+	</f:for>
+	
+</f:section>
+
+<f:section name="Popover">
+	<f:if condition="{popoverData.title}">
+		<f:then>
+			<button type="button" class="btn btn-{popoverData.size} btn-{popoverData.class} {popoverData.additionalClassNames}" data-toggle="popover" title="{popoverData.title}" data-content="{popoverData.content}">					{popoverData.text}
+			</button>
+			
+		</f:then>
+		<f:else>
+			<button type="button" class="btn btn-{popoverData.size} btn-{popoverData.class} {popoverData.additionalClassNames}" data-container="body" data-toggle="popover" data-placement="{popoverData.popoverPlacement}" data-content="{popoverData.content}">
+			{popoverData.text}
+			</button>
+		</f:else>
+	</f:if>
+</f:section>
+
+</div>

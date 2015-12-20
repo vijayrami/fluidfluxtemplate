@@ -1,0 +1,205 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Content" />
+
+<f:section name="Configuration">
+	<flux:form id="tabs" options="{group: 'Bootstrap elements', icon: '../typo3conf/ext/fluxtemplate/Resources/Public/Icons/tab.png'}">
+
+		<flux:form.sheet name="display">
+			<flux:field.select name="mode" items=" ,tab,pill" required="1" requestUpdate="TRUE" />
+			
+			<f:if condition="{0: mode} == {0: 'tab'}">
+				<flux:field.select name="tabDirection" items="above,below,left,right" />
+			</f:if>
+			<flux:field.checkbox name="stackable" />
+			<flux:field.checkbox name="justified" />
+			<flux:field.select name="position" items="default,pull-left,pull-right" />
+		</flux:form.sheet>
+
+		<flux:form.sheet name="tabs">
+			<flux:form.section name="tabs">
+				<flux:form.object name="tab">
+					<flux:field.input name="title" />
+					<flux:field.input name="class" />
+					<flux:field.checkbox name="active" />
+					<flux:field.checkbox name="fade" />
+				</flux:form.object>
+			</flux:form.section>
+		</flux:form.sheet>
+
+		<flux:grid>
+
+			<f:if condition="{tabs}">
+				<f:for each="{tabs}" as="tab" iteration="iteration">
+					<flux:grid.row>
+						<flux:grid.column name="content.{iteration.index}" label="Tab {iteration.cycle} - {tab.tab.title}" />
+					</flux:grid.row>
+				</f:for>
+			</f:if>
+
+		</flux:grid>
+	</flux:form>
+</f:section>
+
+<f:section name="Preview">
+	<flux:widget.grid />
+</f:section>
+
+<f:section name="Main">
+	<v:variable.set name="activeTabIndex" value="0" />
+	<f:if condition="{0: mode} == {0: 'tab'}">
+	<v:asset.style name="tabbingcontentstyle" standalone="TRUE">
+/* custom inclusion of right, left and below tabs */
+
+.tabs-below > .nav-tabs,
+.tabs-right > .nav-tabs,
+.tabs-left > .nav-tabs {
+  border-bottom: 0;
+}
+
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+  display: none;
+}
+
+.tab-content > .active,
+.pill-content > .active {
+  display: block;
+}
+
+.tabs-below > .nav-tabs {
+  border-top: 1px solid #ddd;
+}
+
+.tabs-below > .nav-tabs > li {
+  margin-top: -1px;
+  margin-bottom: 0;
+}
+
+.tabs-below > .nav-tabs > li > a {
+  -webkit-border-radius: 0 0 4px 4px;
+     -moz-border-radius: 0 0 4px 4px;
+          border-radius: 0 0 4px 4px;
+}
+
+.tabs-below > .nav-tabs > li > a:hover,
+.tabs-below > .nav-tabs > li > a:focus {
+  border-top-color: #ddd;
+  border-bottom-color: transparent;
+}
+
+.tabs-below > .nav-tabs > .active > a,
+.tabs-below > .nav-tabs > .active > a:hover,
+.tabs-below > .nav-tabs > .active > a:focus {
+  border-color: transparent #ddd #ddd #ddd;
+}
+
+.tabs-left > .nav-tabs > li,
+.tabs-right > .nav-tabs > li {
+  float: none;
+}
+
+.tabs-left > .nav-tabs > li > a,
+.tabs-right > .nav-tabs > li > a {
+  min-width: 74px;
+  margin-right: 0;
+  margin-bottom: 3px;
+}
+
+.tabs-left > .nav-tabs {
+  float: left;
+  margin-right: 19px;
+  border-right: 1px solid #ddd;
+}
+
+.tabs-left > .nav-tabs > li > a {
+  margin-right: -1px;
+  -webkit-border-radius: 4px 0 0 4px;
+     -moz-border-radius: 4px 0 0 4px;
+          border-radius: 4px 0 0 4px;
+}
+
+.tabs-left > .nav-tabs > li > a:hover,
+.tabs-left > .nav-tabs > li > a:focus {
+  border-color: #eeeeee #dddddd #eeeeee #eeeeee;
+}
+
+.tabs-left > .nav-tabs .active > a,
+.tabs-left > .nav-tabs .active > a:hover,
+.tabs-left > .nav-tabs .active > a:focus {
+  border-color: #ddd transparent #ddd #ddd;
+  *border-right-color: #ffffff;
+}
+
+.tabs-right > .nav-tabs {
+  float: right;
+  margin-left: 19px;
+  border-left: 1px solid #ddd;
+}
+
+.tabs-right > .nav-tabs > li > a {
+  margin-left: -1px;
+  -webkit-border-radius: 0 4px 4px 0;
+     -moz-border-radius: 0 4px 4px 0;
+          border-radius: 0 4px 4px 0;
+}
+
+.tabs-right > .nav-tabs > li > a:hover,
+.tabs-right > .nav-tabs > li > a:focus {
+  border-color: #eeeeee #eeeeee #eeeeee #dddddd;
+}
+
+.tabs-right > .nav-tabs .active > a,
+.tabs-right > .nav-tabs .active > a:hover,
+.tabs-right > .nav-tabs .active > a:focus {
+  border-color: #ddd #ddd #ddd transparent;
+  *border-left-color: #ffffff;
+}
+
+</v:asset.style>
+</f:if>
+
+	<f:if condition="{tabs}">
+		<f:for each="{tabs}" as="tab" iteration="iteration">
+			<f:if condition="{tab.tab.active}">
+				<v:variable.set name="activeTabIndex" value="{iteration.index}" />
+			</f:if>
+		</f:for>
+	</f:if>
+	
+	<div class="tabbable{f:if(condition: tabDirection, then: ' tabs-{tabDirection}')}">
+		<f:if condition="{0: tabDirection} != {0: 'below'}">
+			<f:render section="Tabs" arguments="{_all}" />
+		</f:if>
+
+		<div class="tab-content">
+			<f:if condition="{tabs}">
+				<f:for each="{tabs}" as="tab" iteration="iteration">
+					<div class="tab-pane {f:if(condition: tab.tab.fade, then: 'fade')} {f:if(condition: '{activeTabIndex} == {iteration.index}', then: 'active in')} {tab.tab.class}" id="tab-{record.uid}-{iteration.index}">
+						<flux:content.render area="content.{iteration.index}" />
+					</div>
+				</f:for>
+			</f:if>
+		</div>
+
+		<f:if condition="{0: tabDirection} == {0: 'below'}">
+			<f:render section="Tabs" arguments="{_all}" />
+		</f:if>
+	</div>
+</f:section>
+
+<f:section name="Tabs">
+	<f:if condition="{tabs}">
+		<ul class="nav nav-{mode}s {f:if(condition: stackable, then: 'nav-stacked')} {f:if(condition: justified, then: 'nav-justified')} {position}" role="tablist">
+			<f:for each="{tabs}" as="tab" iteration="iteration">
+				<li class="nav-link {f:if(condition: '{activeTabIndex} == {iteration.index}', then: 'active')}">
+					<a href="{v:page.absoluteUrl()}#tab-{record.uid}-{iteration.index}" data-toggle="{mode}">{tab.tab.title}</a>
+				</li>
+			</f:for>
+		</ul>
+	</f:if>
+</f:section>
+
+</div>

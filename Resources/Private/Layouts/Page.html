@@ -1,0 +1,47 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+
+    <f:layout name="Page"/>
+
+    <v:page.header>
+        <f:render section="Resources" optional="TRUE" arguments="{_all}"/>
+    </v:page.header>
+
+    <f:link.page class="sr-only" section="content">
+        <v:l key="skip_navigation" />
+    </f:link.page>
+
+    <header>
+        <div class="navbar-fixed-top">
+            
+            <f:render section="SpecialNavigation" partial="SpecialNavigation" arguments="{_all}"/>
+            
+            <f:render section="Navigation" partial="Navigation" arguments="{_all}"/>
+            
+        </div>
+        
+        <f:render section="HeaderContent" optional="TRUE" arguments="{_all}"/>
+        
+        <f:render section="Breadcrumb" partial="Breadcrumb" optional="TRUE" arguments="{_all}"/>
+        
+    </header>
+
+    <main class="main-content" id="content" role="main">
+
+        <!--TYPO3SEARCH_begin-->
+        <f:render section="Content"/>
+        <!--TYPO3SEARCH_end-->
+    </main>
+
+    <footer >
+        
+        <f:render section="Footer" partial="Footer" arguments="{_all}"/>
+
+    </footer>
+
+    <v:page.footer>
+        <f:render section="Stats" partial="Stats" arguments="{_all}"/>
+    </v:page.footer>
+</div>

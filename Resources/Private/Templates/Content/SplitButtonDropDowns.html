@@ -1,0 +1,107 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Content" />
+
+<f:section name="Configuration">
+	<flux:form id="splitbuttonwithdropdown" options="{group: 'Bootstrap elements', icon: '../typo3conf/ext/fluxtemplate/Resources/Public/Icons/SplitButtonDropDowns.png'}">
+            <flux:form.sheet name="ButtonSheetOne">
+                    <flux:field.select items="xs,sm,default,lg" name="settings.ButtonSize" default="default"/>
+                    <flux:field.checkbox name="settings.ButtonCenter" default="0" />
+            </flux:form.sheet>
+            <flux:form.sheet name="ButtonSheetTwo">
+                    <flux:form.section name="ButtonSection">
+                            <flux:form.object name="ButtonObject">
+                                    <flux:field.input name="ButtonText"/>
+                                    <flux:field.input name="ButtonTextLink">
+                                        <flux:wizard.link activeTab="Page" />
+                                    </flux:field.input>
+                                    <flux:field.select items="default,primary,success,info,warning,danger,link" name="ButtonOptions" default="default"/>
+                                    <flux:field.checkbox name="dropup" />
+                                    <flux:field.checkbox name="rightdropup" />
+                                    <flux:form.section name="DropDownButtons">
+                                            <flux:form.object name="DropDownLink">
+                                                    <flux:field.input name="DropDownContent" />
+                                                    <flux:field.input name="target">
+                                                            <flux:wizard.link activeTab="Page"/>
+                                                    </flux:field.input>
+                                            </flux:form.object>
+                                            <flux:form.object name="DropDownDivider">
+                                                    <flux:field.checkbox name="divider" default="1" />
+                                            </flux:form.object>
+                                    </flux:form.section>
+                            </flux:form.object>
+                    </flux:form.section>
+            </flux:form.sheet>
+    </flux:form>
+</f:section>
+
+<f:section name="Preview">
+    <strong>Split Button DropDown</strong><br>
+     <f:for each="{ButtonSection}" as="ButtonObjectItem" iteration="iter">
+            {ButtonObjectItem.ButtonObject.ButtonText} | {ButtonObjectItem.ButtonObject.ButtonTextLink}
+     </f:for>
+</f:section>
+
+<f:section name="Main">        
+        
+	<f:for each="{ButtonSection}" as="ButtonObjectItem" iteration="iter">
+	    <v:variable.set name="btnlinkclass" value="btn btn-{ButtonObjectItem.ButtonObject.ButtonOptions} btn-{settings.ButtonSize}" />
+	        <f:if condition="{settings.ButtonCenter}">
+	                <div class="align-center">
+	        </f:if>
+	        <div class="btn-group{f:if(then: ' dropup', else: '', condition: '{ButtonObjectItem.ButtonObject.dropup}')}">
+	                <v:link.typolink configuration="{parameter: ButtonObjectItem.ButtonObject.ButtonTextLink,ATagParams:'class=\"{btnlinkclass}\"'}">
+	                    {ButtonObjectItem.ButtonObject.ButtonText}
+	                </v:link.typolink>
+	                
+	                <button type="button"
+	                class="btn btn-{ButtonObjectItem.ButtonObject.ButtonOptions} {f:if(then: 'btn-{settings.ButtonSize}', else: '', condition: '{settings.ButtonSize}!=\'default\'')} dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+	                             <span class="caret"></span>
+	                </button>
+	                <ul class="dropdown-menu{f:if(then: ' dropdown-menu-right', else: '', condition: '{ButtonObjectItem.ButtonObject.rightdropup}')}" role="menu">
+	                        <f:for each="{ButtonObjectItem}" as="element">
+	                                <v:condition.type.isArray value="{element.DropDownButtons}">
+	                                        <f:for each="{element.DropDownButtons}" as="type" iteration="iteration">
+	                                                <f:for each="{type}" key="elementType" as="elementData">
+	                                                        <f:render section="{elementType -> v:format.case(case: 'ucfirst')}" arguments="{_all}" />
+	                                                </f:for>
+	                                        </f:for>
+	                                </v:condition.type.isArray>
+	                        </f:for>
+	                </ul>
+	        </div>
+	        <f:if condition="{settings.ButtonCenter}">
+	                </div>
+	        </f:if>
+	</f:for>
+</f:section>
+
+<f:section name="Button">
+    <button type="button"
+        class="btn btn-{ButtonObjectItem.ButtonObject.ButtonOptions}
+            {f:if(then: 'btn-{settings.ButtonSize}', else: '', condition: '{settings.ButtonSize}!=\'default\'')}
+            {f:if(then: 'btn-block', else: '', condition: '{settings.ButtonBlock}')}
+            {f:if(then: 'disabled', else: '', condition: '{ButtonObjectItem.ButtonObject.ButtonActive}')}"
+            data-toggle="dropdown"
+            aria-expanded="false"
+            >
+                    {ButtonObjectItem.ButtonObject.ButtonText}
+    </button>
+</f:section>
+    
+<f:section name="DropDownLink">
+    <li>
+        <v:link.typolink configuration="{parameter: elementData.target}">
+                {elementData.DropDownContent}
+        </v:link.typolink>   
+    </li>
+</f:section>
+
+<f:section name="DropDownDivider">
+    <li class="divider"></li>
+</f:section>
+
+
+</div>

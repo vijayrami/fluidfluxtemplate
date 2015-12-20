@@ -1,0 +1,9 @@
+ 
+.custom-control { position: absolute; z-index: 99; top: 100px; }
+.custom-control li { color: #fff; padding: 5px 0 5px 20px; border-bottom: 1px solid #fff; }
+.custom-control li span { cursor: pointer; display: block; }
+
+.slides li div.captionwrapper { position: absolute; right: 10px; width: 350px; top:auto; bottom: 10px; }
+.slides li div.caption span { color: #fff; display: block; }
+.slides li div.caption .captiontitle { font-size: 18px; font-weight: bold; margin-bottom: 5px; text-align: right; }
+.slides li div.caption .captiontext { font-size: 12px; line-height: 15px; }

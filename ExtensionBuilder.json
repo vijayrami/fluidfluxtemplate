@@ -1,0 +1,39 @@
+{
+    "modules": [],
+    "properties": {
+        "backendModules": [],
+        "description": "A smart foundation to start with your website. Supports all Bootstrap Elements. Make your TYPO3 Responsive using SCSS, Bootstrap, HTML5 Boilerplate and jQuery.",
+        "emConf": {
+            "category": "misc",
+            "custom_category": "",
+            "dependsOn": "typo3 => 7.6.0-7.6.99",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "skipGenerateDocumentationTemplate": false,
+            "sourceLanguage": "en",
+            "state": "stable",
+            "targetVersion": "7.6.0-7.6.99",
+            "version": "0.0.1"
+        },
+        "extensionKey": "fluxtemplate",
+        "name": "Fluid: Website Template",
+        "originalExtensionKey": "fluxtemplate",
+        "originalVendorName": "Weboffice",
+        "persons": [
+            {
+                "company": "Weboffice Webdevelopment",
+                "email": "vijay.rami@webofficeindia.com",
+                "name": "Vijay Rami",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [],
+        "vendorName": "Weboffice"
+    },
+    "wires": [],
+    "log": {
+        "last_modified": "2015-11-25 08:44",
+        "extension_builder_version": "7.6.0",
+        "be_user": " (1)"
+    }
+}

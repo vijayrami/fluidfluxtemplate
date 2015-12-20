@@ -1,0 +1,47 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Page" />
+
+	<f:section name="Configuration">
+		<flux:form id="threecolumns" label="3 Spalten">
+			<flux:grid>
+				<flux:grid.row>
+					<flux:grid.column colPos="5" colspan="6" name="Hero"/>
+				</flux:grid.row>
+				<flux:grid.row>
+					<flux:grid.column colPos="1" name="Menü-Spalte"/>
+					<flux:grid.column colPos="0" colspan="4" name="Hauptinhalt"/>
+					<flux:grid.column colPos="2" name="Margin-Spalte"/>
+				</flux:grid.row>
+			</flux:grid>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Resources">
+		<f:render partial="Assets" section="Assets"/>
+	</f:section>
+
+	<f:section name="HeaderContent">
+		<f:render partial="Hero" section="Hero"/>
+	</f:section>
+
+	<f:section name="Content">
+		<div class="container">
+			<div class="row" role="main">
+				<div class="col-md-3 col-menu" role="complementary">
+					<f:render section="SubNavigation" partial="SubNavigation"  optional="TRUE" arguments="{_all}" />
+					<v:content.render column="1"/>
+				</div>
+				<div class="col-md-6 col-main" >
+					<v:content.render column="0"/>
+				</div>
+				<aside class="col-md-3 col-sidebar" role="complementary">
+					<v:content.render column="2"/>
+				</aside>
+			</div>
+		</div>
+	</f:section>
+
+</div>

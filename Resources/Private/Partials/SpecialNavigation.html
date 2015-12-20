@@ -1,0 +1,24 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+
+<f:layout name="Page"/>
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+
+	<f:section name="SpecialNavigation">
+
+		<nav class="usernavbar">
+			<div class="container">
+
+
+				<f:render section="LanguageMenu" partial="LanguageMenu" optional="TRUE" arguments="{_all}"/>
+
+				<f:render section="UserMenu" partial="UserMenu" optional="TRUE" arguments="{_all}"/>
+
+
+			</div>
+		</nav>
+
+
+	</f:section>
+</div>

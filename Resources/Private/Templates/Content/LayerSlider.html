@@ -1,0 +1,215 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Content" />
+
+<f:section name="Configuration">
+	<flux:form id="layerslider" options="{group: 'Sliders', icon: '../typo3conf/ext/fluxtemplate/Resources/Public/Icons/layer_slider.png'}">
+
+		<flux:field.input name="settings.layerslider.id" default="{v:random.string(length: 8)}" />
+
+
+		<flux:field.checkbox name="settings.layerslider.responsive" default="1" />
+		<flux:field.input name="settings.layerslider.responsiveUnder" default="0" />
+		<flux:field.input name="settings.layerslider.layersContainer" default="0" />
+		<flux:field.checkbox name="settings.layerslider.autoStart" default="1" />
+		<flux:field.checkbox name="settings.layerslider.pauseOnHover" default="1" />
+		<flux:field.input name="settings.layerslider.firstSlide" default="1" eval="int,trim" />
+		<flux:field.checkbox name="settings.layerslider.animateFirstSlide" default="1" />
+		<flux:field.input name="settings.layerslider.loops" default="0" eval="int,trim" />
+		<flux:field.checkbox name="settings.layerslider.forceLoopNum" default="1" />
+		<flux:field.checkbox name="settings.layerslider.towWaySlideshow" default="1" />
+		<flux:field.checkbox name="settings.layerslider.randomSlideshow" default="0" />
+
+		<flux:field.input name="settings.layerslider.skin" default="v5" />
+		<flux:field.input name="settings.layerslider.skinsPath" default="/typo3conf/ext/fluxtemplate/Resources/Public/CSS/layerslider/skins/" />
+		<flux:field.input name="settings.layerslider.globalBGColor" default="transparent" />
+		<flux:field.file name="settings.layerslider.globalBGImage" allowed="jpg,png,jpeg,gif" />
+
+		<flux:field.checkbox name="settings.layerslider.navPrevNext" default="1" />
+		<flux:field.checkbox name="settings.layerslider.navStartStop" default="1" />
+		<flux:field.checkbox name="settings.layerslider.navButtons" default="1" />
+		<flux:field.checkbox name="settings.layerslider.hoverPrevNext" default="1" />
+		<flux:field.checkbox name="settings.layerslider.hoverBottomNav" default="1" />
+		<flux:field.checkbox name="settings.layerslider.keybNav" default="1" />
+		<flux:field.checkbox name="settings.layerslider.touchNav" default="1" />
+		<flux:field.checkbox name="settings.layerslider.showBarTimer" default="1" />
+		<flux:field.checkbox name="settings.layerslider.showCircleTimer" default="1" />
+
+		<flux:field.select name="settings.layerslider.thumbnailNavigation" items="disabled,hover,always" default="hover" />
+		<flux:field.input name="settings.layerslider.tnContainerWidth" default="60%" />
+		<flux:field.input name="settings.layerslider.tnWidth" default="100" eval="int,trim" />
+		<flux:field.input name="settings.layerslider.tnHeight" default="60" eval="int,trim" />
+		<flux:field.input name="settings.layerslider.tnActiveOpacity" default="35" eval="int,trim" />
+		<flux:field.input name="settings.layerslider.tnInactiveOpacity" default="100" eval="int,trim" />
+
+		<!-- video properties -->
+		<flux:field.checkbox name="settings.layerslider.autoPlayVideos" default="1" />
+		<flux:field.select name="settings.layerslider.autoPauseSlideshow" items="auto,true,false" default="auto" />
+		<flux:field.select name="settings.layerslider.youtubePreview" items="maxresdefault.jpg,hqdefault.jpg,mqdefault.jpg,default.jpg" default="maxresdefault.jpg" />
+
+		<!-- Image preload properties -->
+		<flux:field.checkbox name="settings.layerslider.imgPreload" default="1" />
+		<flux:field.checkbox name="settings.layerslider.lazyLoad" default="1" />
+
+		<!-- YourLogo properties -->
+		<flux:field.input name="settings.layerslider.yourLogo" default="" />
+		<flux:field.input name="settings.layerslider.yourLogoStyle" default="" />
+		<flux:field.input name="settings.layerslider.yourLogoLink" default="" />
+		<flux:field.select name="settings.layerslider.yourLogoTarget" items="self,_blank" default="_blank" />
+
+
+
+		<flux:field.text name="settings.layerslider.style" enableRichText="0" rows="4" />
+		
+		<flux:form.sheet name="elements">
+
+
+			<flux:form.section name="slides">
+
+				<flux:form.object name="slide">
+
+					<flux:field.input name="title" />
+					<flux:field.text name="layersliderdata" enableRichText="0" rows="4" />
+					<flux:field.file name="background" allowed="jpg,png,jpeg,gif" />
+					<flux:field.file name="thumbnail" allowed="jpg,png,jpeg,gif" />
+
+					<flux:form.section name="elements">
+						<flux:form.object name="text">
+							<flux:field.text name="content" rows="3" />
+							<flux:field.select name="type" items="p,h1,h2,h3,h4,h5,h6,h7,h8" />
+							<f:render section="SharedObjectFields" arguments="{_all}" />
+						</flux:form.object>
+						<flux:form.object name="image">
+							<flux:field.file name="file" allowed="jpg,png,jpeg,gif" />
+							<f:render section="SharedObjectFields" arguments="{_all}" />
+						</flux:form.object>
+					</flux:form.section>
+					
+				</flux:form.object>
+
+			</flux:form.section>
+
+		</flux:form.sheet>
+
+	</flux:form>
+</f:section>
+
+<f:section name="Preview">
+	<p>Slides: {slides -> f:count()}</p>
+</f:section>
+
+<f:section name="SharedObjectFields">
+
+	<flux:field.text name="style" enableRichText="0" rows="4" />
+	<flux:field.text name="layersliderdata" enableRichText="0" rows="4" />
+	<flux:field.input name="class" />
+
+</f:section>
+
+<f:section name="Main">
+	<v:asset.style path="EXT:fluxtemplate/Resources/Public/CSS/layerslider/layerslider.css" name="layerslidercss" />
+	<v:asset.style path="EXT:fluxtemplate/Resources/Public/CSS/layerslider/layersliderdemo.css" name="layersliderdemocss" />
+	<v:asset.script path="EXT:fluxtemplate/Resources/Public/JavaScript/layerslider/greensock.js" name="layerslidergreensockjs" />
+	<v:asset.script path="EXT:fluxtemplate/Resources/Public/JavaScript/layerslider/greensock.js" allowMoveToFooter="1" name="layerslidergreensockjs" />
+	<v:asset.script path="EXT:fluxtemplate/Resources/Public/JavaScript/layerslider/layerslider.transitions.js" allowMoveToFooter="1" name="layerslidertransitionsjs" />
+	<v:asset.script path="EXT:fluxtemplate/Resources/Public/JavaScript/layerslider/layerslider.kreaturamedia.jquery.js" allowMoveToFooter="1" name="layersliderkreaturamediajs" />
+	<v:asset.script name="layerslider{settings.layerslider.id}">
+		jQuery("#{settings.layerslider.id}").layerSlider(<![CDATA[{]]>
+			responsive: {f:if(condition: '{settings.layerslider.responsive} == 1', then: 'true', else: 'false')},
+			responsiveUnder: {settings.layerslider.responsiveUnder},
+			layersContainer: {settings.layerslider.layersContainer},
+			autoStart: {f:if(condition: '{settings.layerslider.autoStart} == 1', then: 'true', else: 'false')},
+			pauseOnHover: {f:if(condition: '{settings.layerslider.pauseOnHover} == 1', then: 'true', else: 'false')},
+			firstSlide: {settings.layerslider.firstSlide},
+			animateFirstSlide: {f:if(condition: '{settings.layerslider.animateFirstSlide} == 1', then: 'true', else: 'false')},
+			loops: {settings.layerslider.loops},
+			forceLoopNum: {f:if(condition: '{settings.layerslider.forceLoopNum} == 1', then: 'true', else: 'false')},
+			towWaySlideshow: {f:if(condition: '{settings.layerslider.towWaySlideshow} == 1', then: 'true', else: 'false')},
+			randomSlideshow: {f:if(condition: '{settings.layerslider.randomSlideshow} == 1', then: 'true', else: 'false')},
+			skin: '{settings.layerslider.skin}',
+			skinsPath: '{settings.layerslider.skinsPath}',
+			globalBGColor: '{settings.layerslider.globalBGColor}',
+			globalBGImage: {f:if(condition: '{0:settings.layerslider.globalBGImage} != {0:\'\'}', then: '\'{settings.layerslider.globalBGImage}\'', else: 'false')},
+
+			navPrevNext: {f:if(condition: '{settings.layerslider.navPrevNext} == 1', then: 'true', else: 'false')},
+			navStartStop: {f:if(condition: '{settings.layerslider.navStartStop} == 1', then: 'true', else: 'false')},
+			navButtons: {f:if(condition: '{settings.layerslider.navButtons} == 1', then: 'true', else: 'false')},
+			hoverPrevNext: {f:if(condition: '{settings.layerslider.hoverPrevNext} == 1', then: 'true', else: 'false')},
+			hoverBottomNav: {f:if(condition: '{settings.layerslider.hoverBottomNav} == 1', then: 'true', else: 'false')},
+			keybNav: {f:if(condition: '{settings.layerslider.keybNav} == 1', then: 'true', else: 'false')},
+			touchNav: {f:if(condition: '{settings.layerslider.touchNav} == 1', then: 'true', else: 'false')},
+			showBarTimer: {f:if(condition: '{settings.layerslider.showBarTimer} == 1', then: 'true', else: 'false')},
+			showCircleTimer: {f:if(condition: '{settings.layerslider.showCircleTimer} == 1', then: 'true', else: 'false')},
+			thumbnailNavigation: '{settings.layerslider.thumbnailNavigation}',
+			tnContainerWidth: '{settings.layerslider.tnContainerWidth}',
+			tnWidth: {settings.layerslider.tnWidth},
+			tnHeight: {settings.layerslider.tnHeight},
+			tnActiveOpacity: {settings.layerslider.tnActiveOpacity},
+			tnInactiveOpacity: {settings.layerslider.tnInactiveOpacity},
+
+			autoPlayVideos: {f:if(condition: '{settings.layerslider.autoPlayVideos} == 1', then: 'true', else: 'false')},
+			autoPauseSlideshow: {f:if(condition: '{0:settings.layerslider.autoPauseSlideshow} == {0:\'auto\'}', then: '\'auto\'', else: '{settings.layerslider.autoPauseSlideshow}')},
+			youtubePreview: '{settings.layerslider.youtubePreview}',
+
+			imgPreload: {f:if(condition: '{settings.layerslider.imgPreload} == 1', then: 'true', else: 'false')},
+			lazyLoad: {f:if(condition: '{settings.layerslider.lazyLoad} == 1', then: 'true', else: 'false')},
+
+			yourLogo: {f:if(condition: '{0:settings.layerslider.yourLogo} != {0:\'\'}', then: '\'{settings.layerslider.globalBGImage}\'', else: 'false')},
+			yourLogoStyle: '{settings.layerslider.yourLogoStyle}',
+			yourLogoLink: {f:if(condition: '{0:settings.layerslider.yourLogoLink} != {0:\'\'}', then: '\'{settings.layerslider.globalBGImage}\'', else: 'false')},
+			yourLogoTarget: '{settings.layerslider.yourLogoTarget}'
+		<![CDATA[}]]>);
+	</v:asset.script>
+
+	<div id="{settings.layerslider.id}" class="ls-wp-container" style="{settings.layerslider.style}">
+
+		<f:for each="{slides}" as="slideelement" iteration="slideiteration">
+
+			<div class="ls-slide" data-ls="{slideelement.slide.layersliderdata}">
+				<f:if condition="{slideelement.slide.background}"><f:image src="{slideelement.slide.background}" class="ls-bg" /></f:if>
+				<f:if condition="{slideelement.slide.thumbnail}"><f:image src="{slideelement.slide.thumbnail}" class="ls-tn" /></f:if>
+
+
+			<f:for each="{slideelement.slide.elements}" as="element" iteration="iteration">
+				<f:for each="{element}" key="elementType" as="elementData">
+
+				<f:if condition="{0: elementType} == {0: 'text'}">
+					<{elementData.type} class="ls-l {elementData.class}" style="{elementData.style}" data-ls="{elementData.layersliderdata}" >
+						<f:format.raw><f:format.nl2br>{elementData.content}</f:format.nl2br></f:format.raw>
+					</{elementData.type}>
+				</f:if>
+				<f:if condition="{0: elementType} == {0: 'image'}">
+					<f:image src="{elementData.file}" class="ls-l {elementData.class}" style="{elementData.style}" additionalAttributes="{data-ls: elementData.layersliderdata }" />
+				</f:if>
+				</f:for>
+			</f:for>
+
+			</div>
+		</f:for>
+
+
+	</div>
+</f:section>
+
+<f:section name="Image">
+	<f:image src="{elementData.file}" alt="{elementData.header}" width="{settings.layerslider.width}" />
+</f:section>
+
+<f:section name="Content">
+	<div class="container-fluid">
+		<flux:content.render area="{elementData.id}" />
+	</div>
+</f:section>
+
+<f:section name="Text">
+	<div class="container-fluid">
+		<f:if condition="{elementData.title}">
+			<{elementData.size}>{elementData.title -> f:format.htmlentities()}</{elementData.size}>
+		</f:if>
+		{elementData.text -> f:format.html()}
+	</div>
+</f:section>
+
+</div>

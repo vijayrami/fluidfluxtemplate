@@ -1,0 +1,18 @@
+###################################################
+# Include all TypoScript files
+###################################################
+
+
+## Configuration
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:fluxtemplate/Configuration/TypoScript/Config" extensions="ts">
+
+# Lib
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:fluxtemplate/Configuration/TypoScript/Lib" extensions="ts">
+
+## Page
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:fluxtemplate/Configuration/TypoScript/Page" extensions="ts">
+
+## Plugin
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:fluxtemplate/Configuration/TypoScript/Plugin" extensions="ts">
+
+

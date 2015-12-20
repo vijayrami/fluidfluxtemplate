@@ -1,0 +1,171 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Content" />
+
+<f:section name="Configuration">
+	<flux:form id="flexslider" options="{group: 'Sliders', icon: '../typo3conf/ext/fluxtemplate/Resources/Public/Icons/flexslider.png'}">
+		
+		
+		<flux:form.sheet name="elements">
+			<flux:form.section name="elements">
+				<flux:form.object name="video">
+					<flux:field.select name="provider" items="vimeo" default="vimeo" />
+					<flux:field.input name="playerid" default="player_{v:random.string(length: 3)}" />
+					<flux:field.input name="videoid" />
+					<flux:field.input name="width" default="1170c" />
+					<flux:field.input name="height" default="400c" />
+					<f:render section="SharedObjectFields" arguments="{_all}" />
+				</flux:form.object>
+				
+				<flux:form.object name="image">
+					<flux:field.file name="file" allowed="jpg,jpeg,png,gif" showThumbnails="TRUE" />
+					<f:render section="SharedObjectFields" arguments="{_all}" />
+				</flux:form.object>
+				
+			</flux:form.section>
+		</flux:form.sheet>
+		
+		<flux:form.sheet name="configuration">
+			
+			<flux:field.input name="settings.flexslider.id" default="{v:random.string(length: 8)}" />
+			<flux:field.input name="settings.flexslider.width" default="1170c" />
+			<flux:field.input name="settings.flexslider.height" default="400c" />
+			
+		</flux:form.sheet>
+		
+		<flux:form.sheet name="primarycontrols">
+		
+			<flux:field.select name="settings.flexslider.controlNav" items="true,false" default="true" />
+			<flux:field.select name="settings.flexslider.directionNav" items="true,false" default="true" />
+			<flux:field.select name="settings.flexslider.keyboard" items="true,false" default="true" />
+			<flux:field.select name="settings.flexslider.mousewheel" items="true,false" default="false" />
+			<flux:field.select name="settings.flexslider.pausePlay" items="true,false" default="false" />
+			<flux:field.select name="settings.flexslider.pauseOnAction" items="true,false" default="true" />
+			<flux:field.select name="settings.flexslider.pauseOnHover" items="true,false" default="false" />
+			<flux:field.input name="settings.flexslider.pauseText" default="Pause" requestUpdate="1" eval="trim" size="100" />
+			<flux:field.input name="settings.flexslider.playText" default="Play" requestUpdate="1" eval="trim" size="100" />
+			<flux:field.input name="settings.flexslider.prevText" default="Previous" requestUpdate="1" eval="trim" size="100" />
+			<flux:field.input name="settings.flexslider.nextText" default="Next" requestUpdate="1" eval="trim" size="100" />
+			<flux:field.select name="settings.flexslider.animationLoop" items="true,false" default="true" />
+			<flux:field.select name="settings.flexslider.carousel" items="true,false" default="true" />
+			<flux:field.select name="settings.flexslider.slideshow" items="true,false" default="true" />
+			<flux:field.input name="settings.flexslider.slideshowSpeed" default="7000" requestUpdate="1" eval="int" size="100" />
+			<flux:field.select name="settings.flexslider.animation" items="fade,slide" default="fade" />
+			<flux:field.input name="settings.flexslider.animationSpeed" default="600" requestUpdate="1" eval="int" size="100" />
+			
+			
+			
+		</flux:form.sheet>
+
+		
+		<flux:form.sheet name="specialproperties">
+			
+			<flux:field.input name="settings.flexslider.controlsContainer" default="" />
+			<flux:field.input name="settings.flexslider.manualControls" default="" />
+			<flux:field.input name="settings.flexslider.sync" default="" />
+			<flux:field.input name="settings.flexslider.asNavFor" default="" />
+			
+		</flux:form.sheet>
+
+		
+	</flux:form>
+</f:section>
+
+<f:section name="Preview">
+	<p>Elements: {elements -> f:count()}</p>
+	
+</f:section>
+
+<f:section name="SharedObjectFields">
+	<flux:field.input name="header" label="Optional header for caption" />
+	<flux:field.text name="caption" label="Optional caption body text" enableRichText="TRUE" defaultExtras="richtext[*]:rtetransform[mode=tscss]" />
+</f:section>
+
+<f:section name="Main">
+		
+	<v:asset.style path="EXT:fluxtemplate/Resources/Public/CSS/flexslider/flexslider.css" name="flexslidercss" dependencies="fonts" />
+	
+	<v:asset.script path="EXT:fluxtemplate/Resources/Public/JavaScript/flexslider/jquery.flexslider.js" name="flexsliderjs" allowMoveToFooter="1" standalone="1" />
+	<v:asset.script path="EXT:fluxtemplate/Resources/Public/JavaScript/flexslider/shCore.js" name="shcorejs" allowMoveToFooter="1" standalone="1" />
+	<v:asset.script path="EXT:fluxtemplate/Resources/Public/JavaScript/flexslider/shBrushXml.js" name="shbrushxmljs" allowMoveToFooter="1" standalone="1" />
+	<v:asset.script path="EXT:fluxtemplate/Resources/Public/JavaScript/flexslider/shBrushJScript.js" name="shbrushjscriptjs" allowMoveToFooter="1" standalone="1" />
+	<v:asset.script path="EXT:fluxtemplate/Resources/Public/JavaScript/flexslider/jquery.easing.js" name="easingjs" allowMoveToFooter="1" standalone="1" />
+	<v:asset.script path="EXT:fluxtemplate/Resources/Public/JavaScript/flexslider/jquery.mousewheel.js" name="mousewheeljs" allowMoveToFooter="1" standalone="1" />
+	<v:asset.script path="EXT:fluxtemplate/Resources/Public/JavaScript/flexslider/demo.js" name="demojs" allowMoveToFooter="1" standalone="1" />
+	<v:asset.script name="flexslider-{settings.flexslider.id}">
+		
+$(window).load(function(){
+	$('#flexslider-{settings.flexslider.id}').flexslider({
+
+
+		controlNav: <f:format.raw value="{settings.flexslider.controlNav}" />,
+		directionNav: {settings.flexslider.directionNav},
+		prevText: "{settings.flexslider.prevText}",
+		nextText: "{settings.flexslider.nextText}",
+		keyboard: {settings.flexslider.keyboard},
+		mousewheel: {settings.flexslider.mousewheel},
+		pausePlay: {settings.flexslider.pausePlay},
+		pauseText: "{settings.flexslider.pauseText}",
+		playText: "{settings.flexslider.playText}",
+
+		controlsContainer: "{settings.flexslider.controlsContainer}",
+		manualControls: "{settings.flexslider.manualControls}",
+		sync: "{settings.flexslider.sync}",
+		asNavFor: "{settings.flexslider.asNavFor}",
+
+		useCSS: false,
+		animationLoop: {settings.flexslider.animationLoop},
+		smoothHeight: true,
+		slideshow: {settings.flexslider.slideshow},
+		slideshowSpeed: {settings.flexslider.slideshowSpeed},
+		pauseOnAction: {settings.flexslider.pauseOnAction},
+		pauseOnHover: {settings.flexslider.pauseOnHover},
+		carousel: {settings.flexslider.carousel},
+		animation: "{settings.flexslider.animation}",
+		animationSpeed: {settings.flexslider.animationSpeed}
+
+
+	});
+});
+		
+	</v:asset.script>
+	
+	<div id="flexslider-{settings.flexslider.id}" class="{settings.flexslider.id} flexslider">
+		
+		<ul class="slides">
+		<f:for each="{elements}" as="element" iteration="iteration">
+			<li>
+				<f:for each="{element}" key="elementType" as="elementData">
+				
+					<f:render section="{elementType -> v:format.case(case: 'ucfirst')}" arguments="{_all}" />
+					
+					<f:if condition="{0: elementData.caption, 1: elementData.header} != {0: '', 1: ''}">
+						<div class="flexslider-caption">
+							<f:if condition="{0: elementData.header} != {0: ''}">
+								<h4>{elementData.header -> f:format.html()}</h4>
+							</f:if>
+							<f:if condition="{0: elementData.caption} != {0: ''}">
+								{elementData.caption -> f:format.html()}
+							</f:if>
+						</div>
+					</f:if>
+				</f:for>
+			</li>
+		</f:for>
+		</ul>
+		
+	</div>
+</f:section>
+
+<f:section name="Image">
+	<f:image src="{elementData.file}" alt="{elementData.header}" width="{settings.flexslider.width}" height="{settings.flexslider.height}" />
+</f:section>
+
+<f:section name="Video">
+	<iframe id="{elementData.playerid}" src="http://player.vimeo.com/video/{elementData.videoid}?api=1&player_id={elementData.playerid}" width="{elementData.width}" height="{elementData.height}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+</f:section>
+
+
+</div>

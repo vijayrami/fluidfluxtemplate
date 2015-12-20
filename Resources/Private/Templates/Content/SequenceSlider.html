@@ -1,0 +1,297 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Content" />
+<f:section name="Configuration">
+	
+	<v:variable.set name="lang1" value="{v:l(key: 'content-sequence.option.sliderstyles.0', default: 'Content left')}" />
+	<v:variable.set name="lang2" value="{v:l(key: 'content-sequence.option.sliderstyles.1', default: 'Content Right')}" />
+	<v:variable.set name="lang3" value="{v:l(key: 'content-sequence.option.sliderstyles.2', default: 'Animate-In')}" />
+	<v:variable.set name="lang5" value="{v:l(key: 'content-sequence.pagination.0', default: 'Preview')}" />
+	<v:variable.set name="lang6" value="{v:l(key: 'content-sequence.pagination.1', default: 'Points')}" />
+	<v:variable.set name="lang7" value="{v:l(key: 'content-sequence.pagination.2', default: 'Numbers')}" />
+	<v:variable.set name="lang12" value="{v:l(key: 'content-sequence.pagination.5', default: 'Off')}" />
+	<v:variable.set name="lang13" value="{v:l(key: 'content-sequence.pagination.image.pos1', default: 'top')}" />
+	<v:variable.set name="lang14" value="{v:l(key: 'content-sequence.pagination.image.pos2', default: 'bottom')}" />
+	<v:variable.set name="lang15" value="{v:l(key: 'content-sequence.pagination.image.pos3', default: 'left')}" />
+	<v:variable.set name="lang16" value="{v:l(key: 'content-sequence.pagination.image.pos4', default: 'right')}" />
+	
+	<flux:form id="sequenceslider" options="{group: 'Sliders', icon: '../typo3conf/ext/fluxtemplate/Resources/Public/Icons/sequence_slider.png'}">
+		<flux:form.sheet name="sequenceconfigsheet" label="{v:l(key: 'content-sequence.sequence', default: 'Sequence-Slider Config')}">
+				
+				<flux:field.custom name="void1"><b>: : : : {v:l(key: 'content-sequence.desc.seq-settings', default: 'Sequence-Settings')} : : : :</b></flux:field.custom>
+				
+				<flux:field.checkbox name="sequenceautoplay" label="{v:l(key: 'content-sequence.autoplay', default: 'Autoplay')}" />
+				<flux:field.checkbox name="sequencesynchronouslywiththesupersized" label="{v:l(key: 'content-sequence.supersized', default: 'Pagination synchronously with the Supersized')}" />	
+				<flux:field.checkbox name="sequenceinnercontentwidth" label="{v:l(key: 'content-sequence.innercontentwidth', default: 'Sequence-Inner Content-Width')}" />
+				
+				<flux:field.checkbox name="sequencearrows" label="{v:l(key: 'content-sequence.arrows', default: 'Display Next/Prev Arrows')}" />
+				<flux:field.input name="sequencetimeint" label="{v:l(key: 'content-sequence.timeint', default: 'Set Slide-Interval')}" minimum="1" maximum="30" default="5" eval="int,trim">				
+					<flux:wizard.slider hideParent="TRUE" step="1" width="200" />
+				</flux:field.input>
+				<flux:field.custom name="void2">
+					<b>: : : : {v:l(key: 'content-sequence.desc.pag-settings', default: 'Pagination-Settings')} : : : :</b>
+				</flux:field.custom>
+				
+				<flux:field.select name="sequencepagination" label="{v:l(key: 'content-sequence.pagination', default: 'Pagination of your Slider')}" items="{off:lang12,preview:lang5,points:lang6,numbers:lang7}" default="off" requestUpdate="TRUE" />
+				
+				<flux:field.checkbox name="sequencepaginationinnercontentwidth" label="{v:l(key: 'content-sequence.paginationinnercontentwidth', default: 'Pagination-Inner Content-Width')}" />
+				
+				<flux:form.section name="sequenceitems">
+					<flux:form.object name="sequenceitem" label="{v:l(key: 'content-sequence.item', default: 'Add a new Slide-Element')}">
+							<flux:field.file name="sequencebgimage" label="{v:l(key: 'content-sequence.option.bgimage', default: 'Background-Image')}" />
+							<flux:field.file name="sequenceimage01" label="{v:l(key: 'content-sequence.option.image01', default: 'First Image')}" />
+							<flux:field.file name="sequenceimage02" label="{v:l(key: 'content-sequence.option.image02', default: 'Second Image')}" />
+							<flux:field.file name="sequenceimage03" label="{v:l(key: 'content-sequence.option.image03', default: 'Third Image')}" />
+
+							<flux:field.input name="sequenceheadline" label="{v:l(key: 'content-sequence.option.headline', default: 'Headline')}" />
+							<flux:field.input name="sequencesubheadline" label="{v:l(key: 'content-sequence.option.subheadline', default: 'Sub-Headline')}" />
+							<flux:field.text name="sequencetext" label="{v:l(key: 'content-sequence.option.text', default: 'Text')}" defaultExtras="richtext:rte_transform[flag=rte_enabled|mode=ts_css]" cols="3" rows="4" enableRichText="1" />
+							
+							<flux:field.input name="sequencebutton01" label="{v:l(key: 'content-sequence.option.textbutton01', default: 'Text for the first button')}" />
+							<flux:field.input name="sequencebutton01link" label="{v:l(key: 'content-sequence.option.linkbutton01', default: 'Link for the first button')}">
+								<flux:wizard.link label="Select your link" activeTab="url" />
+							</flux:field.input>
+
+							<flux:field.input name="sequencebutton02" label="{v:l(key: 'content-sequence.option.textbutton02', default: 'Text for the second buton')}" />
+							<flux:field.input name="sequencebutton02link" label="{v:l(key: 'content-sequence.option.linkbutton02', default: 'Link for the second button')}">
+								<flux:wizard.link label="Select your link" activeTab="url" />
+							</flux:field.input>
+
+							<flux:field.select name="sequenceslidestyles" label="{v:l(key: 'content-sequence.option.sliderstyles', default: 'Select your Slide-Styles')}" items="{style1:lang1,style2:lang2}" />
+							<flux:field.input name="sequenceaddclass" label="{v:l(key: 'content-sequence.option.addclass', default: 'Add a class if you want')}" />
+							
+							<f:if condition="{sequencepagination}=='preview'">
+								<flux:field.input name="sequencepaginationheadline" label="{v:l(key: 'content-sequence.pagination.headline', default: 'Headline for the Pagination')}" />
+								<flux:field.input name="sequencepaginationtext" label="{v:l(key: 'content-sequence.pagination.text', default: 'Text for the Pagination')}" />
+								<flux:field.file name="sequencepaginationimage" label="{v:l(key: 'content-sequence.pagination.image', default: 'Image for the Pagination')}" />
+								<flux:field.input name="sequencepaginationimagelabel" label="{v:l(key: 'content-sequence.pagination.imagetitle', default: 'Title for the Pagination-Image')}" />
+								<flux:field.select name="sequencepaginationimgposition" label="{v:l(key: 'content-sequence.pagination.image-pos', default: 'Image-Position')}" items="{pos1:lang13,pos2:lang14,pos3:lang15,pos4:lang16}" />
+							</f:if>
+					</flux:form.object>
+				</flux:form.section>
+				
+			</flux:form.sheet>
+			
+			<flux:form.sheet name="sequencevisibility" label="{v:l(key: 'content-sequence.visibility', default: 'Visibility-Options')}">
+                <flux:field.checkbox name="arrowshidedesktop" label="{v:l(key: 'content-sequence.arrows.hidedesktop', default: 'Hide Arrows on Desktop')}" />
+                <flux:field.checkbox name="arrowshidenotebook" label="{v:l(key: 'content-sequence.arrows.hidenotebook', default: 'Hide Arrows on Desktop')}" />
+                <flux:field.checkbox name="arrowshidetablet" label="{v:l(key: 'content-sequence.arrows.hidetablet', default: 'Hide Arrows on Desktop')}" />
+                <flux:field.checkbox name="arrowshidephone" label="{v:l(key: 'content-sequence.arrows.hidephone', default: 'Hide Arrows on Desktop')}" />
+                
+                <flux:field.checkbox name="paginationhidedesktop" label="{v:l(key: 'content-sequence.pagination.hidedesktop', default: 'Hide Pagination on Desktop')}" />
+                <flux:field.checkbox name="paginationhidenotebook" label="{v:l(key: 'content-sequence.pagination.hidenotebook', default: 'Hide Pagination on Desktop')}" />
+                <flux:field.checkbox name="paginationhidetablet" label="{v:l(key: 'content-sequence.pagination.hidetablet', default: 'Hide Pagination on Desktop')}" />
+                <flux:field.checkbox name="paginationhidephone" label="{v:l(key: 'content-sequence.pagination.hidephone', default: 'Hide Pagination on Desktop')}" />
+            </flux:form.sheet>
+            
+	</flux:form>
+</f:section>
+
+<f:section name="Preview">
+    <flux:widget.grid />
+    <strong><u>Plugin:</u> MOOX Sequence-Slider</strong><br>
+</f:section>
+
+<f:section name="Main">
+
+	<v:asset.script name="sequence-init-js" group="sequence-slider" standalone="FALSE" allowMoveToFooter="TRUE" external="0"> 
+                $(document).ready(function(){
+                    var options = {
+                    <f:format.raw>
+                        nextButton: <f:if condition="{sequencearrows}"><f:then>true</f:then><f:else>false</f:else></f:if>,
+                        prevButton: <f:if condition="{sequencearrows}"><f:then>true</f:then><f:else>false</f:else></f:if>,
+                        pagination: <f:if condition="{sequencepagination}=='off'"><f:then>false</f:then><f:else>true</f:else></f:if>,
+                        animateStartingFrameIn: true,
+                        autoPlay: <f:if condition="{sequenceautoplay}"><f:then>true</f:then><f:else>false</f:else></f:if>,
+                        autoPlayDirection: 1,
+                        autoPlayDelay: {sequencetimeint_ms -> v:math.product(a: 1000, b: sequencetimeint)},
+                        preloader: true,
+                    </f:format.raw>
+                    preloadTheseFrames: [1],
+                    preloadTheseImages: [
+                        "images/tn-model1.png",
+                        "images/tn-model2.png",
+                        "images/tn-model3.png"
+                    ]
+                    };
+                    
+                    var mySequence = $("#sequence").sequence(options).data("sequence");
+                });
+    </v:asset.script>
+		
+	<v:variable.set name="cssClassHideDesktop" value="hidden-lg" />
+    <v:variable.set name="cssClassHideNotebook" value="hidden-md" />
+    <v:variable.set name="cssClassHideTablet" value="hidden-sm" />
+    <v:variable.set name="cssClassHidePhone" value="hidden-xs" />
+    
+    <f:comment> Visibility Arrows </f:comment>
+        
+            <v:variable.set name="cssClassesSequenceVisibilityArrows" value="" />
+            <f:if condition="{arrowshidedesktop}">
+                <v:variable.set name="cssClassesSequenceVisibilityArrows" value="{cssClassesSequenceVisibilityArrows} {cssClassHideDesktop}" />
+            </f:if>
+            <f:if condition="{arrowshidenotebook}">
+                <v:variable.set name="cssClassesSequenceVisibilityArrows" value="{cssClassesSequenceVisibilityArrows} {cssClassHideNotebook}" />
+            </f:if>
+            <f:if condition="{arrowshidetablet}">
+                <v:variable.set name="cssClassesSequenceVisibilityArrows" value="{cssClassesSequenceVisibilityArrows} {cssClassHideTablet}" />
+            </f:if>
+            <f:if condition="{arrowshidephone}">
+                <v:variable.set name="cssClassesSequenceVisibilityArrows" value="{cssClassesSequenceVisibilityArrows} {cssClassHidePhone}" />
+            </f:if>
+    
+    <f:comment> Visibility Pagination </f:comment>
+        
+            <v:variable.set name="cssClassesSequenceVisibilityPagination" value="" />
+            <f:if condition="{paginationhidedesktop}">
+                <v:variable.set name="cssClassesSequenceVisibilityPagination" value="{cssClassesSequenceVisibilityPagination} {cssClassHideDesktop}" />
+            </f:if>
+            <f:if condition="{paginationhidenotebook}">
+                <v:variable.set name="cssClassesSequenceVisibilityPagination" value="{cssClassesSequenceVisibilityPagination} {cssClassHideNotebook}" />
+            </f:if>
+            <f:if condition="{paginationhidetablet}">
+                <v:variable.set name="cssClassesSequenceVisibilityPagination" value="{cssClassesSequenceVisibilityPagination} {cssClassHideTablet}" />
+            </f:if>
+            <f:if condition="{paginationhidephone}">
+                <v:variable.set name="cssClassesSequenceVisibilityPagination" value="{cssClassesSequenceVisibilityPagination} {cssClassHidePhone}" />
+            </f:if>
+    
+    <div class="sequence-theme">
+        <f:if condition="{sequenceinnercontentwidth}">
+            <div class="container"> 
+        </f:if>
+            
+            <div id="sequence"> 
+                
+                <f:if condition="{sequencearrows}">
+                    <f:then>
+                        <f:if condition="{sequencesynchronouslywiththesupersized}">
+                            <f:then>
+                                <i class="glyphicon glyphicon-chevron-left sequence-prev {cssClassesSequenceVisibilityArrows}" onClick="api.prevSlide();" alt="Previous Frame"></i>
+                                <i class="glyphicon glyphicon-chevron-right sequence-next {cssClassesSequenceVisibilityArrows}" onClick="api.nextSlide();" alt="Next Frame"></i>
+                            </f:then>
+                            <f:else>
+                                <i class="glyphicon glyphicon-chevron-left sequence-prev {cssClassesSequenceVisibilityArrows}" alt="Previous Frame"></i>
+                                <i class="glyphicon glyphicon-chevron-right sequence-next {cssClassesSequenceVisibilityArrows}" alt="Next Frame"></i>
+                            </f:else>
+                        </f:if>
+                    </f:then>
+                    <f:else>
+                        
+                    </f:else>
+                </f:if>
+                
+                <ul class="sequence-canvas">
+                    <f:for each="{sequenceitems}" as="sectionObject" iteration="iteration">         
+                        <li class="{sectionObject.sequenceitem.sequenceslidestyles} slide-{iteration.index}" style="opacity: 0;">
+                            <f:if condition="{sectionObject.sequenceitem.sequencebgimage}"><div class="sequencebgimg" style="height: 100%; width: 100%;"><img src="{sectionObject.sequenceitem.sequencebgimage}" alt="Sequence-BG"/></div></f:if>
+                            <f:if condition="{sectionObject.sequenceitem.sequenceimage01}"><img class="model {sectionObject.sequenceitem.sequenceslidestyles}model01" src="{sectionObject.sequenceitem.sequenceimage01}" alt="Model 1" /></f:if>
+                            <f:if condition="{sectionObject.sequenceitem.sequenceimage02}"><img class="model {sectionObject.sequenceitem.sequenceslidestyles}model02" src="{sectionObject.sequenceitem.sequenceimage02}" alt="Model 2" /></f:if>
+                            <f:if condition="{sectionObject.sequenceitem.sequenceimage03}"><img class="model {sectionObject.sequenceitem.sequenceslidestyles}model03" src="{sectionObject.sequenceitem.sequenceimage03}" alt="Model 3" /></f:if>
+                            <f:if condition="{sectionObject.sequenceitem.sequenceheadline}"><h2 class="{sectionObject.sequenceitem.sequenceslidestyles}title"><f:format.raw>{sectionObject.sequenceitem.sequenceheadline}</f:format.raw></h2></f:if>
+                            <f:if condition="{sectionObject.sequenceitem.sequencesubheadline}"><h3 class="{sectionObject.sequenceitem.sequenceslidestyles}subtitle"><f:format.raw>{sectionObject.sequenceitem.sequencesubheadline}</f:format.raw></h3></f:if>
+                            <f:if condition="{sectionObject.sequenceitem.sequencetext}"><div class="{sectionObject.sequenceitem.sequenceslidestyles}text"><f:format.raw>{sectionObject.sequenceitem.sequencetext}</f:format.raw></div></f:if>
+                            <f:if condition="{sectionObject.sequenceitem.sequencebutton01}"><f:link.page class="btn btn-primary btn-large {sectionObject.sequenceitem.sequenceslidestyles}button01" pageUid="{sectionObject.sequenceitem.sequencebutton01link}" >{sectionObject.sequenceitem.sequencebutton01}</f:link.page></f:if>
+                            <f:if condition="{sectionObject.sequenceitem.sequencebutton02}"><f:link.page class="btn btn-primary btn-large {sectionObject.sequenceitem.sequenceslidestyles}button02" pageUid="{sectionObject.sequenceitem.sequencebutton02link}" >{sectionObject.sequenceitem.sequencebutton02}</f:link.page></f:if>         
+                        </li>
+                    </f:for> 
+                </ul>
+                
+                <f:if condition="{sequencepagination}=='points'">
+                    <f:then>
+                        <div class="{cssClassesSequenceVisibilityPagination}">
+                            <ul class="sequence-pagination">
+                                <f:for each="{sequenceitems}" as="sectionObject" iteration="iteration">
+                                    <li><i class="icon-circle-blank" alt="Slide01"></i></li>
+                                </f:for>
+                            </ul>
+                        </div>
+                    </f:then>
+                </f:if>
+                
+            </div>    
+                
+        <f:if condition="{sequenceinnercontentwidth}">
+            </div>
+        </f:if>
+    </div> 
+    
+    <f:if condition="{sequencepagination}=='preview'">
+        <f:then>
+            <div class="previewpagination {cssClassesSequenceVisibilityPagination}">
+                <f:if condition="sequencepaginationinnercontentwidth">
+                            <div class="container">
+                </f:if> 
+                    <ul class="sequence-pagination">
+                        <f:for each="{sequenceitems}" as="sectionObject" iteration="iteration">
+                            <li>
+                                <div class="preview-pagination-wrap">  
+                                    <f:if condition="{sectionObject.sequenceitem.sequencepaginationheadline}">
+                                        <div class="preview-headline">
+                                            {sectionObject.sequenceitem.sequencepaginationheadline}
+                                        </div>
+                                    </f:if>     
+                                    <div class="preview-contenwrapper">
+                                        <f:if condition="{sectionObject.sequenceitem.sequencepaginationimage}">
+                                        
+                                            <f:then>
+                                                <v:switch value="{sectionObject.sequenceitem.sequencepaginationimgposition}">
+                                                    <v:case case="pos1" break="TRUE">
+                                                        <div class="preview-pos1-img">
+                                                                    <f:image src="{sectionObject.sequenceitem.sequencepaginationimage}" alt="{sectionObject.sequenceitem.sequencepaginationimagetitle}" title="{sectionObject.sequenceitem.sequencepaginationimagetitle}" />                                                
+                                                        </div>
+                                                        <div class="preview-pos1-text">
+                                                                    {sectionObject.sequenceitem.sequencepaginationtext}
+                                                        </div>
+                                                    </v:case>
+                                                    <v:case case="pos2" break="TRUE">
+                                                        <div class="preview-pos2-text">
+                                                                    {sectionObject.sequenceitem.sequencepaginationtext}
+                                                        </div>
+                                                        <div class="preview-pos2-img">
+                                                            <f:image src="{sectionObject.sequenceitem.sequencepaginationimage}" alt="{sectionObject.sequenceitem.sequencepaginationimagetitle}" title="{sectionObject.sequenceitem.sequencepaginationimagetitle}" />
+                                                        </div>  
+                                                    </v:case>
+                                                    <v:case case="pos3" break="TRUE">
+                                                        <div class="preview-pos3-img">
+                                                            <f:image src="{sectionObject.sequenceitem.sequencepaginationimage}" alt="{sectionObject.sequenceitem.sequencepaginationimagetitle}" title="{sectionObject.sequenceitem.sequencepaginationimagetitle}" />
+                                                        </div>
+                                                        <div class="preview-pos3-text">
+                                                            {sectionObject.sequenceitem.sequencepaginationtext}
+                                                        </div>
+                                                    </v:case>
+                                                    <v:case case="pos4" break="TRUE">
+                                                        <div class="preview-pos4-text">
+                                                            {sectionObject.sequenceitem.sequencepaginationtext}
+                                                        </div>
+                                                        <div class="preview-pos4-img">
+                                                            <f:image src="{sectionObject.sequenceitem.sequencepaginationimage}" alt="{sectionObject.sequenceitem.sequencepaginationimagetitle}" title="{sectionObject.sequenceitem.sequencepaginationimagetitle}" />
+                                                        </div>
+                                                    </v:case>
+                                                </v:switch> 
+                                            </f:then>
+                                            <f:else>
+                                                <div class="preview-text-only">
+                                                    {sectionObject.sequenceitem.sequencepaginationtext}
+                                                </div>
+                                            </f:else>
+                                            
+                                        </f:if>
+                                    </div>
+                                </div>
+                            </li>
+                        </f:for>
+                    </ul>
+                <f:if condition="sequencepaginationinnercontentwidth">
+                            </div>
+                </f:if>
+            </div>
+        </f:then>
+        <f:else>
+        
+        </f:else>
+    </f:if>
+</f:section>
+</div>

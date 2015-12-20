@@ -1,0 +1,46 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Partial"/>
+
+	<f:section name="Navigation">
+
+
+		<div class="navbar navbar-default">
+			<div class="container">
+
+
+
+
+				<button class="btn btn-navbar searchbar-toggle visible-xs visible-sm"  data-toggle="collapse" data-target=".bs-searchbar-collapse"><i class="fa fa-search"></i></button>
+
+				<button class="btn btn-navbar navbar-toggle"  data-toggle="collapse" data-target=".bs-navbar-collapse"><i class="fa fa-list"></i></button>
+
+				<div class="bs-searchbar-inline hidden-sm hidden-xs">
+					<f:render section="Searchbox" partial="Searchbox" arguments="{formname : 'default' }" />
+				</div>
+
+				<div class="navbar-header">
+					<f:link.page tabindex="1" pageUid="{v:variable.typoscript(path: 'lib.menu.homePageUID')}" class="navbar-brand"><v:site.name/></f:link.page>
+				</div>
+
+
+				<f:render section="DropdownNavigation" partial="DropdownNavigation" arguments="{_all}"/>
+
+
+				<div class="collapse bs-searchbar bs-searchbar-collapse hidden-md hidden-lg">
+					<div class="row">
+					<div class="col-xs-12 col-sm-12 form-group">
+
+						<f:render section="Searchbox" partial="Searchbox" arguments="{formname : 'mobile' }"/>
+					</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+
+	</f:section>
+</div>

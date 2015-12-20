@@ -1,0 +1,40 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Content" />
+
+<f:section name="Configuration">
+	<flux:form id="pagecontent" options="{group: 'Bootstrap elements', icon: '../typo3conf/ext/fluxtemplate/Resources/Public/Icons/content.png'}">
+		
+		
+		<flux:field.tree name="pageIds" multiple="true" allowRecursiveMode="true" label="Page ID" table="pages" expandAll="true" maxItems="99" parentField="pid"  foreignLabel="title" width="600" size="15" />
+		
+	</flux:form>
+</f:section>
+
+<f:section name="Preview">
+	<p>Anzeige der Seite(n):</p>
+	<ul>
+	<f:for each="{v:iterator.explode(content: pageIds, glue: ',')}" as="pageId">
+		<li><v:page.info pageUid="{pageId}" field="title" /></li>
+	</f:for>
+	</ul>
+</f:section>
+
+<f:section name="Main">
+	
+	<f:if condition="{pageIds}">
+		
+		<f:for each="{v:iterator.explode(content: pageIds, glue: ',')}" as="pageId">
+			<v:content.render column="0" pageUid="{pageId}" as="contentElements">
+				<f:for each="{contentElements}" as="contentElement">
+					<f:format.raw>{contentElement}</f:format.raw>
+				</f:for>
+			</v:content.render>
+		</f:for>
+	</f:if>
+		
+	
+</f:section>
+</div>

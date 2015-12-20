@@ -1,0 +1,231 @@
+<!-- ###master_aufmerksam### -->
+###error_aufmerksam###    
+<div class="form-group">
+	<label class="control-label col-lg-2 col-md-3" for="aufmerksam">###LLL:aufmerksam### ###required_aufmerksam###</label>
+	  <div class="col-lg-9 col-md-8">
+	  <select id="aufmerksam" name="###formValuesPrefix###[aufmerksam]" class="form-control">
+		<option value="">###LLL:aufmerksam.waehlen###</option>
+		<option value="freunde" ###selected_aufmerksam_freunde###>###LLL:aufmerksam.freunde###</option>
+		<option value="internet" ###selected_aufmerksam_internet###>###LLL:aufmerksam.internet###</option>
+		<option value="flyer" ###selected_aufmerksam_flyer###>###LLL:aufmerksam.flyer###</option>
+		<option value="sonstiges" ###selected_aufmerksam_sonstiges###>###LLL:aufmerksam.sonstiges###</option>
+	  </select>
+	</div>
+  <div class="col-lg-1 col-md-1">
+  	###validate_aufmerksam###
+  </div>
+</div>
+<!-- ###master_aufmerksam### -->
+
+<!-- ###master_input### -->
+<div class="form-group">
+###error_###fieldname######
+  <label class="control-label col-lg-2 col-md-3" for="###fieldname###" ###is_error_###fieldname######>###LLL:###fieldname###### ###required_###fieldname######</label>
+  <div class="col-lg-10 col-md-9">
+  	<input type="text" class="form-control" size="20" id="###fieldname###" name="###formValuesPrefix###[###fieldname###]" value="###value_###fieldname######"/>
+	</div>
+</div>
+<!-- ###master_input### -->
+
+<!-- ###master_textarea### -->
+<div class="form-group">
+###error_###fieldname######
+
+  <label class="control-label col-lg-2 col-md-3" for="###fieldname###" ###is_error_###fieldname######>###LLL:###fieldname###### ###required_###fieldname######</label>
+  <div class="col-lg-9 col-md-8">
+  	<textarea rows="3" cols="30" class="form-control" id="###fieldname###" name="###formValuesPrefix###[###fieldname###]">###value_###fieldname######</textarea>
+	</div>
+	<div class="col-lg-1 col-md-1">
+	</div>
+</div>
+<!-- ###master_textarea### -->
+
+<!-- ###master_input_ajax### -->
+###error_###fieldname######
+<div class="form-group ajax">
+  <label class="control-label col-lg-2 col-md-3" for="###fieldname###">###LLL:###fieldname###### ###required_###fieldname######</label>
+  <div class="col-lg-9 col-md-8">
+  	<input type="text" class="form-control" size="20" id="###fieldname###" name="###formValuesPrefix###[###fieldname###]" value="###value_###fieldname######"/>
+  </div>
+  <div class="col-lg-1 col-md-1">
+  	###validate_###fieldname######
+  </div>
+</div>
+<!-- ###master_input_ajax### -->
+
+<!-- ###master_textarea_ajax### -->
+###error_###fieldname######
+<div class="form-group ajax">
+  <label class="control-label col-lg-2 col-md-3" for="###fieldname###">###LLL:###fieldname###### ###required_###fieldname######</label>
+  <textarea rows="3" cols="30" id="###fieldname###" name="###formValuesPrefix###[###fieldname###]">###value_###fieldname######</textarea>
+  ###validate_###fieldname######
+</div>
+<!-- ###master_textarea_ajax### -->
+
+<!-- ###master_anrede### -->
+###error_anrede###    
+<div class="form-group">
+	<label class="control-label col-lg-2 col-md-3" for="anrede">###LLL:anrede### ###required_anrede###</label>
+	  <div class="col-lg-9 col-md-8">
+	  <select id="anrede" name="###formValuesPrefix###[anrede]" class="form-control">
+		<option value="">###LLL:anrede.waehlen###</option>
+		<option value="Frau" ###selected_anrede_Frau###>###LLL:anrede.frau###</option>
+		<option value="Herr" ###selected_anrede_Herr###>###LLL:anrede.mann###</option>
+	  </select>
+	</div>
+  <div class="col-lg-1 col-md-1">
+  	###validate_anrede###
+  </div>
+</div>
+<!-- ###master_anrede### -->
+
+<!-- ###master_checkbox### -->
+<div class="form-group">
+###error_###fieldname######
+	<div class="col-lg-10 col-md-9 col-md-offset-3 col-lg-offset-2">
+		<div class="checkbox">
+			<label>
+				<input type="checkbox" id="###fieldname###" name="###formValuesPrefix###[###fieldname###]" value="1" ###checked_###fieldname###_1### />###LLL:###fieldname######
+			</label>
+		</div>
+	</div>
+</div>
+<!-- ###master_checkbox### -->
+
+<!-- ###master_submit### -->
+<div class="form-group">
+	<div class="col-lg-10 col-md-9 col-lg-offset-2 col-md-offset-3">
+		<button type="submit" ###submit_nextStep### class="btn btn-primary" value="###LLL:submit###"><i class="fa fa-check"></i> ###LLL:submit###</button>
+
+	</div>
+</div>
+<!-- ###master_submit### -->
+
+<!-- ###master_submit-disable### -->
+<div class="form-group">
+  <input type="submit" ###submit_nextStep### class="button submit ###validation-status###" value="###LLL:submit###" />
+</div>
+<!-- ###master_submit-disable### -->
+
+<!-- ###master_ajax-submit### -->
+<div class="form-group">
+	###loading_ajax-submit###
+	<input type="submit" ###submit_nextStep### class="button submit" value="###LLL:submit###" />
+	<div class="clear"></div>
+</div>
+<!-- ###master_ajax-submit### -->
+
+<!-- ###master_next### -->
+<div class="form-group">
+  <input type="submit" ###submit_nextStep### class="button submit" value="###LLL:next###" />
+</div>
+<!-- ###master_next### -->
+
+<!-- ###master_prev### -->
+<div class="form-group">
+  <input type="submit" ###submit_prevStep### class="button submit" value="###LLL:prev###" />
+</div>
+<!-- ###master_prev### -->
+
+<!-- ###master_form-start### -->
+<form action="###REL_URL###" method="post" class="form-horizontal" id="###fieldname###">
+  ###HIDDEN_FIELDS###
+<!-- ###master_form-start### -->
+
+<!-- ###master_multipart-form-start### -->
+<form action="###REL_URL###" method="post" class="form-horizontal" id="###fieldname###" enctype="multipart/form-data" >
+  ###HIDDEN_FIELDS###
+<!-- ###master_multipart-form-start### -->
+
+<!-- ###master_form-end### -->
+</form>
+<!-- ###master_form-end### -->
+
+<!-- ###master_section-start### -->
+<fieldset>
+<!-- ###master_section-start### -->
+
+<!-- ###master_section-end### -->
+</fieldset>
+<!-- ###master_section-end### -->
+
+<!-- ###master_email-user-start-plain### -->
+
+###LLL:email_user_text1###
+
+###LLL:email_user_text2###
+
+###LLL:footer_greeting###
+
+###LLL:footer_companyname###
+###LLL:footer_companyname2###
+###LLL:footer_street###
+###LLL:footer_zip_city###
+
+Telefon:	###LLL:footer_telephone###
+E-Mail:	    ###LLL:footer_email###
+Internet:	###LLL:footer_internet###
+
+<!-- ###master_email-user-start-plain### -->
+
+<!-- ###master_email-user-end-plain### -->
+
+###LLL:email_user_footer###
+<!-- ###master_email-user-end-plain### -->
+
+<!-- ###master_email-admin-start-plain### -->
+
+###LLL:email_admin_text###
+
+<!-- ###master_email-admin-start-plain### -->
+
+<!-- ###master_email-admin-end-plain### -->
+
+###LLL:email_admin_footer###
+<!-- ###master_email-admin-end-plain### -->
+
+<!-- ###master_email-user-start-html### -->
+<p>###LLL:email_user_text1###</p>
+<br />
+<p>###LLL:email_user_text2###</p><p>
+###LLL:footer_greeting###</p><p>
+###LLL:footer_companyname###<br />
+###LLL:footer_companyname2###br<br />
+###LLL:footer_street###<br />
+###LLL:footer_zip_city###</p><p>
+Telefon:	08651 - 9057287<br />
+E-Mail:	    <a href="mailto:###LLL:footer_email###">###LLL:footer_email###</a><br />
+Internet:	<a href="http://###LLL:footer_internet###">###LLL:footer_internet###</a></p>
+<br />
+<table>
+<!-- ###master_email-user-start-html### -->
+
+<!-- ###master_email-user-end-html### -->
+</table>
+<br />
+<p>###LLL:email_user_footer###</p>
+<!-- ###master_email-user-end-html### -->
+
+<!-- ###master_email-admin-start-html### -->
+
+<p><strong>###LLL:email_admin_text###</strong></p>
+<br />
+<table>
+<!-- ###master_email-admin-start-html### -->
+
+<!-- ###master_email-admin-end-html### -->
+</table>
+<br />
+<p>###LLL:email_admin_footer###</p>
+<!-- ###master_email-admin-end-html### -->
+
+<!-- ###master_email-line-plain### -->
+###LLL:###fieldname###### ###value_###fieldname######
+<!-- ###master_email-line-plain### -->
+
+<!-- ###master_email-line-html### -->
+<tr>
+	<td valign="top"><strong>###LLL:###fieldname######</strong></td>
+	<td>###value_###fieldname######</td>
+</tr>
+<!-- ###master_email-line-html### -->

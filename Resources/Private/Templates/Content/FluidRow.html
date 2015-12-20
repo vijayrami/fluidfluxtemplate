@@ -1,0 +1,80 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"
+     xmlns:ft="http://typo3.org/ns/Weboffice/fluxtemplate/ViewHelpers">
+<f:layout name="Content" />
+
+
+<f:section name="Configuration">
+
+    
+    <v:variable.set name="settings" value="{v:variable.typoscript(path: 'plugin.tx_fluxtemplate.settings')}" />
+    
+    <flux:form id="row" options="{group: 'Bootstrap elements', icon: '../typo3conf/ext/fluxtemplate/Resources/Public/Icons/icon-bootstrap.png'}">
+        <flux:field.input name="backgroundColor" default="#FFAA00">
+                    <flux:wizard.colorPicker hideParent="TRUE" />
+        </flux:field.input>
+        <flux:form.section name="columns">
+            <flux:form.object name="column">
+                <flux:field.select name="class-xs" items="{f:render(section: 'Value-xs', arguments: {iteration: iteration})
+                     -> v:iterator.loop(count: settings.gridColumns, iteration: 'iteration', minimum: 1) -> ft:arrayHelper.explode(addEmptyValue : 'true')}" />
+                <flux:field.select name="class-sm" items="{f:render(section: 'Value-sm', arguments: {iteration: iteration})
+                    -> v:iterator.loop(count: settings.gridColumns, iteration: 'iteration', minimum: 1) -> ft:arrayHelper.explode(addEmptyValue : 'true')}" />
+                <flux:field.select name="class-md" items="{f:render(section: 'Value-md', arguments: {iteration: iteration})
+                    -> v:iterator.loop(count: settings.gridColumns, iteration: 'iteration', minimum: 1) -> ft:arrayHelper.explode(addEmptyValue : 'true')}" />
+                <flux:field.select name="class-lg" items="{f:render(section: 'Value-lg', arguments: {iteration: iteration})
+                    -> v:iterator.loop(count: settings.gridColumns, iteration: 'iteration', minimum: 1) -> ft:arrayHelper.explode(addEmptyValue : 'true')}" />
+                
+        
+                <flux:field.checkbox name="addWell" />
+                <flux:field.input name="additionalClass" />
+
+            </flux:form.object>
+        </flux:form.section>
+        <flux:grid>
+            <flux:grid.row>
+                <v:condition.type.isArray value="{columns}">
+                    <f:for each="{columns}" as="sectionObject" iteration="iteration">
+                        <v:variable.set name="width" value="{sectionObject.column.class-md -> v:format.substring(start: 7)}" />
+                        <v:variable.set name="percent" value="{width  -> v:math.division(b: settings.gridColumns) -> v:math.product(b: 100) -> v:math.round(decimals: 2)}" />
+                        <flux:grid.column style="width: {percent}%" name="column{iteration.cycle}" label="{percent}%" />
+                    </f:for>
+                </v:condition.type.isArray>
+            </flux:grid.row>
+        </flux:grid>
+    </flux:form>
+</f:section>
+
+<f:section name="Main">
+    <div class="row" style="background-color: {f:if(condition: backgroundColor, then: '{backgroundColor}')};">
+        <f:for each="{columns}" as="sectionObject" iteration="iteration">
+            <div class="{sectionObject.column.class-lg} {sectionObject.column.class-md} {sectionObject.column.class-sm} {sectionObject.column.class-xs}">
+                <f:if condition="{sectionObject.column.addWell}">
+                    <f:then>
+                        <div class="well{f:if(condition: sectionObject.column.additionalClass, then: ' {sectionObject.column.additionalClass}')}">
+                            <flux:content.render area="column{iteration.cycle}" />
+                        </div>
+                    </f:then>
+                    <f:else>
+                        <div{f:if(condition: sectionObject.column.additionalClass, then: ' class="{sectionObject.column.additionalClass}"')}>
+                            <flux:content.render area="column{iteration.cycle}" />
+                        </div>
+                    </f:else>
+                </f:if>
+            </div>
+        </f:for>
+    </div>
+</f:section>
+
+<f:section name="Preview">
+    <flux:widget.grid />
+</f:section>
+
+<f:section name="Value-md">col-md-{iteration.cycle}:'col-md-{iteration.cycle} ({iteration.cycle -> v:math.division(b: settings.gridColumns) -> v:math.product(b: 100) -> v:math.round(decimals: 2)}%)'{f:if(condition: iteration.isLast, else: ',')}</f:section>
+<f:section name="Value-sm">col-sm-{iteration.cycle}:'col-sm-{iteration.cycle} ({iteration.cycle -> v:math.division(b: settings.gridColumns) -> v:math.product(b: 100) -> v:math.round(decimals: 2)}%)'{f:if(condition: iteration.isLast, else: ',')}</f:section>
+<f:section name="Value-xs">col-xs-{iteration.cycle}:'col-xs-{iteration.cycle} ({iteration.cycle -> v:math.division(b: settings.gridColumns) -> v:math.product(b: 100) -> v:math.round(decimals: 2)}%)'{f:if(condition: iteration.isLast, else: ',')}</f:section>
+<f:section name="Value-lg">col-lg-{iteration.cycle}:'col-lg-{iteration.cycle} ({iteration.cycle -> v:math.division(b: settings.gridColumns) -> v:math.product(b: 100) -> v:math.round(decimals: 2)}%)'{f:if(condition: iteration.isLast, else: ',')}</f:section>
+
+
+</div>

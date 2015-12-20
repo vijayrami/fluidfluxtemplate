@@ -1,0 +1,272 @@
+####################################################
+## Bootstrap for Typo3
+## static Constants
+####################################################
+
+
+# customsubcategory=navigation=Navigation
+# customsubcategory=language=Language
+# customsubcategory=text=Text
+# customsubcategory=logo=Logo
+# customsubcategory=banner=Banner
+# customsubcategory=bodytag=Body tag
+# customsubcategory=development=Development
+# customsubcategory=breadcrumb=Breadcrumb
+# customsubcategory=textdirection=Text direction
+# customsubcategory=javascript=JavaScript
+# customsubcategory=jquery=jQuery
+
+
+PAGE_TARGET = _self
+styles.content.imgtext.captionSplit = 1
+styles.content.imgtext.imageTextSplit = 1
+content.pageFrameObj =
+[browser = msie]
+doctypesw_cond = 1
+[else]
+doctypesw_cond = 0
+[end]
+
+
+docTypeToUse = html5
+
+styles.content.imgtext.borderSelector = DIV.{$styles.content.imgtext.borderClass} DIV.csc-textpic-imagewrap FIGURE
+
+
+extkey = fluxtemplate
+
+headercomment = Bootstrap Template With SCSS Compiler.
+
+
+plugin.tx_fluxtemplate {
+    filepaths {
+        publicResources = EXT:{$extkey}/Resources/Public/
+        css             = {$plugin.tx_fluxtemplate.filepaths.publicResources}CSS/
+        scss            = {$plugin.tx_fluxtemplate.filepaths.publicResources}SCSS/
+        javascript      = {$plugin.tx_fluxtemplate.filepaths.publicResources}JavaScript/
+    }
+    
+    view {
+        templateRootPath = EXT:{$extkey}/Resources/Private/Templates/
+        partialRootPath = EXT:{$extkey}/Resources/Private/Partials/
+        layoutRootPath = EXT:{$extkey}/Resources/Private/Layouts/
+    }
+}
+
+
+protocol = http
+[globalString = IENV:TYPO3_SSL=1]
+    protocol = https
+[global]
+
+
+######################### basics ################################
+
+
+# cat=bootstrap/other/a; type=int+; label=Number of grid columns: Set this to the same number used in your custom Bootstrap CSS if you've switched from the default 12-grid
+gridColumns = 12
+
+######################## searchbox #########################
+
+
+# cat=bootstrap-searchbox/enable/b; type=int+; label=Searchpage PID (all languages):UID of the page containing the Indexed-Search-Plugin - REQUIRED if searchbox is in use:
+searchPagePID = 18
+
+
+######################## header #########################
+
+
+# cat=bootstrap-header/navigation/b; type=int; label=User Menu Folder ID: Id of the folder which contains the pages/shortcuts
+navigationUserEntryId =
+
+
+# cat=bootstrap-header/other/a; type=int+; label=UID of homepage?:If you have chosen the previous option, you need to tell TYPO3 what UID the homepage has, since this could be any page.
+homePageUID = 0
+
+
+######################## first navigation #########################
+
+# cat=bootstrap-firstnavigation/enable/n; type=int+; label=Entry level of first navigation:By default it shows all pages of the FIRST level (0) in your pagetree.
+navigationOneEntryLevel = 0
+
+
+
+######################## second navigation #########################
+
+# cat=bootstrap-secondnavigation/enable/r; type=int+; label=Entry level of second menu:The submenu is the menu on the left side and by default it shows all pages and subpages of the SECOND level in your pagetree.
+navigationTwoEntryLevel = 1
+
+
+
+######################## meta #########################
+# cat=bootstrap-meta/favicon/a; type=resource; label=Favicon:Favicon. Filetype: ico, gif, png
+favicon =
+# cat=bootstrap-meta/favicon/b; type=resource; label=Apple touch icon: filetype: png
+appleTouchIcon57 =
+# cat=bootstrap-meta/favicon/c; type=resource; label=Apple touch icon: filetype: png
+appleTouchIcon72 =
+# cat=bootstrap-meta/favicon/d; type=resource; label=Apple touch icon: filetype: png
+appleTouchIcon114 =
+# cat=bootstrap-meta/favicon/e; type=resource; label=Apple touch icon: filetype: png
+appleTouchIcon144 =
+# cat=bootstrap-meta/bodytag/a; type=text; label=CSS class?:CSS class in body tag.
+cssClass =
+
+######################### footer ################################
+
+
+# cat=bootstrap-footer/navigation/b; type=int; label=Footer Menu Folder ID: Id of the folder which contains the pages/shortcuts
+navigationFooterEntryId = 8
+# cat=bootstrap-footer/navigation/c; type=int; label=Footer Content Page ID: Id of the page with the footer content
+contentFooterUid =
+
+######################### languages ################################
+
+
+
+# cat=bootstrap-language/language/b; type=string; label=Default language (Lang 0):UID of your default language (usually ALWAYS 0):
+standardLanguage = 0
+# cat=bootstrap-language/language/c; type=string; label=First foreign language (Lang 1):UID of your first foreign language (if any):
+firstForeignLanguage = 1
+# cat=bootstrap-language/language/d; type=string; label=Second foreign language (Lang 2):UID of your second foreign language (if any):
+secondForeignLanguage = 2
+# cat=bootstrap-language/language/e; type=string; label=Third foreign language (Lang 3):UID of your third foreign language (if any):
+thirdForeignLanguage = 3
+# cat=bootstrap-language/language/f; type=string; label=Fourth foreign language (Lang 4):UID of your fourth foreign language (if any):
+fourthForeignLanguage = 4
+# cat=bootstrap-language/language/g; type=string; label=Fifth foreign language (Lang 5):UID of your fifth foreign language (if any):
+fifthForeignLanguage = 5
+# cat=bootstrap-language/language/h; type=string; label=Sixth foreign language (Lang 6):UID of your sixth foreign language (if any):
+sixthForeignLanguage = 6
+
+# cat=bootstrap-language/language/i; type=options [en,dk,de,no,it,fr,es,nl,cz,pl,si,fi,tr,se,pt,ru,ro,ch,sk,lt,is,hr,hu,gl,th,gr,hk,eu,bg,br,et,ar,he,ua,lv,jp,vn,ca,ba,kr,eo,my,hi]; label=ISO-Code (Lang 0):of the standard language.
+languageIsoCodeStandardLang = de
+# cat=bootstrap-language/language/j; type=options [en,dk,de,no,it,fr,es,nl,cz,pl,si,fi,tr,se,pt,ru,ro,ch,sk,lt,is,hr,hu,gl,th,gr,hk,eu,bg,br,et,ar,he,ua,lv,jp,vn,ca,ba,kr,eo,my,hi]; label=ISO-Code (Lang 1):of the first foreign language.
+languageIsoCodeFirstLang = en
+# cat=bootstrap-language/language/k; type=options [en,dk,de,no,it,fr,es,nl,cz,pl,si,fi,tr,se,pt,ru,ro,ch,sk,lt,is,hr,hu,gl,th,gr,hk,eu,bg,br,et,ar,he,ua,lv,jp,vn,ca,ba,kr,eo,my,hi]; label=ISO-Code (Lang 2):of the second foreign language.
+languageIsoCodeSecondLang =
+# cat=bootstrap-language/language/l; type=options [en,dk,de,no,it,fr,es,nl,cz,pl,si,fi,tr,se,pt,ru,ro,ch,sk,lt,is,hr,hu,gl,th,gr,hk,eu,bg,br,et,ar,he,ua,lv,jp,vn,ca,ba,kr,eo,my,hi]; label=ISO-Code (Lang 3):of the third foreign language.
+languageIsoCodeThirdLang =
+# cat=bootstrap-language/language/m; type=options [en,dk,de,no,it,fr,es,nl,cz,pl,si,fi,tr,se,pt,ru,ro,ch,sk,lt,is,hr,hu,gl,th,gr,hk,eu,bg,br,et,ar,he,ua,lv,jp,vn,ca,ba,kr,eo,my,hi]; label=ISO-Code (Lang 4):of the fourth foreign language.
+languageIsoCodeFourthLang =
+# cat=bootstrap-language/language/n; type=options [en,dk,de,no,it,fr,es,nl,cz,pl,si,fi,tr,se,pt,ru,ro,ch,sk,lt,is,hr,hu,gl,th,gr,hk,eu,bg,br,et,ar,he,ua,lv,jp,vn,ca,ba,kr,eo,my,hi]; label=ISO-Code (Lang 5):of the fifth foreign language.
+languageIsoCodeFifthLang =
+# cat=bootstrap-language/language/o; type=options [en,dk,de,no,it,fr,es,nl,cz,pl,si,fi,tr,se,pt,ru,ro,ch,sk,lt,is,hr,hu,gl,th,gr,hk,eu,bg,br,et,ar,he,ua,lv,jp,vn,ca,ba,kr,eo,my,hi]; label=ISO-Code (Lang 6):of the sixth foreign language.
+languageIsoCodeSixthLang =
+
+# cat=bootstrap-language/language/p; type=text; label=Locale-Setting (Lang 0):of the standard language. This is a bit tricky, because it depends on your webserver. Try different settings if dates and times are not shown correctly. On Windows-servers use the literals e.g. "german", on Linux-servers try to use the codes (e.g. de_DE*) according to the language you use. To find out which locales are installed on your Linux-Server, type 'locale -a' in a shell. Possible values are e.g. german, english (for Windows) or de_DE, de_DE@euro, de_DE.iso88591, de_DE.iso885915@euro, de_DE.utf8, en_US, en_US.iso88591, en_US.iso885915, en_US.utf8 (for Linux).
+languageLocaleStandardLang = de_DE.utf8
+# cat=bootstrap-language/language/q; type=text; label=Locale-Setting (Lang 1):of the first foreign language. This is a bit tricky, because it depends on your webserver. Try different settings if dates and times are not shown correctly. On Windows-servers use the literals e.g. "german", on Linux-servers try to use the codes (e.g. de_DE*) according to the language you use. To find out which locales are installed on your Linux-Server, type 'locale -a' in a shell. Possible values are e.g. german, english (for Windows) or de_DE, de_DE@euro, de_DE.iso88591, de_DE.iso885915@euro, de_DE.utf8, en_US, en_US.iso88591, en_US.iso885915, en_US.utf8 (for Linux).
+languageLocaleFirstLang = en_GB.utf8
+# cat=bootstrap-language/language/r; type=text; label=Locale-Setting (Lang 2):of the second foreign language. This is a bit tricky, because it depends on your webserver. Try different settings if dates and times are not shown correctly. On Windows-servers use the literals e.g. "german", on Linux-servers try to use the codes (e.g. de_DE*) according to the language you use. To find out which locales are installed on your Linux-Server, type 'locale -a' in a shell. Possible values are e.g. german, english (for Windows) or de_DE, de_DE@euro, de_DE.iso88591, de_DE.iso885915@euro, de_DE.utf8, en_US, en_US.iso88591, en_US.iso885915, en_US.utf8 (for Linux).
+languageLocaleSecondLang =
+# cat=bootstrap-language/language/s; type=text; label=Locale-Setting (Lang 3):of the second foreign language. This is a bit tricky, because it depends on your webserver. Try different settings if dates and times are not shown correctly. On Windows-servers use the literals e.g. "german", on Linux-servers try to use the codes (e.g. de_DE*) according to the language you use. To find out which locales are installed on your Linux-Server, type 'locale -a' in a shell. Possible values are e.g. german, english (for Windows) or de_DE, de_DE@euro, de_DE.iso88591, de_DE.iso885915@euro, de_DE.utf8, en_US, en_US.iso88591, en_US.iso885915, en_US.utf8 (for Linux).
+languageLocaleThirdLang =
+# cat=bootstrap-language/language/t; type=text; label=Locale-Setting (Lang 4):of the second foreign language. This is a bit tricky, because it depends on your webserver. Try different settings if dates and times are not shown correctly. On Windows-servers use the literals e.g. "german", on Linux-servers try to use the codes (e.g. de_DE*) according to the language you use. To find out which locales are installed on your Linux-Server, type 'locale -a' in a shell. Possible values are e.g. german, english (for Windows) or de_DE, de_DE@euro, de_DE.iso88591, de_DE.iso885915@euro, de_DE.utf8, en_US, en_US.iso88591, en_US.iso885915, en_US.utf8 (for Linux).
+languageLocaleFourthLang =
+# cat=bootstrap-language/language/u; type=text; label=Locale-Setting (Lang 5):of the second foreign language. This is a bit tricky, because it depends on your webserver. Try different settings if dates and times are not shown correctly. On Windows-servers use the literals e.g. "german", on Linux-servers try to use the codes (e.g. de_DE*) according to the language you use. To find out which locales are installed on your Linux-Server, type 'locale -a' in a shell. Possible values are e.g. german, english (for Windows) or de_DE, de_DE@euro, de_DE.iso88591, de_DE.iso885915@euro, de_DE.utf8, en_US, en_US.iso88591, en_US.iso885915, en_US.utf8 (for Linux).
+languageLocaleFifthLang =
+# cat=bootstrap-language/language/v; type=text; label=Locale-Setting (Lang 6):of the second foreign language. This is a bit tricky, because it depends on your webserver. Try different settings if dates and times are not shown correctly. On Windows-servers use the literals e.g. "german", on Linux-servers try to use the codes (e.g. de_DE*) according to the language you use. To find out which locales are installed on your Linux-Server, type 'locale -a' in a shell. Possible values are e.g. german, english (for Windows) or de_DE, de_DE@euro, de_DE.iso88591, de_DE.iso885915@euro, de_DE.utf8, en_US, en_US.iso88591, en_US.iso885915, en_US.utf8 (for Linux).
+languageLocaleSixthLang =
+
+
+# cat=bootstrap-language/textdirection/a; type=options[ltr,rtl]; label=Text direction (Lang 0):Sets text direction for whole document (useful for display of Arabic, Hebrew pages). Basically the value becomes the attribute value of "dir" for the <html> tag. (ltr = Left-To-Right, rtl = Right-To-Left)
+htmlTagDirStandardLang = ltr
+# cat=bootstrap-language/textdirection/b; type=options[ltr,rtl]; label=Text direction (Lang 1):Sets text direction for whole document (useful for display of Arabic, Hebrew pages). Basically the value becomes the attribute value of "dir" for the <html> tag. (ltr = Left-To-Right, rtl = Right-To-Left)
+htmlTagDirFirstLang = ltr
+# cat=bootstrap-language/textdirection/c; type=options[ltr,rtl]; label=Text direction (Lang 2):Sets text direction for whole document (useful for display of Arabic, Hebrew pages). Basically the value becomes the attribute value of "dir" for the <html> tag. (ltr = Left-To-Right, rtl = Right-To-Left)
+htmlTagDirSecondLang = ltr
+# cat=bootstrap-language/textdirection/d; type=options[ltr,rtl]; label=Text direction (Lang 3):Sets text direction for whole document (useful for display of Arabic, Hebrew pages). Basically the value becomes the attribute value of "dir" for the <html> tag. (ltr = Left-To-Right, rtl = Right-To-Left)
+htmlTagDirThirdLang = ltr
+# cat=bootstrap-language/textdirection/e; type=options[ltr,rtl]; label=Text direction (Lang 4):Sets text direction for whole document (useful for display of Arabic, Hebrew pages). Basically the value becomes the attribute value of "dir" for the <html> tag. (ltr = Left-To-Right, rtl = Right-To-Left)
+htmlTagDirFourthLang = ltr
+# cat=bootstrap-language/textdirection/f; type=options[ltr,rtl]; label=Text direction (Lang 5):Sets text direction for whole document (useful for display of Arabic, Hebrew pages). Basically the value becomes the attribute value of "dir" for the <html> tag. (ltr = Left-To-Right, rtl = Right-To-Left)
+htmlTagDirFifthLang = ltr
+# cat=bootstrap-language/textdirection/g; type=options[ltr,rtl]; label=Text direction (Lang 6):Sets text direction for whole document (useful for display of Arabic, Hebrew pages). Basically the value becomes the attribute value of "dir" for the <html> tag. (ltr = Left-To-Right, rtl = Right-To-Left)
+htmlTagDirSixthLang = ltr
+
+
+# cat=bootstrap-language/language/x1; type=text; label=Locale-Setting (Lang 0):of the standard language. de_DE, en_US, ...
+htmlTagLangKeyStandardLang = de
+# cat=bootstrap-language/language/x2; type=text; label=Locale-Setting (Lang 1):of the first foreign language. de_DE, en_US, ...
+htmlTagLangKeyFirstLang = en
+# cat=bootstrap-language/language/x3; type=text; label=Locale-Setting (Lang 2):of the second foreign language. de_DE, en_US, ...
+htmlTagLangKeySecondLang =
+# cat=bootstrap-language/language/x4; type=text; label=Locale-Setting (Lang 3):of the second foreign language. de_DE, en_US, ...
+htmlTagLangKeyThirdLang =
+# cat=bootstrap-language/language/x5; type=text; label=Locale-Setting (Lang 4):of the second foreign language. de_DE, en_US, ...
+htmlTagLangKeyFourthLang =
+# cat=bootstrap-language/language/x6; type=text; label=Locale-Setting (Lang 5):of the second foreign language. de_DE, en_US, ...
+htmlTagLangKeyFifthLang =
+# cat=bootstrap-language/language/x7; type=text; label=Locale-Setting (Lang 6):of the second foreign language. de_DE, en_US, ...
+htmlTagLangKeySixthLang =
+
+
+
+######################### other urls ################################
+
+# cat=bootstrap-urls/other/a; type=options[No=0,Yes=1]; label=Use simulateStaticDocuments?:If you are NOT using realURL, you can use simulateStaticDocuments instead. You CANNOT use this in conjunction with realURL. If enabled, the next 3 option are important for simulateStaticDocuments and must be either left at its default values or set to values that fit your needs. No extension is required, everything is included in TYPO3 already. IMPORTANT: Apache-module mod_rewrite must be installed on your webserver and you need a file named .htaccess in the root of your webserver.
+simStatDocOn = 0
+# cat=bootstrap-urls/other/b; type=int+; label=Add pagetitle:If not zero, TYPO3 generates urls with the title in, limited to the first x number of chars. If set to zero (0) this feature is turned off.
+simStatDocAddTitle = 40
+# cat=bootstrap-urls/other/c; type=options[base64,md5]; label=Encode additional parameters:Allows you to also encode additional parameters into the simulated filename. If you don't understand this, just leave the default setting.
+simStatDocPenc = md5
+# cat=bootstrap-urls/other/d; type=text; label=List of variables:A list of variables that may be a part of the md5/base64 encoded part of a simulate_static_document virtual filename.
+simStatDocPencOnlyP = cHash, tx_ttnews[backPid], tx_ttnews[tt_news], tx_ttnews[pS], tx_ttnews[pL], tx_ttnews[arc], tx_ttnews[cat], tx_ttnews[pointer], tx_ttnews[swords]
+# cat=bootstrap-urls/other/e; type=options[No=0,Yes=1]; label=Use realurl?:Enable this feature only, if you have installed the TYPO3 extension realurl. IMPORTANT: You have to configure realurl by means of its documentation. Read it! If you enable this feature, simulateStaticDocuments is switched off automatically, no matter what you set there. The option tx_realurl_enable = 1, which is required by realurl, is set automatically, if this feature is enabled. Do not forget to set Base URL also.
+realUrlOn = 1
+# cat=bootstrap-urls/other/f; type=options[No=0,Yes=1]; label=Use cooluri?:Enable this feature only, if you have installed the TYPO3 extension cooluri. IMPORTANT: You have to configure cooluri by means of its documentation. Read it! If you enable this feature, simulateStaticDocuments is switched off automatically, no matter what you set there. The option tx_cooluri_enable = 1, which is required by cooluri, is set automatically, if this feature is enabled. Do not forget to set Base URL also.
+coolUriOn = 0
+# cat=bootstrap-urls/other/g; type=text; label=Base URL:YOU MUST CHANGE this default-setting to YOUR domain. NO http:// and NO trailing slash!
+baseUrl = localhost/typo7lts
+# cat=bootstrap-urls/other/h; type=options[,all,cached,output]; label=Prefix local anchors:If realurl or cooluri is used and this feature is set to one of the keywords, the content will have all local anchors in links prefixed with the path of the script. Basically this means that <a href="#"> will be transformed to <a href="path/path/script?params#">. This procedure is necessary if Base URL is set. (all = the content is always processed before it may be stored in cache. cached = only if the page is put into the cache. output = only the output code just before it's echoed out.)
+userPrefixLocalAnchors =
+
+######################### other settings ################################
+
+# cat=bootstrap-expert-settings/other/a; type=options[No=0,Yes=1]; label=Enable Admin-Panel?:If set, the admin panel appears in the bottom of pages. NOTE: In addition the panel must be enabled for non-admin users as well, if you want this, using the TSconfig for the non-admin user! See adminguide documentation.
+userAdmPanelOn = 0
+# cat=bootstrap-expert-settings/other/a; type=options[No=0,Yes=1]; label=Enable Debug Information?:If set any debug-information in the TypoScript code is output. This applies e.g. to menu objects and the parsetime output.
+userDebugOn = 0
+# cat=bootstrap-expert-settings/other/b; type=options[No=0,Yes=1]; label=Enable indexing at all?:Enables cached pages to be indexed. Must be enabled to get indexed_search to work.
+userIndexingOn = 1
+# cat=bootstrap-expert-settings/other/c; type=options[No=0,Yes=1]; label=Index external documents?:If set, external media linked to on the pages is indexed as well. Certain software must to be installed on your webserver to use this feature. See indexed_serach documentation.
+userIndexExternalsOn = 0
+# cat=bootstrap-expert-settings/other/c; type=options[No=0,Yes=1]; label=Index metatags?:If set, all words contained in the metatags will be also be indexed. Should be turned on only in special circumstances.
+userIndexMetaTagsOn = 0
+
+# cat=bootstrap-expert-settings/other/f; type=options[No=0,Yes=1]; label=Prefix comments off?:This is for debugging your TypoScript Code. If switched On, HTML comments are added like <!-- Output of lib.header.20 [begin] --> and <!-- Output of lib.header.20 [end] --> to find the output of an element easier in HTML source. The COA-Elements must be prepared to do this. Turn off for production environments!
+userDisablePrefComm = 1
+
+# cat=bootstrap-expert-settings/development/g; type=options[No=0,Yes=1]; label=Live mode:In live mode CSS and JS scripts are combined and compressed.
+liveMode = 0
+
+
+######################### javascripts ################################
+
+# cat=bootstrap-basics/javascript/a; type=string; label=jQuery Core: Path to the jquery core file
+jquerycore = EXT:fluxtemplate/Resources/Public/JavaScript/jquery/jquery-2.1.4.min.js
+
+# cat=bootstrap-basics/javascript/b; type=string; label=jQuery Migrate: Path to the jquery migrate file
+jquerymigrate = EXT:fluxtemplate/Resources/Public/JavaScript/jquery/jquery-migrate.min.js
+
+
+# cat=bootstrap-basics/javascript/c; type=string; label=Bootstrap JavaScript file: Path to the bootstrap javascript file
+jsBootstrap = EXT:fluxtemplate/Resources/Public/JavaScript/bootstrap/bootstrap.min.js
+
+
+# cat=bootstrap-basics/javascript/d; type=string; label=Modernizr script
+jsModernizr = EXT:fluxtemplate/Resources/Public/JavaScript/Libraries/modernizr.min.js
+
+# cat=bootstrap-basics/javascript/e; type=string; label=jsHtml5shim
+jsHtml5shim = EXT:fluxtemplate/Resources/Public/JavaScript/html5shiv.min.js
+
+
+# cat=bootstrap-basics/javascript/f; type=string; label=jQuery UI Core: Path to the jquery UI core file
+jqueryui = EXT:fluxtemplate/Resources/Public/JavaScript/jquery/jquery-ui.min.js
+
+# cat=bootstrap-basics/javascript/g; type=string; label=Path to mobify script: If you don't want to use mobify, leave it empty
+jsMobify = EXT:fluxtemplate/Resources/Public/JavaScript/mobify.min.js
+
+# cat=bootstrap-basics/javascript/h; type=string; label=Respond.js: Path to the respond.js file
+respondjs = EXT:fluxtemplate/Resources/Public/JavaScript/Libraries/respond.min.js

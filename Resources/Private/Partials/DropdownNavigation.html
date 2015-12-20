@@ -1,0 +1,51 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Partial"/>
+
+	<f:section name="DropdownNavigation">
+
+
+		<v:page.menu entryLevel="{v:variable.typoscript(path: 'lib.menu.main.entryLevel')}" expandAll="FALSE" useShortcutUid="FALSE">
+			<f:if condition="{menu}">
+				<nav role="navigation" class="collapse navbar-collapse bs-js-navbar-collapse bs-navbar-collapse">
+					<ul class="nav navbar-nav ">
+						<f:for each="{menu}" as="menuPage" iteration="iteration">
+							<li class="{menuPage.class}">
+							
+								<a tabindex="{iteration.cycle -> v:math.sum(b: 100)}" href="{menuPage.link}" class="{menuPage.class}" {f:if(condition: menuPage.hasSubPages, then: 'data-toggle="dropdown" data-target="#"')} >
+									{f:if(condition: menuPage.nav_title, then: menuPage.nav_title, else: menuPage.title)}
+									
+									{f:if(condition: menuPage.hasSubPages, then: '<span class="caret"></span>')}
+								</a>
+								<!-- Sub menu -->
+
+								<v:page.menu pageUid="{menuPage.uid}" includeSpacers="false" expandAll="false">
+									<f:if condition="{menu}">
+										<ul class="dropdown-menu" role="menu">
+
+											<f:for each="{menu}" as="subMenuPage" iteration="subIteration">
+												<li class="{subMenuPage.class}">
+													<a tabindex="{subIteration.cycle -> v:math.sum(b: 130)}" href="{subMenuPage.link}" class="{subMenuPage.class}">
+														{f:if(condition: subMenuPage.nav_title, then: subMenuPage.nav_title, else: subMenuPage.title)}
+													</a>
+
+												</li>
+											</f:for>
+										</ul>
+									</f:if>
+								</v:page.menu>
+
+							</li>
+
+						</f:for>
+					</ul>
+				</nav>
+			</f:if>
+		</v:page.menu>
+
+
+
+	</f:section>
+</div>

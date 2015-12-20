@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+/**
+* Auxiliary file. So the RTE Editor can flawlessly parse the classes. Therefore, this does not reload the frontend.
+*/
+
+@import "bootstrap.css";
+
+
+/* Left, center, right and justify alignment of text in block elements*/
+p.align-left, td.align-left, th.align-left, h1.align-left, h2.align-left, h3.align-left, h4.align-left, h5.align-left, h6.align-left, div.align-left, address.align-left { text-align: left !important; }
+p.align-center, td.align-center, th.align-center, h1.align-center, h2.align-center, h3.align-center, h4.align-center, h5.align-center, h6.align-center, div.align-center, address.align-center { text-align: center !important; }
+p.align-right, td.align-right, th.align-right, h1.align-right, h2.align-right, h3.align-right, h4.align-right, h5.align-right, h6.align-right, div.align-right, address.align-right { text-align: right !important; }
+p.align-justify, td.align-justify, th.align-justify, h1.align-justify, h2.align-justify, h3.align-justify, h4.align-justify, h5.align-justify, h6.align-justify, div.align-justify, address.align-justify { text-align:justify !important; }
+
+
+/* Bullet styles for unordered lists.*/
+ul.component-items { }
+ul.action-items { }
+ul.checklist { }
+
+/* Numbering styles for ordered lists.*/
+ol.component-items-ordered {  }
+ol.action-items-ordered {  }
+
+/* span classes */
+span.important {  }
+span.name-of-person {  }
+span.detail {  }
+span.underline { }
+span.mono { }
+span.file { }
+span.directory { }
+span.oneclass {  }
+
+span.label {}
+span.label-default {}
+span.label-primary {}
+span.label-success {}
+span.label-info {}
+span.label-warning {}
+span.label-danger {}
+
+
+/* Link classes */
+a.external-link {  }
+a.external-link-new-window { }
+a.internal-link {}
+a.internal-link-new-window {}
+a.download {}
+a.mail { }
+a.more-link { }
+a.button-link { }
+
+
+/* table classes */
+table.table { }
+table.table-condensed { }
+table.table-bordered { }
+table.table-striped { }
+table.table-hover { }
+table.table-styled { }
+
+tr.rowheader { }
+
+/* paragraph classes */
+
+p.text-muted     { }
+p.text-primary   { }
+p.text-dimmed    { }
+p.text-warning   { }
+p.text-danger    { }
+p.text-success   { }
+p.text-info      { }
+
+p.bg-primary { }
+p.bg-success { }
+p.bg-info { }
+p.bg-warning { }
+p.bg-danger { }
+
+p.box { }
+
+p.style1 { }
+
+/* headline classes */
+h1.style1 { }
+h4.style1 { }
+
+/* formatter classes */
+pre.htmlCode {  }
+pre.phpCode {  }
+
+
+/* Default selector for indentation.*/
+div.indent { margin-left: 2em; }
+
+/* Avoid borders around images in the RTE */
+img {border:0;}

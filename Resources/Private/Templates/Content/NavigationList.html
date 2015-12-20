@@ -1,0 +1,110 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Content" />
+
+<f:section name="Configuration">
+	<flux:form id="navigationlist" options="{group: 'Bootstrap elements', icon: '../typo3conf/ext/fluxtemplate/Resources/Public/Icons/menu.png'}">
+		<flux:form.sheet name="display">
+			<flux:field.checkbox name="addWell" />
+			<flux:field.checkbox name="zeroPadding" />
+			<flux:field.input name="class" />
+		</flux:form.sheet>
+		<flux:form.sheet name="items">
+			<flux:form.section name="items">
+				<flux:form.object name="header">
+					<flux:field.input name="text" />
+					<flux:field.input name="class" />
+				</flux:form.object>
+				<flux:form.object name="item">
+					<flux:field.input name="text" />
+					<flux:field.input name="tooltip" />
+					<flux:field.input name="icon" eval="trim">
+						<flux:wizard.link activeTab="file" />
+					</flux:field.input>
+					<flux:field.input name="target">
+						<flux:wizard.link activeTab="page" />
+					</flux:field.input>
+					<flux:field.input name="class" />
+				</flux:form.object>
+				<flux:form.object name="divider">
+					<flux:field.input name="class" />
+				</flux:form.object>
+			</flux:form.section>
+		</flux:form.sheet>
+	</flux:form>
+</f:section>
+
+<f:section name="Preview">
+	<ul>
+		<f:for each="{items}" as="itemSectionObjects">
+			<f:for each="{itemSectionObjects}" as="object" key="objectType">
+				<li>
+					
+					<strong>{objectType}</strong><br/>
+					<f:if condition="{0: objectType} == {0: 'header'}">						
+						<b>Header Text: </b><em>{object.text}</em><br/>
+						<b>CSS Class: </b><em>{object.class}</em><br/>
+					</f:if>
+					<f:if condition="{0: objectType} == {0: 'item'}">						
+						<b>Link Text: </b><em>{object.text}</em><br/>
+						<b>Tooltip Text: </b><em>{object.tooltip}</em><br/>
+						<b>Icon: </b><f:image src="{object.icon}" width="150" height="100" treatIdAsReference="1" />
+					</f:if>
+					<f:if condition="{0: objectType} == {0: 'divider'}">						
+						<b>CSS Class: </b><em>{object.class}</em><br/>						
+					</f:if>
+					
+				</li>
+			</f:for>
+		</f:for>
+	</ul>
+</f:section>
+
+<f:section name="Main">
+	<div class="{class} {f:if(condition: addWell, then: 'well')}" style="{f:if(condition: zeroPadding, then: 'padding: 8px 0px 8px 0px;')}">
+		<ul class="nav nav-list">
+			<f:for each="{items}" as="itemSectionObjects">
+				<v:variable.set name="icon" value="" />
+				<f:for each="{itemSectionObjects}" as="object" key="objectType">
+									
+					<v:switch value="{objectType}">
+						<v:case case="header" break="TRUE">
+							<f:if condition="{object.text}">
+								<f:then>
+									<li class="nav-header {object.class}"><f:format.raw>{icon}{object.text}</f:format.raw></li>
+								</f:then>
+							</f:if>
+						</v:case>
+						<v:case case="divider" break="TRUE">							
+							<f:if condition="{object.class}">
+								<f:then>
+									<li class="divider {object.class}"></li>
+								</f:then>
+							</f:if>
+						</v:case>
+						<v:case case="item">
+							
+							<v:variable.set name="icon" value="{f:image(src: '{object.icon}', treatIdAsReference: 1 )}" />
+							
+							<li class="item {f:if(condition: '{record.pid} == {object.target}', then: 'active')}">
+								<f:if condition="{object.target -> v:math.round()} > 0">
+									<f:then>
+										<f:link.page pageUid="{object.target}" class="{object.class}" rel="{f:if(condition: object.tooltip, then: 'tooltip')}" title="{object.tooltip}"><f:format.raw>{icon}{object.text}</f:format.raw></f:link.page>
+									</f:then>
+									<f:else>
+										<a href="{object.target}" class="{object.class}" rel="{f:if(condition: object.tooltip, then: 'tooltip')}" title="{object.tooltip}"><f:format.raw>{icon}{object.text}</f:format.raw></a>
+									</f:else>
+								</f:if>
+							</li>
+						</v:case>
+					</v:switch>
+					
+				</f:for>
+			</f:for>
+		</ul>
+	</div>
+</f:section>
+
+</div>

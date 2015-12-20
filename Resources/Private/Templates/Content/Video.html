@@ -1,0 +1,60 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Content" />
+
+<f:section name="Configuration">
+	<flux:form id="video" options="{group: 'Bootstrap elements', icon: '../typo3conf/ext/fluxtemplate/Resources/Public/Icons/video.png'}">
+		
+		<flux:field.input name="id" default="{v:random.string(length: 8)}" />
+		
+		<flux:field.file name="video.poster" allowed="jpg,jpeg,gif"/>
+		
+		<flux:field.file name="video.mp4" allowed="mp4"/>
+		<flux:field.file name="video.webm" allowed="webm"/>
+		<flux:field.file name="video.ogv" allowed="ogv"/>
+		
+		<flux:field.select name="ratio" items="{16by9: '16 zu 9', 4by3: '4 zu 3'}" default="4by3" />
+	</flux:form>
+</f:section>
+
+<f:section name="Preview">
+	<p><b>Video</b><br/>
+	<f:if condition="{video.mp4}">
+	{video.mp4}<br/>
+	</f:if>
+	<f:if condition="{video.webm}">
+	{video.webm}<br/>
+	</f:if>
+	<f:if condition="{video.ogv}">
+	{video.ogv}<br/>
+	</f:if>
+	</p>
+</f:section>
+
+<f:section name="Main">
+	
+	<div class="embed-responsive embed-responsive-{ratio}">
+		<video id="video-{id}" class="video-js vjs-default-skin vjs-big-play-centered embed-responsive-item"
+			controls preload="auto" height="100%" width="100%" data-setup='{"controls":true}'
+			<f:if condition="{video.poster}">
+			poster="{video.poster}"
+			</f:if>
+			data-setup='{}'>
+			<f:if condition="{video.mp4}">
+			<source src="{video.mp4}" type='video/mp4' />
+			</f:if>
+			<f:if condition="{video.webm}">
+			<source src="{video.webm}" type='video/webm' />
+			</f:if>
+			<f:if condition="{video.ogv}">
+			<source src="{video.ogv}" type='video/ogg' />
+			</f:if>
+			<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+		</video>
+	</div>
+
+	
+</f:section>
+</div>

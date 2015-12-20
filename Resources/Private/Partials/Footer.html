@@ -1,0 +1,48 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Partial"/>
+
+	<f:section name="Footer">
+
+
+		<div class="footer-section">
+			<div class="container">
+
+
+				<div class="row hidden-xs">
+		
+					<div class="col-sm-12">
+		
+		
+						<v:content.render column="0" pageUid="{v:variable.typoscript(path: 'contentFooterUid')}" as="contentElements">
+							<f:for each="{contentElements}" as="contentElement">
+								<f:format.raw>{contentElement}</f:format.raw>
+							</f:for>
+						</v:content.render>
+		
+					</div>
+		
+				</div>
+		
+		
+				<div class="row">
+		
+					<div class="col-sm-8">
+						<f:cObject typoscriptObjectPath="lib.copyright" />
+					</div>
+		
+					<div class="col-sm-4">
+						<v:page.menu class="footer-links list-inline pull-right" pageUid="{v:variable.typoscript(path: 'lib.menu.footer.pageUid')}"></v:page.menu>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</f:section>
+
+
+
+</div>

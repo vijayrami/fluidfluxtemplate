@@ -1,0 +1,38 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Content" />
+
+<f:section name="Configuration">
+	<flux:form id="youtubevideo" options="{group: 'Bootstrap elements', icon: '../typo3conf/ext/fluxtemplate/Resources/Public/Icons/social-youtube.png'}">		
+		
+			<flux:field.input name="videoid" required="1" />
+			<flux:field.select name="service" size="1" maxItems="1" items="{ 0: 'YouTube', 1: 'Vimeo'}" />
+			<flux:field.select name="ratio" items="{16by9: '16 zu 9', 4by3: '4 zu 3'}" default="4by3" />
+		
+	</flux:form>
+</f:section>
+
+<f:section name="Preview">
+	<f:if condition="{service}==0"><iframe width="300px" height="200px" src="http://www.youtube.com/embed/{videoid}"></iframe ></f:if>
+	<f:if condition="{service}==1"><iframe width="300px" height="200px" src="http://player.vimeo.com/video/{videoid}"></iframe ></f:if>
+</f:section>
+
+<f:section name="Main">
+	<f:if condition="{service}==0">
+			<article class="youtube video">
+				<div class="embed-responsive embed-responsive-{ratio}">
+			  		<iframe class="embed-responsive-item" width="100%" height="100%" src="http://www.youtube.com/embed/{videoid}"></iframe >
+			  	</div>
+			</article>
+	</f:if>
+	<f:if condition="{service}==1">
+			<article class="vimeo video">
+				<div class="embed-responsive embed-responsive-{ratio}">
+				  <iframe class="embed-responsive-item" width="100%" height="100%" src="http://player.vimeo.com/video/{videoid}"></iframe >
+				 </div>
+			</article>
+	</f:if>	
+</f:section>
+</div>

@@ -1,0 +1,46 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+
+<f:layout name="Page" />
+	<f:section name="Configuration">
+
+		<flux:form id="onecolumn" label="1 Spalte">
+		
+
+			<!-- Grid displayed in the page module -->
+			<flux:grid>
+				<flux:grid.row>
+					<flux:grid.column colPos="5" name="Hero"/>
+				</flux:grid.row>
+				<flux:grid.row>
+					<flux:grid.column colPos="0" name="Hauptinhalt"/>
+				</flux:grid.row>
+			</flux:grid>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Resources">
+		<f:render partial="Assets" section="Assets"/>
+	</f:section>
+	
+	<f:section name="HeaderContent">
+		<f:render partial="Hero" section="Hero"/>
+	</f:section>
+
+
+	<f:section name="Content">
+	
+		<div class="main">
+			<div class="container">
+				<v:content.render column="0"/>
+				<f:if condition="{v:variable.typoscript(path: 'lib.addthis.display')}">
+                    <f:render section="AddThis" partial="AddThis" optional="true" arguments="{_all}"/>
+                </f:if>
+			</div>
+		</div>
+        
+	</f:section>
+
+</div>

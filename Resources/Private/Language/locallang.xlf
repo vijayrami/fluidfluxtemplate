@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-10-24T16:57:23Z" product-name="fluxtemplate">
+		<header/>
+		<body>
+		  <trans-unit id="flux.fluidcontent">
+                <source>Fluid content element example</source>
+            </trans-unit>
+            <trans-unit id="flux.fluidcontent.description">
+                <source>Description can be entered in LLL file locallang.xml of fluxtemplate mysite</source>
+            </trans-unit>
+            <trans-unit id="flux.fluidpage">
+                <source>Standard fluid page</source>
+            </trans-unit>
+            <trans-unit id="flux.fluidpage.description">
+                <source>Description can be entered in LLL file locallang.xlf of fluxtemplate mysite</source>
+            </trans-unit>   
+            <trans-unit id="justifyfull">
+                <source>justify</source>
+            </trans-unit>
+            <trans-unit id="justifyleft">
+                <source>left</source>
+            </trans-unit>
+            <trans-unit id="justifycenter">
+                <source>center</source>
+            </trans-unit>
+            <trans-unit id="justifyright">
+                <source>right</source>
+            </trans-unit>
+            
+            <trans-unit id="more_link_titleText">
+                <source>more-link</source>
+            </trans-unit>
+            <trans-unit id="more_link_altText">
+                <source>more-link</source>
+            </trans-unit>
+            <trans-unit id="next_link_titleText">
+                <source>next-link</source>
+            </trans-unit>
+            <trans-unit id="next_link_altText">
+                <source>next-link</source>
+            </trans-unit>   
+            <trans-unit id="back_link_titleText">
+                <source>back-link</source>
+            </trans-unit>
+            <trans-unit id="back_link_altText">
+                <source>back-link</source>
+            </trans-unit>
+            <trans-unit id="search">
+                <source>Suchen</source>
+            </trans-unit>
+            
+            <!-- Carousel -->
+            <trans-unit id="flux.carousel">
+                <source>Bootstrap Carousel</source>
+            </trans-unit>   
+            <trans-unit id="flux.carousel.description">
+                <source>Content elements, images or simple texts (each type supporting captions) in a carousel matrix with JS based slide change.</source>
+            </trans-unit>   
+            
+            <trans-unit id="flux.carousel.fields.settings.carousel.id">
+                <source>DOM element ID (override not necessary but possible)</source>
+            </trans-unit>   
+            <trans-unit id="flux.carousel.fields.settings.carousel.innerStyles">
+                <source>Optional CSS rule for the slider area body</source>
+            </trans-unit>                   
+            <trans-unit id="flux.carousel.fields.settings.carousel.quickselect">
+                <source>Display circle icons for direct selection of slides, default top right corner</source>
+            </trans-unit>   
+            <trans-unit id="flux.carousel.fields.settings.carousel.interval">
+                <source>Interval between image changes, in miliseconds (default: 5000)</source>
+            </trans-unit>   
+            
+            <trans-unit id="flux.carousel.objects.content">
+                <source>Content</source>
+            </trans-unit>
+            <trans-unit id="flux.carousel.objects.content.id">
+                <source>Content Area ID</source>
+            </trans-unit>
+            <trans-unit id="flux.carousel.objects.image">
+                <source>Image</source>
+            </trans-unit>
+            <trans-unit id="flux.carousel.objects.image.file">
+                <source>Image file</source>
+            </trans-unit>   
+            <trans-unit id="flux.carousel.fields.settings.carousel.labelNext"><source>Label: next (clear to remove link)</source></trans-unit>
+            <trans-unit id="flux.carousel.fields.settings.carousel.labelPrev"><source>Label: previous (clear to remove link)</source></trans-unit>
+            <trans-unit id="flux.carousel.fields.settings.carousel.navigationStyles"><source>Optional CSS rule for the navigation dots</source></trans-unit>
+            
+            <trans-unit id="flux.carousel.fields.settings.carousel.quickselectDotStyles"><source>Optional CSS rule for the quick slide selector dots</source></trans-unit>
+            <trans-unit id="flux.carousel.fields.settings.carousel.quickselectStyles"><source>Optional CSS rule for the quick slide selector dots container</source></trans-unit>
+            <trans-unit id="flux.carousel.fields.settings.carousel.width"><source>Image width, supports TS IMAGE widths, fx 250c to set width 250 with cropping</source></trans-unit>
+            <trans-unit id="flux.carousel.fields.void" />
+            <trans-unit id="flux.carousel.objects.text"><source>Text</source></trans-unit>
+            <trans-unit id="flux.carousel.objects.text.size"><source>Header size</source></trans-unit>
+            <trans-unit id="flux.carousel.objects.text.text"><source>Text</source></trans-unit>
+            <trans-unit id="flux.carousel.objects.text.title"><source>Header</source></trans-unit>
+            <trans-unit id="flux.carousel.sections.elements"><source>Elements</source></trans-unit>
+            <trans-unit id="flux.carousel.sheets.elements"><source>Elements</source></trans-unit>
+            <trans-unit id="flux.carousel.sheets.styles"><source>Styles</source></trans-unit>
+            <!-- Fluid Row -->
+            <trans-unit id="flux.row"><source>Column Row</source></trans-unit>
+            <trans-unit id="flux.row.description"><source>Adds a wrapper element that lets you define columns of varying widths</source></trans-unit>
+            <trans-unit id="flux.row.fields.basic"><source>Basic (non-responsive) row, uses CSS class 'row' instead of 'row-fluid'</source></trans-unit>
+            <trans-unit id="flux.row.fields.backgroundColor"><source>Choose Background Color</source></trans-unit>
+            <trans-unit id="flux.row.objects.column"><source>Column</source></trans-unit>
+            <trans-unit id="flux.row.objects.column.addWell"><source>Add 'Well' inside cell</source></trans-unit>
+            <trans-unit id="flux.row.objects.column.additionalClass"><source>Additional CSS class names</source></trans-unit>
+            <trans-unit id="flux.row.objects.column.class"><source>Class</source></trans-unit>
+            <trans-unit id="flux.row.sections.columns"><source>Columns</source></trans-unit>
+            <trans-unit id="flux.row.objects.column.class-xs"><source>Extra small devices</source></trans-unit>
+            <trans-unit id="flux.row.objects.column.class-sm"><source>Small devices</source></trans-unit>
+            <trans-unit id="flux.row.objects.column.class-md"><source>Medium devices</source></trans-unit>
+            <trans-unit id="flux.row.objects.column.class-lg"><source>Large devices</source></trans-unit>
+            <trans-unit id="flux.row.columns.column"><source></source>Column</trans-unit>
+            <!-- Gallery -->
+            <trans-unit id="flux.gallery"><source>Gallery Images</source></trans-unit>
+            <trans-unit id="flux.gallery.description"><source>Display Gallery Images</source></trans-unit>
+            <trans-unit id="flux.gallery.fields.settings.images"><source>Upload Images</source></trans-unit>
+            <!-- Page Content -->
+            <trans-unit id="flux.pagecontent"><source>Content of another page</source></trans-unit>
+            <trans-unit id="flux.pagecontent.description"><source>View content of another page</source></trans-unit>
+            <!--Video-->
+            <trans-unit id="flux.video"><source>Video</source></trans-unit>
+            <trans-unit id="flux.video.description"><source>Displays a responsive video with Video JS</source></trans-unit>         
+            <trans-unit id="flux.video.fields.video.poster"><source>Preview image</source></trans-unit>
+            <trans-unit id="flux.video.fields.video.mp4"><source>MP4 video file</source></trans-unit>
+            <trans-unit id="flux.video.fields.video.webm"><source>WEBM video file</source></trans-unit>
+            <trans-unit id="flux.video.fields.video.ogv"><source>OGV video file</source></trans-unit>
+            <trans-unit id="flux.video.fields.ratio"><source>Select Aspect ratio</source></trans-unit>
+            <trans-unit id="flux.video.fields.id"><source>Video ID</source></trans-unit>
+            <!--YouTube Video-->
+            <trans-unit id="flux.youtubevideo"><source>You Tube Video</source></trans-unit>
+            <trans-unit id="flux.youtubevideo.description"><source>Displays a YouTube Or Vimeo video</source></trans-unit>
+            <trans-unit id="flux.youtubevideo.fields.videoid"><source>Insert Video ID</source></trans-unit>
+            <trans-unit id="flux.youtubevideo.fields.service"><source>Select Video Services</source></trans-unit>
+            <trans-unit id="flux.youtubevideo.fields.ratio"><source>Select Aspect ratio</source></trans-unit>
+            <!--Modal Light-->
+            <trans-unit id="flux.modalLight"><source>Bootstrap Modal</source></trans-unit>
+            <trans-unit id="flux.modalLight.description"><source>Add Bootstrap-Modal Window With Content</source></trans-unit>          
+            <trans-unit id="flux.modalLight.sheets.openbutton"><source>General</source></trans-unit>
+            <trans-unit id="flux.modalLight.sheets.advanced"><source>CSS-Settings</source></trans-unit>         
+            <trans-unit id="flux.modalLight.fields.settings.buttonText"><source>Button text</source></trans-unit>
+            <trans-unit id="flux.modalLight.fields.settings.buttonclass"><source>Select CSS Class For Button</source></trans-unit>
+            <trans-unit id="flux.modalLight.fields.settings.title"><source>Modal Window Title</source></trans-unit>
+            <trans-unit id="flux.modalLight.fields.settings.additionalClassesButton"><source>Additional Class for Button</source></trans-unit>
+            <trans-unit id="flux.modalLight.fields.settings.additionalClassesModal"><source>Additional Class for Modal</source></trans-unit>
+            <trans-unit id="flux.modalLight.fields.settings.modalsize"><source>Select Modal Window Size</source></trans-unit>
+            <trans-unit id="flux.modalLight.fields.settings.buttonsize"><source>Select Button Size</source></trans-unit>
+            <!--Bootstrap Accordion-->
+            <trans-unit id="flux.accordion"><source>Bootstrap Accordion with content elements</source></trans-unit>
+            <trans-unit id="flux.accordion.description"><source>Bootstrap Accordion element container</source></trans-unit>
+            <trans-unit id="flux.accordion.sheets.panels"><source>Panels</source></trans-unit>
+            <trans-unit id="flux.accordion.sections.panels"><source>Panels</source></trans-unit>
+            <trans-unit id="flux.accordion.objects.panel"><source>Panel</source></trans-unit>
+            <trans-unit id="flux.accordion.objects.panel.title"><source>Panel header/title</source></trans-unit>
+            <trans-unit id="flux.accordion.objects.panel.active"><source>Panel is active?</source></trans-unit>
+            <trans-unit id="flux.accordion.objects.panel.class"><source>CSS Class</source></trans-unit>
+            <!--Button Link-->
+            <trans-unit id="flux.buttonlink"><source>Button Link</source></trans-unit>
+            <trans-unit id="flux.buttonlink.description"><source>Default Bootstrap button-styled link to a page, file or custom URL.</source></trans-unit>
+            <trans-unit id="flux.buttonlink.fields.text"><source>Link text</source></trans-unit>
+            <trans-unit id="flux.buttonlink.fields.target"><source>Link target</source></trans-unit>
+            <trans-unit id="flux.buttonlink.fields.tooltip"><source>Display title as tooltip</source></trans-unit>
+            <trans-unit id="flux.buttonlink.fields.title"><source>Optional title, appears as tooltip if tooltip is enabled</source></trans-unit>
+            <trans-unit id="flux.buttonlink.fields.iconClass"><source>Optional icon class name, example 'envelope' or 'exclamation'</source></trans-unit>
+            <trans-unit id="flux.buttonlink.fields.iconPlacement"><source>Icon placement - left or right</source></trans-unit>
+            <trans-unit id="flux.buttonlink.fields.size"><source>LinkButton size</source></trans-unit>          
+            <trans-unit id="flux.buttonlink.fields.block"><source>Display button as block element (100% width)</source></trans-unit>
+            <trans-unit id="flux.buttonlink.fields.class"><source>LinkButton style type</source></trans-unit>
+            <trans-unit id="flux.buttonlink.fields.additionalClassNames"><source>Additional class names for LinkButton element</source></trans-unit>
+            <trans-unit id="flux.buttonlink.fields.wrapTag"><source>Wrap with tag</source></trans-unit> 
+            <!--Popover Buttons-->  
+            <trans-unit id="flux.popoverbutton"><source>Popover Button</source></trans-unit>
+            <trans-unit id="flux.popoverbutton.description"><source>Default Bootstrap Popover button-styled to display Content in tooltip Style.</source></trans-unit>  
+            <trans-unit id="flux.popoverbutton.objects.popover.text"><source>Popover text</source></trans-unit>
+            <trans-unit id="flux.popoverbutton.objects.popover.popoverPlacement"><source>Popover placement - left,right,top or Bottom ?</source></trans-unit>
+            <trans-unit id="flux.popoverbutton.objects.popover.size"><source>Popover Button size</source></trans-unit>  
+            <trans-unit id="flux.popoverbutton.objects.popover.class"><source>Popover Button style type</source></trans-unit>
+            <trans-unit id="flux.popoverbutton.objects.popover.additionalClassNames"><source>Additional class names for Popover Button element</source></trans-unit>        
+            <trans-unit id="flux.popoverbutton.objects.popover.wrapTag"><source>Wrap with tag</source></trans-unit> 
+            <trans-unit id="flux.popoverbutton.objects.popover.title"><source>Popover Title</source></trans-unit>
+            <trans-unit id="flux.popoverbutton.objects.popover.content"><source>Popover Content</source></trans-unit>
+            <trans-unit id="flux.popoverbutton.objects.popover"><source>Add New Popover</source></trans-unit>
+            <trans-unit id="flux.popoverbutton.sheets.popoveraddons"><source>Popover Options</source></trans-unit>
+            <trans-unit id="flux.popoverbutton.sections.popoveraddons"><source>Popover Options</source></trans-unit>
+            <!--ProgressBar-->  
+            <trans-unit id="flux.progressBar"><source>Progressbar</source></trans-unit>
+            <trans-unit id="flux.progressBar.description"><source>Insert Progressbar</source></trans-unit>
+            <trans-unit id="flux.progressBar.sheets.progressBar"><source>General</source></trans-unit>
+            <trans-unit id="flux.progressBar.fields.settings.progressBarAnimated"><source>Animated?</source></trans-unit>
+            <trans-unit id="flux.progressBar.fields.settings.progressBarStriped"><source>Striped?</source></trans-unit>
+            <trans-unit id="flux.progressBar.fields.settings.progressBarColor"><source>Color?</source></trans-unit>
+            <trans-unit id="flux.progressBar.fields.settings.progressBarProgress"><source>Progress in %</source></trans-unit>
+            <trans-unit id="flux.progressBar.fields.settings.progressBarShowText"><source>Show % in Bar</source></trans-unit>
+            <!-- GoogleMap -->
+            <trans-unit id="flux.googlemap"><source>Google Map</source></trans-unit>
+            <trans-unit id="flux.googlemap.description"><source>Adding a Google Map to your website</source></trans-unit>
+            <trans-unit id="flux.googlemap.sheets.goolemapconfiguration"><source>Configuration</source></trans-unit>
+            <trans-unit id="flux.googlemap.sheets.display"><source>Display Properties</source></trans-unit>         
+            <trans-unit id="flux.googlemap.fields.settings.googlemap.id"><source>ID</source></trans-unit>
+            <trans-unit id="flux.googlemap.fields.settings.googlemap.latitude"><source>Latitude</source></trans-unit>
+            <trans-unit id="flux.googlemap.fields.settings.googlemap.longitude"><source>Longitude</source></trans-unit>
+            <trans-unit id="flux.googlemap.fields.settings.googlemap.zoom"><source>Zoom Stufe</source></trans-unit>
+            <trans-unit id="flux.googlemap.fields.settings.googlemap.maptypeid"><source>Map Type</source></trans-unit>
+            <trans-unit id="flux.googlemap.fields.settings.googlemap.infowindow"><source>Description of map and position Dsiplayed When you open info window.</source></trans-unit>
+            <trans-unit id="flux.googlemap.fields.settings.googlemap.openinfowindow"><source>open description on startup.</source></trans-unit>
+            <trans-unit id="flux.googlemap.fields.settings.googlemap.linktitle"><source>map title on cursor hover</source></trans-unit>
+            <trans-unit id="flux.googlemap.fields.settings.googlemap.width"><source>map width, in pixel (only visible to the frontend view!)</source></trans-unit>
+            <trans-unit id="flux.googlemap.fields.settings.googlemap.height"><source>map height, in pixel (only visible to the frontend view!)</source></trans-unit>
+            <!-- Flexslider -->
+            <trans-unit id="flux.flexslider"><source>Flexslider</source></trans-unit>
+            <trans-unit id="flux.flexslider.description"><source>Content elements, images or simple texts (each type supporting captions) in a flexslider matrix with JS based slide change.</source></trans-unit>
+            <trans-unit id="flux.flexslider.sheets.elements"><source>Elements</source></trans-unit>
+            <trans-unit id="flux.flexslider.sheets.configuration"><source>Configuration</source></trans-unit>   
+            <trans-unit id="flux.flexslider.sheets.primarycontrols"><source>Primary controls</source></trans-unit>
+            <trans-unit id="flux.flexslider.sheets.specialproperties"><source>Special properties</source></trans-unit>
+            <trans-unit id="flux.flexslider.sections.elements"><source>Elements</source></trans-unit>
+            <trans-unit id="flux.flexslider.objects.video"><source>Video</source></trans-unit>
+            <trans-unit id="flux.flexslider.objects.video.provider"><source>Select a Video Channel</source></trans-unit>
+            <trans-unit id="flux.flexslider.objects.video.playerid"><source>Player ID (Don't Enter anything here.)</source></trans-unit>
+            <trans-unit id="flux.flexslider.objects.video.videoid"><source>Video ID</source></trans-unit>
+            <trans-unit id="flux.flexslider.objects.video.width"><source>Width of iframe</source></trans-unit>
+            <trans-unit id="flux.flexslider.objects.video.height"><source>Height of iframe</source></trans-unit>
+            <trans-unit id="flux.flexslider.objects.image"><source>Image</source></trans-unit>
+            <trans-unit id="flux.flexslider.objects.image.file"><source>Image file</source></trans-unit>
+            <trans-unit id="flux.flexslider.fields.settings.flexslider.id"><source>DOM element ID (override not necessary but possible)</source></trans-unit>
+            <trans-unit id="flux.flexslider.fields.settings.flexslider.width"><source>Image width, supports TS IMAGE widths, fx 250c to set width 250 with cropping</source></trans-unit>
+            <trans-unit id="flux.flexslider.fields.settings.flexslider.height"><source>Image height, supports TS IMAGE height, fx 250c to set width 250 with cropping</source></trans-unit>
+            <trans-unit id="flux.flexslider.fields.settings.flexslider.controlNav"><source>Control navigation on (Create navigation for paging control of each slide.)</source></trans-unit>
+            <trans-unit id="flux.flexslider.fields.settings.flexslider.directionNav"><source>Direction navigation on (Create previous/next arrow navigation.)</source></trans-unit>
+            <trans-unit id="flux.flexslider.fields.settings.flexslider.keyboard"><source>Allow slider navigating via keyboard left/right keys.</source></trans-unit>
+            <trans-unit id="flux.flexslider.fields.settings.flexslider.mousewheel"><source>Allows slider navigating via mousewheel.</source></trans-unit>
+            <trans-unit id="flux.flexslider.fields.settings.flexslider.pausePlay"><source>Create pause/play element to control slider slideshow.</source></trans-unit>
+            <trans-unit id="flux.flexslider.fields.settings.flexslider.pauseText"><source>Set the text for the "pause" item.</source></trans-unit>
+            <trans-unit id="flux.flexslider.fields.settings.flexslider.playText"><source>Set the text for the "play" item.</source></trans-unit>
+            <trans-unit id="flux.flexslider.fields.settings.flexslider.prevText"><source>Set the text for the "previous" item</source></trans-unit>
+            <trans-unit id="flux.flexslider.fields.settings.flexslider.nextText"><source>Set the text for the "next" item</source></trans-unit>
+            <trans-unit id="flux.flexslider.fields.settings.flexslider.animationLoop"><source>Animation loop (Gives the slider a seamless infinite loop.)</source></trans-unit>
+            <trans-unit id="flux.flexslider.fields.settings.flexslider.carousel"><source>Carousel</source></trans-unit>
+            <trans-unit id="flux.flexslider.fields.settings.flexslider.slideshow"><source>Setup a slideshow for the slider to animate automatically.</source></trans-unit>
+            <trans-unit id="flux.flexslider.fields.settings.flexslider.slideshowSpeed"><source>sets the amount of time between each slideshow interval, in milliseconds.</source></trans-unit>
+            <trans-unit id="flux.flexslider.fields.settings.flexslider.pauseOnAction"><source>Pause the slideshow when interacting with control elements.</source></trans-unit>
+            <trans-unit id="flux.flexslider.fields.settings.flexslider.pauseOnHover"><source>Pause the slideshow when hovering over slider, then resume when no longer hovering.</source></trans-unit>
+            <trans-unit id="flux.flexslider.fields.settings.flexslider.animation"><source>Animation</source></trans-unit>
+            <trans-unit id="flux.flexslider.fields.settings.flexslider.animationSpeed"><source>sets the duration in which animations will happen, in milliseconds.</source></trans-unit>
+            <trans-unit id="flux.flexslider.fields.settings.flexslider.controlsContainer"><source>controlsContainer jQuery Object/Selector</source></trans-unit>
+            <trans-unit id="flux.flexslider.fields.settings.flexslider.manualControls"><source>manualControls jQuery Object/Selector</source></trans-unit>
+            <trans-unit id="flux.flexslider.fields.settings.flexslider.sync"><source>Sync selector: Mirror the actions performed on this slider with another slider</source></trans-unit>
+            <trans-unit id="flux.flexslider.fields.settings.flexslider.asNavFor"><source>asNavFor selector</source></trans-unit>
+            <!-- Tabs/Pills -->
+            <trans-unit id="flux.tabs"><source>Tabs / Pills with content items</source></trans-unit>
+            <trans-unit id="flux.tabs.description"><source>Placed content in the tabs or Pills.</source></trans-unit>
+            <trans-unit id="flux.tabs.sheets.display"><source>Display</source></trans-unit>
+            <trans-unit id="flux.tabs.sheets.tabs"><source>Tabs</source></trans-unit>
+            <trans-unit id="flux.tabs.sections.tabs"><source>Tabs</source></trans-unit>
+            <trans-unit id="flux.tabs.objects.tab"><source>Tab</source></trans-unit>
+            <trans-unit id="flux.tabs.fields.mode"><source>Select Viewing Mode</source></trans-unit>
+            <trans-unit id="flux.tabs.fields.tabDirection"><source>Choose in which direction tab appears.</source></trans-unit>
+            <trans-unit id="flux.tabs.fields.stackable"><source>Make stackable tabs/pills.</source></trans-unit>
+            <trans-unit id="flux.tabs.fields.justified"><source>Make navigation tabs/pills equal widths of their parent at screens wider than 768px.</source></trans-unit>
+            <trans-unit id="flux.tabs.fields.position"><source>Tab positioning</source></trans-unit>
+            <trans-unit id="flux.tabs.objects.tab.title"><source>Tab Titel</source></trans-unit>
+            <trans-unit id="flux.tabs.objects.tab.class"><source>Additional CSS Class Name</source></trans-unit>
+            <trans-unit id="flux.tabs.objects.tab.active"><source>Active?</source></trans-unit>
+            <trans-unit id="flux.tabs.objects.tab.fade"><source>Enable fade effect?</source></trans-unit>
+            <!-- jQuery Tabs -->
+            <trans-unit id="flux.jquerytabs"><source>Tabs with content elements</source></trans-unit>
+            <trans-unit id="flux.jquerytabs.description"><source>Placed content in the tabs or Pills.</source></trans-unit>
+            <trans-unit id="flux.jquerytabs.sheets.tabs"><source>Tabs</source></trans-unit>
+            <trans-unit id="flux.jquerytabs.sections.tabs"><source>Tabs</source></trans-unit>
+            <trans-unit id="flux.jquerytabs.objects.tab"><source>Tab</source></trans-unit>
+            <trans-unit id="flux.jquerytabs.objects.tab.title"><source>Tab Titel</source></trans-unit>
+            <trans-unit id="flux.jquerytabs.objects.tab.class"><source>Additional CSS Class Name</source></trans-unit>
+            <trans-unit id="flux.jquerytabs.objects.tab.active"><source>Active?</source></trans-unit>
+            <!-- Navigation Lists -->
+            <trans-unit id="flux.navigationlist"><source>Navigation List</source></trans-unit>
+            <trans-unit id="flux.navigationlist.description"><source>Configurable navigation list of links to various resources.</source></trans-unit>
+            <trans-unit id="flux.navigationlist.sheets.display"><source>Display</source></trans-unit>
+            <trans-unit id="flux.navigationlist.fields.addWell"><source>Add well wrapper</source></trans-unit>
+            <trans-unit id="flux.navigationlist.fields.zeroPadding"><source>Do not pad the wrapper</source></trans-unit>
+            <trans-unit id="flux.navigationlist.fields.class"><source>Additional class names for wrapper element</source></trans-unit>
+            <trans-unit id="flux.navigationlist.sheets.items"><source>Items</source></trans-unit>
+            <trans-unit id="flux.navigationlist.sections.items"><source>Items</source></trans-unit>
+            <trans-unit id="flux.navigationlist.objects.header"><source>List Header</source></trans-unit>
+            <trans-unit id="flux.navigationlist.objects.header.text"><source>Header text</source></trans-unit>
+            <trans-unit id="flux.navigationlist.objects.header.class"><source>Additional CSS class names</source></trans-unit>
+            <trans-unit id="flux.navigationlist.objects.item"><source>List Item</source></trans-unit>
+            <trans-unit id="flux.navigationlist.objects.item.text"><source>Item label text</source></trans-unit>
+            <trans-unit id="flux.navigationlist.objects.item.tooltip"><source>Optional tooltip text</source></trans-unit>
+            <trans-unit id="flux.navigationlist.objects.item.icon"><source>Optional icon (16x16)</source></trans-unit>
+            <trans-unit id="flux.navigationlist.objects.item.target"><source>Target</source></trans-unit>
+            <trans-unit id="flux.navigationlist.objects.item.class"><source>Additional CSS class names</source></trans-unit>
+            <trans-unit id="flux.navigationlist.objects.divider"><source>Divider</source></trans-unit>
+            <trans-unit id="flux.navigationlist.objects.divider.class"><source>Additional CSS class names</source></trans-unit>
+            <!-- Layer Slider -->
+            <trans-unit id="flux.layerslider"><source>LayerSlider</source></trans-unit>
+            <trans-unit id="flux.layerslider.description"><source>Most advanced Responsive jQuery Slider Plugin with the famous Parallax Effect and optional 3D Transitions!</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.id"><source>ID</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.responsive"><source>responsive: Making LayerSlider Responsive.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.responsiveUnder"><source>responsiveUnder: You can force the slider to change automatically into responsive mode but only if the slider width is smaller than responsiveUnder pixels.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.layersContainer"><source>layersContainer: Creates an invisible inner container with the given dimension in pixels to hold and center your layers.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.autoStart"><source>autoStart: If true, slideshow will automatically start after loading the page.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.pauseOnHover"><source>pauseOnHover: If ture, SlideShow will pause when you move the mouse pointer over the LayerSlider container.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.firstSlide"><source>firstSlide: LayerSlider will start with the specified slide.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.animateFirstSlide"><source>animateFirstSlide: Disabling this option will result a static starting slide for the fisrt time on page load.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.loops"><source>loops: Number of loops if autoStart set true (0 means infinite).</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.forceLoopNum"><source>forceLoopNum: If true, the slider will always stop at the given number of loops even if the user restarts the slideshow.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.towWaySlideshow"><source>towWaySlideshow: If true, slideshow will go backwards if you click the prev button.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.randomSlideshow"><source>randomSlideshow: If true, LayerSlider will change to a random layer instead of changing to the next / prev layer. Note that 'loops' feature won't work with randomSlideshow!</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.skin"><source>skin</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.skinsPath"><source>skinsPath</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.globalBGColor"><source>globalBGColor: Background color of LayerSlider. You can use all CSS methods, like hexa colors, rgb(r,g,b) method, color names, etc. Note, that background sublayers are covering the background.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.globalBGImage"><source>globalBGImage: Background image of LayerSlider. This will be a fixed background image of LayerSlider by default. Note, that background sublayers are covering the global background image.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.navPrevNext"><source>navPrevNext: If false, Prev and Next buttons will be invisible.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.navStartStop"><source>navStartStop: If false, Start and Stop buttons will be invisible.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.navButtons"><source>navButtons: If false, slide buttons will be invisible.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.hoverPrevNext"><source>hoverPrevNext: If true, the prev and next buttons will be shown only if you move your mouse over the slider.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.hoverBottomNav"><source>hoverBottomNav: If true, the bottom navigation controls (with also thumbnails) will be shown only if you move your mouse over the slider.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.keybNav"><source>keybNav: Keyboard navigation. You can navigate with the left and right arrow keys.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.touchNav"><source>touchNav: Touch-control (on mobile devices).</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.showBarTimer"><source>showBarTimer: You can show or hide the bar timer.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.showCircleTimer"><source>showCircleTimer: You can show or hide the circle timer.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.thumbnailNavigation"><source>thumbnailNavigation: Thumbnail navigation mode. Note, that 'hover' setting needs navButtons true!</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.tnContainerWidth"><source>tnContainerWidth: Default width of the thumbnail container.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.tnWidth"><source>tnWidth: Width of the thumbnails.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.tnHeight"><source>tnHeight: Height of the thumbnails.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.tnActiveOpacity"><source>tnActiveOpacity: Opacity of the active thumbnail.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.tnInactiveOpacity"><source>tnInactiveOpacity: Opacity of the Inactive thumbnail.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.autoPlayVideos"><source>autoPlayVideos: If true, slider will autoplay youtube / vimeo videos - you can use it with autoPauseSlideshow.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.autoPauseSlideshow"><source>autoPauseSlideshow: 'auto', true or false. 'auto' means, if autoPlayVideos is set to true, slideshow will stop UNTIL the video is playing and after that it continues. True means slideshow will stop and it won't continue after video is played.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.youtubePreview"><source>youtubePreview: Default thumbnail picture of YouTube videos.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.imgPreload"><source>imgPreload: Preloads all images and background-images of the next layer.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.lazyLoad"><source>lazyLoad: Loads images only when needed to save bandwidth and server resouces. Relies on the preload feature.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.yourLogo"><source>yourLogo: A fixed image layer can be shown above the slider that remains still during slide progression. Can be used to display logos or watermarks.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.yourLogoStyle"><source>yourLogoStyle: CSS properties to control the image placement and appearance.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.yourLogoLink"><source>yourLogoLink: Enter an URL to link the YourLogo image.</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.yourLogoTarget"><source>yourLogoTarget</source></trans-unit>
+            <trans-unit id="flux.layerslider.fields.settings.layerslider.style"><source>Style</source></trans-unit>
+            <trans-unit id="flux.layerslider.sheets.elements"><source>Elements</source></trans-unit>
+            <trans-unit id="flux.layerslider.sections.slides"><source>Slides</source></trans-unit>
+            <trans-unit id="flux.layerslider.objects.slide"><source>Slide</source></trans-unit>
+            <trans-unit id="flux.layerslider.objects.slide.title"><source>Slide Title</source></trans-unit>
+            <trans-unit id="flux.layerslider.objects.slide.layersliderdata"><source>Layerslider data</source></trans-unit>
+            <trans-unit id="flux.layerslider.objects.slide.background"><source>Background</source></trans-unit>
+            <trans-unit id="flux.layerslider.objects.slide.thumbnail"><source>Thumbnail</source></trans-unit>
+            <trans-unit id="flux.layerslider.sections.elements"><source>Elements</source></trans-unit>
+            <trans-unit id="flux.layerslider.objects.text"><source>Text</source></trans-unit>
+            <trans-unit id="flux.layerslider.objects.text.text"><source>Text</source></trans-unit>
+            <trans-unit id="flux.layerslider.objects.text.type"><source>Type</source></trans-unit>
+            <trans-unit id="flux.layerslider.objects.text.style"><source>CSS Styles</source></trans-unit>
+            <trans-unit id="flux.layerslider.objects.text.layersliderdata"><source>Layerslider data</source></trans-unit>
+            <trans-unit id="flux.layerslider.objects.text.class"><source>Class</source></trans-unit>
+            <trans-unit id="flux.layerslider.objects.image"><source>Image</source></trans-unit>
+            <trans-unit id="flux.layerslider.objects.image.file"><source>Image file</source></trans-unit>
+            <trans-unit id="flux.layerslider.objects.image.style"><source>CSS Styles</source></trans-unit>
+            <trans-unit id="flux.layerslider.objects.image.layersliderdata"><source>Layerslider data</source></trans-unit>
+            <trans-unit id="flux.layerslider.objects.image.class"><source>Class</source></trans-unit>
+            <!-- Split Button With DropDowns -->
+            <trans-unit id="flux.splitbuttonwithdropdown"><source>Split Button with DropDown</source></trans-unit>
+            <trans-unit id="flux.splitbuttonwithdropdown.description"><source>Create a Button with a splitted DropDown.</source></trans-unit>
+            <trans-unit id="flux.splitbuttonwithdropdown.sheets.ButtonSheetOne"><source>Button Configuration</source></trans-unit>
+            <trans-unit id="flux.splitbuttonwithdropdown.fields.settings.ButtonSize"><source>Button size</source></trans-unit>
+            <trans-unit id="flux.splitbuttonwithdropdown.fields.settings.ButtonCenter"><source>Button align center</source></trans-unit>
+            <trans-unit id="flux.splitbuttonwithdropdown.sheets.ButtonSheetTwo"><source>Buttons</source></trans-unit>
+            <trans-unit id="flux.splitbuttonwithdropdown.sections.ButtonSection"><source>Add Buttons</source></trans-unit>
+            <trans-unit id="flux.splitbuttonwithdropdown.objects.ButtonObject"><source>Add a Button</source></trans-unit>
+            <trans-unit id="flux.splitbuttonwithdropdown.objects.ButtonObject.ButtonText"><source>Button Content (title)</source></trans-unit>
+            <trans-unit id="flux.splitbuttonwithdropdown.objects.ButtonObject.ButtonTextLink"><source>Button Link</source></trans-unit>
+            <trans-unit id="flux.splitbuttonwithdropdown.objects.ButtonObject.ButtonOptions"><source>Button Options</source></trans-unit>
+            <trans-unit id="flux.splitbuttonwithdropdown.objects.ButtonObject.dropup"><source>Trigger dropdown menus above elements</source></trans-unit>
+            <trans-unit id="flux.splitbuttonwithdropdown.objects.ButtonObject.rightdropup"><source>DropDown align right</source></trans-unit>
+            <trans-unit id="flux.splitbuttonwithdropdown.sections.DropDownButtons"><source>DropDown Contents</source></trans-unit>
+            <trans-unit id="flux.splitbuttonwithdropdown.objects.DropDownLink"><source>DropDown Content</source></trans-unit>
+            <trans-unit id="flux.splitbuttonwithdropdown.objects.DropDownLink.DropDownContent"><source>Content</source></trans-unit>
+            <trans-unit id="flux.splitbuttonwithdropdown.objects.DropDownLink.target"><source>Link (Must be filled)</source></trans-unit>
+            <trans-unit id="flux.splitbuttonwithdropdown.objects.DropDownDivider"><source>DropDown Divider</source></trans-unit>
+            <trans-unit id="flux.splitbuttonwithdropdown.objects.DropDownDivider.divider"><source>Want to Add Divider ?</source></trans-unit>
+            <!-- Fraction Slider -->
+            <trans-unit id="flux.fractionslider"><source>Fraction Slider</source></trans-unit>
+            <trans-unit id="flux.fractionslider.description"><source>Awesome jQuery parallax slider plugin. Animate multiple element per slide with full control in every aspect of time and animation.</source></trans-unit>
+            <trans-unit id="flux.fractionslider.fields.slideTransition"><source>Default slide transition</source></trans-unit>
+            <trans-unit id="flux.fractionslider.fields.slideTransitionSpeed"><source>Default slide transition time</source></trans-unit>
+            <trans-unit id="flux.fractionslider.fields.slideEndAnimation"><source>If set true, objects will transition out before next slide moves in</source></trans-unit>
+            <trans-unit id="flux.fractionslider.fields.fullWidth"><source>Transition over the full width of the window</source></trans-unit>
+            <trans-unit id="flux.fractionslider.fields.delay"><source>Default delay for elements</source></trans-unit>
+            <trans-unit id="flux.fractionslider.fields.timeout"><source>Default timeout before switching slides</source></trans-unit>
+            <trans-unit id="flux.fractionslider.fields.speedIn"><source>Default in - transition speed</source></trans-unit>
+            <trans-unit id="flux.fractionslider.fields.speedOut"><source>Default out - transition speed</source></trans-unit>
+            <trans-unit id="flux.fractionslider.fields.easeIn"><source>Default easing in</source></trans-unit>
+            <trans-unit id="flux.fractionslider.fields.easeOut"><source>Default easing out</source></trans-unit>
+            <trans-unit id="flux.fractionslider.fields.controls"><source>Controls</source></trans-unit>
+            <trans-unit id="flux.fractionslider.fields.pager"><source>Pager inside of the slider</source></trans-unit>
+            <trans-unit id="flux.fractionslider.fields.autoChange"><source>Auto change slides</source></trans-unit>
+            <trans-unit id="flux.fractionslider.fields.pauseOnHover"><source>Pauses slider on hover (current step will still be completed)</source></trans-unit>
+            <trans-unit id="flux.fractionslider.fields.backgroundAnimation"><source>Background animation</source></trans-unit>
+            <trans-unit id="flux.fractionslider.fields.backgroundElement"><source>Background element to animate | default fractionSlider background element</source></trans-unit>
+            <trans-unit id="flux.fractionslider.fields.backgroundX"><source>Background animation x distance</source></trans-unit>
+            <trans-unit id="flux.fractionslider.fields.backgroundY"><source>Background animation y distance</source></trans-unit>
+            <trans-unit id="flux.fractionslider.fields.backgroundSpeed"><source>Default background animation speed</source></trans-unit>
+            <trans-unit id="flux.fractionslider.fields.backgroundEase"><source>Default background animation easing</source></trans-unit>
+            <trans-unit id="flux.fractionslider.fields.responsive"><source>Responsive slider</source></trans-unit>
+            <trans-unit id="flux.fractionslider.fields.increase"><source>If enabled, slider is allowed to get bigger than basic dimensions</source></trans-unit>
+            <trans-unit id="flux.fractionslider.fields.dimensionsWidth"><source>Default slider width</source></trans-unit>
+            <trans-unit id="flux.fractionslider.fields.dimensionsHeight"><source>Default slider height</source></trans-unit>
+            <trans-unit id="flux.fractionslider.sheets.slides"><source>Slides</source></trans-unit>
+            <trans-unit id="flux.fractionslider.sections.slides"><source>Add Slides</source></trans-unit>
+            <trans-unit id="flux.fractionslider.objects.slide"><source>Add a Slide</source></trans-unit>
+            <trans-unit id="flux.fractionslider.objects.slide.dataIn"><source>dataIn - Type of the in-animation</source></trans-unit>
+            <trans-unit id="flux.fractionslider.objects.slide.slideCssClasses"><source>Slide CSS classes</source></trans-unit>
+            <trans-unit id="flux.fractionslider.objects.slide.slideBackgroundImage"><source>Slide Background Image file</source></trans-unit>
+            <trans-unit id="flux.fractionslider.sections.elements"><source>Elements</source></trans-unit>
+            <trans-unit id="flux.fractionslider.objects.image"><source>Image</source></trans-unit>
+            <trans-unit id="flux.fractionslider.objects.image.file"><source>Image file</source></trans-unit>
+            
+            
+            <trans-unit id="flux.fractionslider.objects.header"><source>Header</source></trans-unit>
+            <trans-unit id="flux.fractionslider.objects.header.title"><source>Title</source></trans-unit>
+            <trans-unit id="flux.fractionslider.objects.header.size"><source>Header size</source></trans-unit>
+            
+            
+            <trans-unit id="flux.fractionslider.objects.text"><source>Text</source></trans-unit>
+            <trans-unit id="flux.fractionslider.objects.text.text"><source>Text</source></trans-unit>
+            
+            
+            <trans-unit id="flux.fractionslider.objects.button"><source>Button</source></trans-unit>
+            <trans-unit id="flux.fractionslider.objects.button.size"><source>Button size</source></trans-unit>
+            <trans-unit id="flux.fractionslider.objects.button.title"><source>Title</source></trans-unit>
+            <trans-unit id="flux.fractionslider.objects.button.target"><source>Link</source></trans-unit>
+            <trans-unit id="flux.fractionslider.objects.button.options"><source>Type</source></trans-unit>
+            
+            
+            
+            <trans-unit id="flux.fractionslider.objects.content"><source>Content</source></trans-unit>
+            <trans-unit id="flux.fractionslider.objects.content.id"><source>ID</source></trans-unit>
+            
+            <!-- Sequence Slider -->
+            <trans-unit id="flux.sequenceslider"><source>Sequence Slider</source></trans-unit>
+            <trans-unit id="flux.sequenceslider.description"><source>The Responsive Slider with Advanced CSS3 Transitions.</source></trans-unit>
+            <trans-unit id="content-sequence.sequence"><source>Sequence Config</source></trans-unit>
+            <trans-unit id="content-sequence.desc.seq-settings"><source>Sequence-Settings</source></trans-unit>
+            <trans-unit id="content-sequence.autoplay"><source>Autoplay On</source></trans-unit>
+            <trans-unit id="content-sequence.supersized"><source>Pagination synchronously with the Supersized</source></trans-unit>
+            <trans-unit id="content-sequence.innercontentwidth"><source>Sequence-Inner Content-Width</source></trans-unit>
+            <trans-unit id="content-sequence.arrows"><source>Display Next/Prev Arrows</source></trans-unit>
+            <trans-unit id="content-sequence.timeint"><source>Set Slide-Interval</source></trans-unit>
+            <trans-unit id="content-sequence.desc.pag-settings"><source>Pagination-Settings</source></trans-unit>
+            <trans-unit id="content-sequence.pagination"><source>Pagination of your Slider</source></trans-unit>
+            <trans-unit id="content-sequence.option.sliderstyles.0"><source>image left, text right</source></trans-unit>
+            <trans-unit id="content-sequence.option.sliderstyles.1"><source>text left, image right</source></trans-unit>
+            <trans-unit id="content-sequence.option.sliderstyles.2"><source>Pagination of your Slider</source></trans-unit>
+            
+            <trans-unit id="content-sequence.pagination.0"><source>Preview</source></trans-unit>
+            <trans-unit id="content-sequence.pagination.1"><source>Points</source></trans-unit>
+            <trans-unit id="content-sequence.pagination.2"><source>Numbers</source></trans-unit>
+            <trans-unit id="content-sequence.pagination.5"><source>Off</source></trans-unit>
+            
+            <trans-unit id="content-sequence.pagination.image.pos1"><source>top</source></trans-unit>
+            <trans-unit id="content-sequence.pagination.image.pos2"><source>bottom</source></trans-unit>
+            <trans-unit id="content-sequence.pagination.image.pos3"><source>left</source></trans-unit>
+            <trans-unit id="content-sequence.pagination.image.pos4"><source>right</source></trans-unit>
+            
+            <trans-unit id="flux.sequenceslider.sections.sequenceitems"><source>Add Slide-Elements</source></trans-unit>
+            <trans-unit id="flux.sequenceslider.objects.sequenceitem"><source>Add a new Slide-Element</source></trans-unit>
+            <trans-unit id="content-sequence.option.bgimage"><source>Select your Background-Image</source></trans-unit>
+            <trans-unit id="content-sequence.option.image01"><source>First Image</source></trans-unit>
+            <trans-unit id="content-sequence.option.image02"><source>Second Image</source></trans-unit>
+            <trans-unit id="content-sequence.option.image03"><source>Third Image</source></trans-unit>
+            
+            <trans-unit id="content-sequence.visibility"><source>Visibility-Options</source></trans-unit>
+            <trans-unit id="content-sequence.arrows.hidedesktop"><source>Hide Arrows in Desktop-Version</source></trans-unit>
+            <trans-unit id="content-sequence.arrows.hidenotebook"><source>Hide Arrows in Notebook-Version</source></trans-unit>
+            <trans-unit id="content-sequence.arrows.hidetablet"><source>Hide Arrows in Tablet-Version</source></trans-unit>
+            <trans-unit id="content-sequence.arrows.hidephone"><source>Hide Arrows in Smartphone-Version</source></trans-unit>
+            <trans-unit id="content-sequence.pagination.hidedesktop"><source>Hide Pagination in Desktop-Version</source></trans-unit>
+            <trans-unit id="content-sequence.pagination.hidenotebook"><source>Hide Pagination in Notebook-Version</source></trans-unit>
+            <trans-unit id="content-sequence.pagination.hidetablet"><source>Hide Pagination in Tablet-Version</source></trans-unit>
+            <trans-unit id="content-sequence.pagination.hidephone"><source>Hide Pagination in Smartphone-Version</source></trans-unit>
+            
+		</body>
+	</file>
+	<file source-language="default" datatype="plaintext" original="messages" date="2015-10-14T15:53:23Z" product-name="fluxtemplate">
+        <header/>
+        <body>
+            <trans-unit id="skip_navigation"><source>Skip navigation</source></trans-unit>
+
+            <trans-unit id="copyright"><source>t3Bootstrap template by</source></trans-unit>
+
+            <trans-unit id="search"><source>Search</source></trans-unit>
+
+            <!-- Link titles -->
+            <trans-unit id="more_link_titleText"><source>Read more</source></trans-unit>
+            <trans-unit id="more_link_altText"><source>Read more</source></trans-unit>
+            <trans-unit id="next_link_titleText"><source>Read more</source></trans-unit>
+            <trans-unit id="next_link_altText"><source>Read more</source></trans-unit>
+        </body>
+    </file>
+    <file source-language="de" datatype="plaintext" original="messages" date="2015-10-14T15:53:23Z" product-name="fluxtemplate">
+        <header/>
+        <body>
+            <trans-unit id="tt_content.cols"><source>Breite gemessen an Grid-Spaltenanzahl pro Bildspalte</source></trans-unit>
+                <trans-unit id="skip_navigation"><source>Zum Inhalt springen</source></trans-unit>
+
+                <trans-unit id="copyright"><source>t3Bootstrap Template von</source></trans-unit>
+
+                <trans-unit id="search"><source>Suchen</source></trans-unit>
+
+                <!-- Link titles -->
+                <trans-unit id="more_link_titleText"><source>Weiterlesen</source></trans-unit>
+                <trans-unit id="more_link_altText"><source>Weiterlesen</source></trans-unit>
+                <trans-unit id="next_link_titleText"><source>Weiterlesen</source></trans-unit>
+                <trans-unit id="next_link_altText"><source>Weiterlesen</source></trans-unit>
+
+                <!-- News ext -->
+                <trans-unit id="news.share"><source>Teilen</source></trans-unit>
+            
+                <trans-unit id="other"><source>Weitere</source></trans-unit>
+        </body>
+    </file>
+</xliff>

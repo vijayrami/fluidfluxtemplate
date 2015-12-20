@@ -1,0 +1,33 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+<f:layout name="Partial"/>
+
+	<f:section name="Hero">
+
+		<f:comment>
+		<f:if condition="{headerimage}">
+		<v:asset.style name="herostyle">
+			header .hero {
+				background-image: url({f:uri.image(src: '{headerimage}')});
+			}
+		</v:asset.style>
+		</f:if>
+		</f:comment>
+
+		<section class="hero">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<v:content.render column="5"/>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+	</f:section>
+
+</div>

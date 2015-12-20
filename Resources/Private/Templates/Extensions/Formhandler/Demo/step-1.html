@@ -1,0 +1,46 @@
+<!-- ###TEMPLATE_FORM1### -->
+###master_multipart-form-start_contact-form###
+  ###master_section-start###
+		###master_input_name###
+		###master_input_email###
+		###master_textarea_message###
+  ###master_section-end###
+  ###master_section-start###
+	###master_contact-type###
+
+	<div class="form-group">
+	###error_interests###
+
+		<label class="control-label col-lg-2 col-md-3">###LLL:interests###</label>
+		<div class="col-lg-10 col-md-9">
+			<div class="checkbox">
+				<label><input type="checkbox" id="interests-sports" name="###formValuesPrefix###[interests][]" value="sports" ###checked_interests_sports### />###LLL:interests.sports###</label>
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox" id="interests-music" name="###formValuesPrefix###[interests][]" value="music" ###checked_interests_music### />###LLL:interests.music###</label>
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox" id="interests-movies" name="###formValuesPrefix###[interests][]" value="movies" ###checked_interests_movies### />###LLL:interests.movies###</label>
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox" id="interests-eating" name="###formValuesPrefix###[interests][]" value="eating" ###checked_interests_eating### />###LLL:interests.eating###</label>
+			</div>
+		</div>
+	</div>
+  ###master_section-end###
+  ###master_section-start###
+		###master_file_attachments###
+		###master_basicfile_attachment###
+		###master_checkbox_confirm###
+  ###master_section-end###
+  ###master_section-start###
+		###master_submit###
+  ###master_section-end###
+###master_form-end###
+<!-- ###TEMPLATE_FORM1### -->
+
+
+<!-- ###TEMPLATE_SUBMITTEDOK### begin -->
+<p>Vielen Dank für Ihre Nachricht.</p>
+
+<!-- ###TEMPLATE_SUBMITTEDOK### end -->
