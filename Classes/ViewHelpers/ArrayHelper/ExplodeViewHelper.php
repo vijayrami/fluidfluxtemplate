@@ -1,5 +1,5 @@
 <?php
-namespace Weboffice\fluxtemplate\ViewHelpers\ArrayHelper;
+namespace Weboffice\fluidfluxtemplate\ViewHelpers\ArrayHelper;
 
 
 
